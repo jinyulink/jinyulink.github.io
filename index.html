@@ -48,7 +48,7 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"jinyulink.github.io","root":"/","version":"1.8.12","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname"}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"jinyulink.github.io","root":"/","version":"1.8.12","typing":{"enable":true,"typeSpeed":80,"cursorChar":"l","loop":true},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname"}},"search_path":"/local-search.xml"};
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
@@ -133,6 +133,18 @@
             </li>
           
         
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                交換連結
+              </a>
+            </li>
+          
+        
         
           <li class="nav-item" id="search-btn">
             <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
@@ -190,7 +202,69 @@
     
     
       <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/2021/12/19/hello-world/" target="_self">
+        <a href="/2021/12/19/Bit-Strings/" target="_self">
+          <img src="/img/cses.jpg" srcset="/img/loading.gif" lazyload alt="CSES - Bit Strings">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/12/19/Bit-Strings/" target="_self">
+          CSES - Bit Strings
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/12/19/Bit-Strings/" target="_self">
+          
+          
+            
+          
+          Introductory / Bit Strings
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-12-19 19:22" pubdate>
+              2021-12-19
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E8%A7%A3%E9%A1%8C/">解題</a>
+            
+              <a href="/categories/%E8%A7%A3%E9%A1%8C/CSES/">CSES</a>
+            
+              <a href="/categories/%E8%A7%A3%E9%A1%8C/CSES/Introductory/">Introductory</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/CSES/">CSES</a>
+            
+              <a href="/tags/Binary-Exponentiation/">Binary Exponentiation</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2021/12/19/first-website/" target="_self">
           <img src="/img/hexo.jpeg" srcset="/img/loading.gif" lazyload alt="我的第一個網站 [Hexo x Github Page] (待更)">
         </a>
       </div>
@@ -198,13 +272,13 @@
     <article class="col-12 col-md-8 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/12/19/hello-world/" target="_self">
+        <a href="/2021/12/19/first-website/" target="_self">
           我的第一個網站 [Hexo x Github Page] (待更)
         </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2021/12/19/hello-world/" target="_self">
+        <a href="/2021/12/19/first-website/" target="_self">
           
           
             
@@ -290,7 +364,7 @@
 
   <footer class="text-center mt-5 py-3">
   <div class="footer-content">
-     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+     <div> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div>  <a href="https://jinyulink.github.io/" target="_blank" rel="nofollow noopener"><span><br>JIN BLOG©<br></span></a> 
   </div>
   
 
@@ -361,6 +435,19 @@
 
 
 
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
 
 

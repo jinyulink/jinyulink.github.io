@@ -4,9 +4,40 @@
   
   
   <entry>
+    <title>CSES - Bit Strings</title>
+    <link href="/2021/12/19/Bit-Strings/"/>
+    <url>/2021/12/19/Bit-Strings/</url>
+    
+    <content type="html"><![CDATA[<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">//Author: Jinlk</span><br><span class="hljs-comment">//https://cses.fi/problemset/task/1617</span><br><span class="hljs-comment">//Binary Exponentiation</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-function"><span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> <span class="hljs-title">binpow</span><span class="hljs-params">(<span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> a, <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> b, <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> m)</span> </span>&#123;<br>    a %= m;<br>    <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> res = <span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">while</span> (b &gt; <span class="hljs-number">0</span>) &#123;<br>        <span class="hljs-keyword">if</span> (b &amp; <span class="hljs-number">1</span>)<br>            res = res * a % m;<br>        a = a * a % m;<br>        b &gt;&gt;= <span class="hljs-number">1</span>;<br>    &#125;<br>    <span class="hljs-keyword">return</span> res;<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">int</span> n;<br>    cin&gt;&gt;n;<br>    cout&lt;&lt;<span class="hljs-built_in">binpow</span>(<span class="hljs-number">2</span>,n,<span class="hljs-built_in">pow</span>(<span class="hljs-number">10</span>,<span class="hljs-number">9</span>)+<span class="hljs-number">7</span>);<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>解題</category>
+      
+      <category>CSES</category>
+      
+      <category>Introductory</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>CSES</tag>
+      
+      <tag>Binary Exponentiation</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>我的第一個網站 [Hexo x Github Page] (待更)</title>
-    <link href="/2021/12/19/hello-world/"/>
-    <url>/2021/12/19/hello-world/</url>
+    <link href="/2021/12/19/first-website/"/>
+    <url>/2021/12/19/first-website/</url>
     
     <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>從很久以前就有創自己網頁的想法，但總是因為覺得困難或麻煩而沒去研究，</p><h2 id="timeline"><a href="#timeline" class="headerlink" title="timeline"></a>timeline</h2><ul><li>21/12/17 - 研究Hexo</li><li>21/12/18 - 找到fluid主題</li><li>21/12/19 - 首次部署網站到github</li></ul>]]></content>
     
