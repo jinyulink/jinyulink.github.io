@@ -13,23 +13,25 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#252626">
-  <meta name="description" content="Introductory / Weird Algorithm">
+  <meta name="description" content="大一第一次參加CPE被慘電的考後心得...">
   <meta name="author" content="Jinyulink">
   <meta name="keywords" content="">
-  <meta name="description" content="Introductory &#x2F; Weird Algorithm">
+  <meta name="description" content="大一第一次參加CPE被慘電的考後心得...">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【題解】CSES - Weird Algorithm">
-<meta property="og:url" content="http://jinlk.cf/2021/12/20/CSES-Weird-Algorithm/index.html">
+<meta property="og:title" content="大一CPE初體驗心得">
+<meta property="og:url" content="http://jinlk.cf/2021/12/21/CPE-first-time/index.html">
 <meta property="og:site_name" content="JIN BLOG">
-<meta property="og:description" content="Introductory &#x2F; Weird Algorithm">
+<meta property="og:description" content="大一第一次參加CPE被慘電的考後心得...">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2021-12-20T00:46:36.000Z">
-<meta property="article:modified_time" content="2021-12-20T00:48:29.878Z">
+<meta property="og:image" content="http://jinlk.cf/img/%E7%98%8B%E7%8B%82.png">
+<meta property="article:published_time" content="2021-12-21T14:54:46.692Z">
+<meta property="article:modified_time" content="2021-12-21T16:58:21.912Z">
 <meta property="article:author" content="Jinyulink">
-<meta property="article:tag" content="CSES">
+<meta property="article:tag" content="CPE">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://jinlk.cf/img/%E7%98%8B%E7%8B%82.png">
   
-  <title>【題解】CSES - Weird Algorithm - JIN BLOG</title>
+  <title>大一CPE初體驗心得 - JIN BLOG</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -191,12 +193,12 @@
 </nav>
 
     <div class="banner" id="banner" parallax=true
-         style="background: url('/img/default1.png') no-repeat center center;
+         style="background: url('/img/VLC-00011.png') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="【題解】CSES - Weird Algorithm">
+            <span class="h2" id="subtitle" title="大一CPE初體驗心得">
               
             </span>
 
@@ -206,8 +208,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-12-20 08:46" pubdate>
-        2021年12月20日 早上
+      <time datetime="2021-12-21 22:54" pubdate>
+        2021年12月21日 晚上
       </time>
     </span>
   
@@ -217,7 +219,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      721 字
+      1.1k 字
     </span>
   
 
@@ -226,7 +228,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      2 分钟
+      4 分钟
     </span>
   
 
@@ -263,19 +265,36 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">【題解】CSES - Weird Algorithm</h1>
+            <h1 style="display: none">大一CPE初體驗心得</h1>
             
             <div class="markdown-body">
-              <h2 id="題目"><a href="#題目" class="headerlink" title="題目"></a><a target="_blank" rel="noopener" href="https://cses.fi/problemset/task/1068">題目</a></h2><p>Consider an algorithm that takes as input a positive integer n. If n is even, the algorithm divides it by two, and if n is odd, the algorithm multiplies it by three and adds one. The algorithm repeats this, until n is one. For example, the sequence for n=3 is as follows:<br>3→10→5→16→8→4→2→1</p>
-<p>Your task is to simulate the execution of the algorithm for a given value of n.</p>
-<h3 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h3><p>The only input line has an integer n. </p>
+              <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>CPE類似於大學版的APCS，並且都是免費的(讚)，抱著不用錢的心態，就索性報名考考看。由於是第一次考，經驗不多，把試場一些注意事項寫下來，解題部分看看就好，比我強的人大有人在，也歡迎大老在底下留言，交流交流。</p>
+<p>這次考的場次是2021/12/21的。</p>
+<h1 id="考前"><a href="#考前" class="headerlink" title="考前"></a>考前</h1><p>高中有打C++解題的經歷，所以對基本語法還算OK，不過沒什麼演算法基礎。考前幾週有去codeforces打了兩場比賽跟開始做CPE官網列出的<a target="_blank" rel="noopener" href="https://cpe.cse.nsysu.edu.tw/environment.php">一顆星題(共49題)</a>，不過我沒有每題都打完(懶)，大概看了三十幾題就來考了。</p>
+<h1 id="考試"><a href="#考試" class="headerlink" title="考試"></a>考試</h1><p>考場就是學校資工系的電腦教室，座位隨便坐，前面有快一個小時的時間給你測試系統，建議要考的人先在家自己熟悉一下，不要像我一開始不熟悉緊張得要死…，CPE是採用<a target="_blank" rel="noopener" href="http://coding-frenzy.arping.me/">瘋狂程設</a>這套軟體(介面十分古老)。<br>考試可以帶筆，用試場提供的規則紙張當計算紙。</p>
+<h2 id="考試介面"><a href="#考試介面" class="headerlink" title="考試介面"></a>考試介面</h2><p>介面很簡單，分成上─題目、中─Code、下─輸出，右邊有編譯後的狀態 (AC, TLE, WA 等)、Compiler 訊息、input/output 資料，此外，系統有英漢字典跟<strong>C/C++參考資料</strong>可以查，挺佛心的，同時可以看到即時排名，包含教室排名(你所在考場的排名)及全國排名，但排名有時會出現教室排名更新了，全國的卻還沒更新的情況，請已教室排名顯示的解題紀錄為主，因為全國考場會每五分鐘傳一次資料到中山大學伺服器(CPE主辦單位)，難免會有塞車情形，可以過個再五分鐘按f5刷新。</p>
+<p>此外，題目會有兩種按鈕，<strong>看題</strong>跟<strong>解題</strong>，可以先把題目看完後，再按解題開始code，看題時間不會記錄到解題時間內。</p>
+<p><img src="/img/%E7%98%8B%E7%8B%82.png" srcset="/img/loading.gif" lazyload alt="瘋狂程設介面"></p>
+<h2 id="過程"><a href="#過程" class="headerlink" title="過程"></a>過程</h2><p><strong>(目前還沒有題目 等官網更新後 會放上來)</strong></p>
+<ol>
+<li><p><input checked="" disabled="" type="checkbox">  點開第一題，大概想了五分鐘，先把大概的程式碼寫在紙上後，按下解題，開始code，幸運的思路沒錯，不用修改code就拿到第一個<font color=#4DC44B>AC</font>，不過美好的開始不代表會一直美好下去…</p>
+</li>
+<li><p><input checked="" disabled="" type="checkbox">  第二題想了大概二十分鐘吧，原本以為只有質數有可能為解，打算用<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%9F%83%E6%8B%89%E6%89%98%E6%96%AF%E7%89%B9%E5%B0%BC%E7%AD%9B%E6%B3%95">Sieve of Eratosthenes</a>判斷質數後，判斷答案，仔細想了想才發現不一定，最後用基於<strong>Sieve of Eratosthenes</strong>的方法修改了一下思路，最後總共花了36分鐘拿到<font color=#4DC44B>AC</font>。</p>
+</li>
+<li><p><input checked="" disabled="" type="checkbox">  接下來由於看到第三題感覺比較複雜，就先跳到第四題了，大概花了十幾分鐘，用了雙層迴圈拿到<font color=#4DC44B>AC</font>，但這方法似乎沒有很好。</p>
+</li>
+</ol>
 <ul>
-<li>1≤n≤10^6</li>
+<li>目前為止對我來說都還挺順利，但接下來…</li>
 </ul>
-<h3 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h3><p>Print a line that contains all values of n during the algorithm.</p>
-<h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><p>Input:<br>3</p>
-<p>Output:<br>3 10 5 16 8 4 2 1</p>
-<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">//Author: jinlk</span><br><span class="hljs-comment">//https://cses.fi/problemset/task/1068/</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> <span class="hljs-keyword">int</span> n;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123; <br>    cin&gt;&gt;n;<br>    <span class="hljs-keyword">while</span>(n!=<span class="hljs-number">1</span>)<br>    &#123;<br>        cout&lt;&lt;n&lt;&lt;<span class="hljs-string">&quot; &quot;</span>;<br>        <span class="hljs-keyword">if</span>(n%<span class="hljs-number">2</span>)<br>            n=(n*<span class="hljs-number">3</span>)+<span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">else</span><br>            n/=<span class="hljs-number">2</span>;<br>    &#125;<br>    cout&lt;&lt;n;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<ol start="4">
+<li><p>第三題我印象深刻(<a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=c082">UVA00118</a>)，機器人走路這題搞了我快兩小時…，慢慢手刻每一行Code，當我還在尋思程式哪裡出錯時，考試最後十分鐘，我才發現我搞錯題意了…，但為時已晚…</p>
+</li>
+<li><p>5-7題還不敢碰，演算法沒什麼基礎Σ(lliдﾟﾉ)ﾉ</p>
+</li>
+</ol>
+<h1 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h1><p>第一次考CPE拿下三題，符合我的預期，但很嘔的是原本如果仔細看題目，應該能拿到四題的說..，總之打算明年三月再去考一次，這段期間希望自己多刷一些題跟學演算法吧!</p>
+
             </div>
             <hr>
             <div>
@@ -286,9 +305,9 @@
                     
                       <a class="hover-with-bg" href="/categories/%E8%A7%A3%E9%A1%8C/">解題</a>
                     
-                      <a class="hover-with-bg" href="/categories/%E8%A7%A3%E9%A1%8C/CSES/">CSES</a>
+                      <a class="hover-with-bg" href="/categories/%E8%A7%A3%E9%A1%8C/CPE/">CPE</a>
                     
-                      <a class="hover-with-bg" href="/categories/%E8%A7%A3%E9%A1%8C/CSES/Introductory/">Introductory</a>
+                      <a class="hover-with-bg" href="/categories/%E8%A7%A3%E9%A1%8C/CPE/%E5%BF%83%E5%BE%97/">心得</a>
                     
                   </div>
                 
@@ -296,7 +315,7 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/CSES/">CSES</a>
+                      <a class="hover-with-bg" href="/tags/CPE/">CPE</a>
                     
                   </div>
                 
@@ -313,18 +332,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/12/21/CPE-first-time/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">大一CPE初體驗心得</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/12/19/CSES-Bit-Strings/">
-                        <span class="hidden-mobile">【題解】CSES - Bit Strings</span>
+                      <a href="/2021/12/20/CSES-Weird-Algorithm/">
+                        <span class="hidden-mobile">【題解】CSES - Weird Algorithm</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
