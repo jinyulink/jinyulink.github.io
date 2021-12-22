@@ -24,7 +24,7 @@
 <meta property="og:description" content="Introductory &#x2F; Bit Strings">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2021-12-22T07:15:38.000Z">
-<meta property="article:modified_time" content="2021-12-22T07:48:19.018Z">
+<meta property="article:modified_time" content="2021-12-22T15:22:03.883Z">
 <meta property="article:author" content="Jinyulink">
 <meta property="article:tag" content="CSES">
 <meta name="twitter:card" content="summary_large_image">
@@ -282,7 +282,7 @@
 <p>4 </p>
 </blockquote>
 <h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">//Author: Jinlk</span><br><span class="hljs-comment">//https://cses.fi/problemset/task/1083</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> <span class="hljs-keyword">int</span> n; <br>    cin&gt;&gt;n;<br>    <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> <span class="hljs-keyword">int</span> x=<span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;n<span class="hljs-number">-1</span>;i++)<br>    &#123;<br>        <span class="hljs-keyword">int</span> y;<br>        cin&gt;&gt;y;<br>        x+=y;<br>    &#125;<br>    cout&lt;&lt;(n*(<span class="hljs-number">1</span>+n))/<span class="hljs-number">2</span>-x; <br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
-<h2 id="想法"><a href="#想法" class="headerlink" title="想法"></a>想法</h2><p>拿測資來舉例，算出1加到5的合(<strong>等差 梯形公式</strong>)，在扣掉Input的每一項加總，即為Missing Number.</p>
+<h2 id="想法"><a href="#想法" class="headerlink" title="想法"></a>想法</h2><p>拿測資來舉例，算出1加到5的合(<strong>等差 梯形公式</strong>  )，在扣掉Input的每一項加總，即為Missing Number.</p>
 
             </div>
             <hr>
