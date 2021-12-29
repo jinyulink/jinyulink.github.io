@@ -84,7 +84,11 @@
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
-<meta name="generator" content="Hexo 5.4.0"></head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"></head>
 
 
 <body>
@@ -275,9 +279,11 @@
             <h1 style="display: none">我的第一個網站 [Hexo x Github Page] (待更)</h1>
             
             <div class="markdown-body">
-              <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>從很久以前就有創自己靜態網頁的想法，但總是因為覺得困難或麻煩而沒去研究，這次剛好有空閒時間，順手來研究一下，沒想到比想像中簡單，以下我會將我創建這個Blog的經歷從頭到尾寫下來，希望對第一次創Blog的夥伴能快速上手。</p>
-<p>另外，創建這個Blog是<strong>完全免費</strong>的(包含自訂義網域)，也不需要信用卡，所以請大家安心食用 :)。</p>
-<h1 id="為何Hexo-x-Github"><a href="#為何Hexo-x-Github" class="headerlink" title="為何Hexo x Github"></a>為何Hexo x Github</h1><p>Hexo官網寫著<strong>快速、簡單且強大的網誌框架</strong>，而也確實如此，全自動部署，簡潔、輕便，主題樣式及美觀我認為比競爭者Hugo好上不少，學會一些常用指令就能上手了，即便前端零基礎。</p>
+              <h1 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h1>
+<p>從很久以前就有創自己靜態網頁的想法，但總是因為覺得困難或麻煩而沒去研究，這次剛好有空閒時間，順手來研究一下，沒想到比想像中簡單，以下我會將我創建這個Blog的經歷從頭到尾寫下來，希望對第一次創Blog的夥伴能快速上手。</p>
+<p>另外，創建這個Blog是<strong>完全免費</strong>的(包含自訂義網域)，也不需要信用卡，所以請大家安心食用 😃。</p>
+<h1 id="為何hexo-x-github"><a class="markdownIt-Anchor" href="#為何hexo-x-github"></a> 為何Hexo x Github</h1>
+<p>Hexo官網寫著<strong>快速、簡單且強大的網誌框架</strong>，而也確實如此，全自動部署，簡潔、輕便，主題樣式及美觀我認為比競爭者Hugo好上不少，學會一些常用指令就能上手了，即便前端零基礎。</p>
 <p>Github好處就是免費、架站快速、穩定，後期也可以自訂網域，當然有些限制:</p>
 <ul>
 <li>網站大小 &lt; 1GB</li>
@@ -285,39 +291,51 @@
 <li>建置次數 &lt; 10次/時</li>
 </ul>
 <p>但作為一個自己的靜態部落格，應該還夠用。</p>
-<h1 id="開始建置環境"><a href="#開始建置環境" class="headerlink" title="開始建置環境"></a>開始建置環境</h1><p>需安裝/註冊的東西:</p>
+<h1 id="開始建置環境"><a class="markdownIt-Anchor" href="#開始建置環境"></a> 開始建置環境</h1>
+<p>需安裝/註冊的東西:</p>
 <ul>
 <li>Node.js</li>
 <li>Git</li>
 <li>Hexo</li>
 <li>註冊Github帳號</li>
 </ul>
-<h2 id="Node-js"><a href="#Node-js" class="headerlink" title="Node.js"></a>Node.js</h2><p>提供使用 npm 來安裝套件。<br>下面去<a target="_blank" rel="noopener" href="https://nodejs.org/en/">Node.js</a>官網，點擊左邊穩定版本下載即可。<br><img src="/img/nodejs.png" srcset="/img/loading.gif" lazyload alt="Node.js官網下載"></p>
-<h2 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h2><p>用來取得Github的檔案及將檔案發佈到Github。<br><img src="/img/git.jpg" srcset="/img/loading.gif" lazyload alt="Git官網下載"></p>
-<h2 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h2><p>完成上述兩個安裝後，就可以安裝Hexo了，<br>首先，先開好一個放部落格網站檔案的資料夾，並在cmd(小黑窗)打開。</p>
-<p>輸入安裝指令: </p>
+<h2 id="nodejs"><a class="markdownIt-Anchor" href="#nodejs"></a> Node.js</h2>
+<p>提供使用 npm 來安裝套件。<br />
+下面去<a target="_blank" rel="noopener" href="https://nodejs.org/en/">Node.js</a>官網，點擊左邊穩定版本下載即可。<br />
+<img src="/img/nodejs.png" srcset="/img/loading.gif" lazyload alt="Node.js官網下載" /></p>
+<h2 id="git"><a class="markdownIt-Anchor" href="#git"></a> Git</h2>
+<p>用來取得Github的檔案及將檔案發佈到Github。<br />
+<img src="/img/git.jpg" srcset="/img/loading.gif" lazyload alt="Git官網下載" /></p>
+<h2 id="hexo"><a class="markdownIt-Anchor" href="#hexo"></a> Hexo</h2>
+<p>完成上述兩個安裝後，就可以安裝Hexo了，<br />
+首先，先開好一個放部落格網站檔案的資料夾，並在cmd(小黑窗)打開。</p>
+<p>輸入安裝指令:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm install hexo-cli -g<br></code></pre></td></tr></table></figure>
-
 <p>接著，輸入初始化指令:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">hexo init<br></code></pre></td></tr></table></figure>
-
 <p>安裝所需檔案:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm install<br></code></pre></td></tr></table></figure>
-
-<p>接著會在所在資料夾看到以下檔案，如果有的話，目前為止都是對的。<br><img src="/img/file.png" srcset="/img/loading.gif" lazyload alt="檢查資料夾是否有這些檔案"></p>
+<p>接著會在所在資料夾看到以下檔案，如果有的話，目前為止都是對的。<br />
+<img src="/img/file.png" srcset="/img/loading.gif" lazyload alt="檢查資料夾是否有這些檔案" /></p>
 <p>這個時候，在黑窗輸入:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">hexo server<br></code></pre></td></tr></table></figure>
-
-<p>如果黑窗跳出這段訊息:<br><img src="/img/hexos.png" srcset="/img/loading.gif" lazyload></p>
-<p>去瀏覽器訪問<a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000/</a> 就會看到你目前已經建置好一個網頁了!<br><img src="/img/landscape.jpg" srcset="/img/loading.gif" lazyload></p>
+<p>如果黑窗跳出這段訊息:<br />
+<img src="/img/hexos.png" srcset="/img/loading.gif" lazyload alt="" /></p>
+<p>去瀏覽器訪問http://localhost:4000/ 就會看到你目前已經建置好一個網頁了!<br />
+<img src="/img/landscape.jpg" srcset="/img/loading.gif" lazyload alt="" /></p>
 <p>(以下待更)</p>
-<h1 id="認識Github-Page"><a href="#認識Github-Page" class="headerlink" title="認識Github Page"></a>認識Github Page</h1><p><a target="_blank" rel="noopener" href="https://github.com/">Github</a>為世界上最大的代碼存放網站和開源社群，而<strong>Github Page</strong>是GitHub提供的一個網頁代管服務，可以用於存放<strong>靜態網頁</strong>，例如:部落格、專案文件甚至整本書。一般GitHub Pages的網站使用github.io的子域名(username.github.io)，但是使用者也可以使用第三方域名。</p>
+<h1 id="認識github-page"><a class="markdownIt-Anchor" href="#認識github-page"></a> 認識Github Page</h1>
+<p><a target="_blank" rel="noopener" href="https://github.com/">Github</a>為世界上最大的代碼存放網站和開源社群，而<strong>Github Page</strong>是GitHub提供的一個網頁代管服務，可以用於存放<strong>靜態網頁</strong>，例如:部落格、專案文件甚至整本書。一般GitHub Pages的網站使用github.io的子域名(<a target="_blank" rel="noopener" href="http://username.github.io">username.github.io</a>)，但是使用者也可以使用第三方域名。</p>
 <p>基於Github的穩定性及不用付費，將個人Blog架設在Github Page是最方便快速的方法之一。</p>
-<h2 id="創立Github-Page"><a href="#創立Github-Page" class="headerlink" title="創立Github Page"></a>創立Github Page</h2><h3 id="註冊Github"><a href="#註冊Github" class="headerlink" title="註冊Github"></a>註冊Github</h3><h3 id="建立Repository"><a href="#建立Repository" class="headerlink" title="建立Repository"></a>建立Repository</h3><h1 id="Timeline"><a href="#Timeline" class="headerlink" title="Timeline"></a>Timeline</h1><ul>
+<h2 id="創立github-page"><a class="markdownIt-Anchor" href="#創立github-page"></a> 創立Github Page</h2>
+<h3 id="註冊github"><a class="markdownIt-Anchor" href="#註冊github"></a> 註冊Github</h3>
+<h3 id="建立repository"><a class="markdownIt-Anchor" href="#建立repository"></a> 建立Repository</h3>
+<h1 id="timeline"><a class="markdownIt-Anchor" href="#timeline"></a> Timeline</h1>
+<ul>
 <li>21/12/17 - 研究Hexo</li>
 <li>21/12/18 - 找到fluid主題</li>
 <li>21/12/19 - 首次部署網站到github</li>
-<li>21/12/21 - 自訂義網域jinlk.cf (免費)</li>
+<li>21/12/21 - <a target="_blank" rel="noopener" href="http://xn--jinlk-mt3ik37t7jdmqg9py.cf">自訂義網域jinlk.cf</a> (免費)</li>
 <li>21/12/22 - 一美金買了jinlk.site網域</li>
 </ul>
 <p><em>last updated 21/12/23 23:51</em></p>
