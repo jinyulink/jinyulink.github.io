@@ -2,15 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://jinlk.site/2021/12/29/CSES-Two-Knights/</loc>
-    
-    <lastmod>2021-12-29</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://jinlk.site/2021/12/28/CSES/</loc>
     
     <lastmod>2021-12-29</lastmod>
@@ -101,13 +92,6 @@
   
   <url>
     <loc>http://jinlk.site/categories/%E8%A7%A3%E9%A1%8C%E7%AD%86%E8%A8%98/CSES/</loc>
-    <lastmod>2021-12-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://jinlk.site/categories/%E8%A7%A3%E9%A1%8C%E7%AD%86%E8%A8%98/CSES/Introductory/</loc>
     <lastmod>2021-12-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
