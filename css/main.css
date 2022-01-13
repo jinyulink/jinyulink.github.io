@@ -294,8 +294,8 @@ sup > a::before,
   color: #ff4500;
 }
 html {
-  font-size: 16px;
-  letter-spacing: 0.02em;
+  font-size: 18px;
+  letter-spacing: 0.04em;
 }
 html,
 body {
@@ -345,7 +345,7 @@ img[lazyload] {
 }
 :root {
   --color-mode: 'light';
-  --body-bg-color: #CCCCCC;
+  --body-bg-color: #FFFFFF;
   --board-bg-color: #DEDEDE;
   --text-color: #3c4858;
   --sec-text-color: #718096;
