@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://jinlk.site/about/index.html</loc>
+    <loc>http://jinlk.site/2022/02/17/cpnote/</loc>
     
     <lastmod>2022-02-19</lastmod>
     
@@ -11,9 +11,9 @@
   </url>
   
   <url>
-    <loc>http://jinlk.site/2022/02/17/cpnote/</loc>
+    <loc>http://jinlk.site/about/index.html</loc>
     
-    <lastmod>2022-02-18</lastmod>
+    <lastmod>2022-02-19</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
