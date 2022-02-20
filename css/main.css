@@ -372,7 +372,7 @@ img[lazyload] {
     --link-hover-color: #30a9de;
     --link-hover-bg-color: #364151;
     --navbar-bg-color: #252626;
-    --navbar-text-color: #d0d0d0;
+    --navbar-text-color: #fff;
   }
   :root:not([data-user-color-scheme]) img,
   :root:not([data-user-color-scheme]) .note,
@@ -454,7 +454,7 @@ img[lazyload] {
   --link-hover-color: #30a9de;
   --link-hover-bg-color: #364151;
   --navbar-bg-color: #252626;
-  --navbar-text-color: #d0d0d0;
+  --navbar-text-color: #fff;
 }
 [data-user-color-scheme='dark'] img,
 [data-user-color-scheme='dark'] .note,
