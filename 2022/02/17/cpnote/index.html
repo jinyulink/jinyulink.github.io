@@ -27,7 +27,7 @@
 <meta property="og:description" content="常用的一些知識筆記(私人使用)">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2022-02-17T15:28:38.000Z">
-<meta property="article:modified_time" content="2022-02-19T09:09:06.862Z">
+<meta property="article:modified_time" content="2022-02-20T16:45:40.414Z">
 <meta property="article:author" content="Jinlk">
 <meta property="article:tag" content="Jinlk , jinlk , jinyulink , jin , jin blog">
 <meta name="twitter:card" content="summary_large_image">
@@ -107,7 +107,7 @@
   <script>
   WIDGET = {
     "CONFIG": {
-      "modules": "0124",
+      "modules": "012",
       "background": "5",
       "tmpColor": "FFFFFF",
       "tmpSize": "19",
@@ -119,12 +119,12 @@
       "alertIconSize": "18",
       "padding": "15px 10px 10px 20px",
       "shadow": "0",
-      "language": "en",
+      "language": "zh",
       "fixed": "false",
       "vertical": "top",
       "horizontal": "left",
       "city": "CN101340101",
-      "key": "446b0838caa24c9d8f021a9cc061a672"
+      "key": "f9065e7c589f4cd1963dba1a0017a7ec"
     }
   }
   </script>
@@ -307,7 +307,7 @@
             
             <div class="markdown-body">
               <h1 id="基本架構"><a class="markdownIt-Anchor" href="#基本架構"></a> 基本架構</h1>
-<figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-comment">//Author: Jinlk</span><br><span class="hljs-comment">//https://jinlk.site</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> int long long</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> vt vector</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> pb push_back</span><br><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> maxn = <span class="hljs-number">1e5</span> + <span class="hljs-number">50</span>;<br><span class="hljs-keyword">int</span> a[maxn];<br><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>	<span class="hljs-keyword">int</span> n;<br>	cin &gt;&gt; n;<br>	<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++) cin &gt;&gt; a[i];<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-comment">//Author: Jinlk</span><br><span class="hljs-comment">//https://jinlk.site</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> IO cin.tie(0);ios_base::sync_with_stdio(false)</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> int long long</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> vt vector</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> pb push_back</span><br><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> maxn = <span class="hljs-number">1e5</span> + <span class="hljs-number">50</span>;<br><span class="hljs-keyword">int</span> a[maxn];<br><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>        IO;<br>	<span class="hljs-keyword">int</span> n;<br>	cin &gt;&gt; n;<br>	<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++) cin &gt;&gt; a[i];<br>&#125;<br></code></pre></div></td></tr></table></figure>
 <h1 id="方便加速程式"><a class="markdownIt-Anchor" href="#方便加速程式"></a> 方便/加速程式</h1>
 <figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><br>cin.<span class="hljs-built_in">tie</span>(<span class="hljs-number">0</span>); <span class="hljs-comment">//避免自動輸出緩衝區</span><br><br>ios_base::<span class="hljs-built_in">sync_with_stdio</span>(<span class="hljs-literal">false</span>); <span class="hljs-comment">//c++跟c不混用</span><br><br>cout&lt;&lt;<span class="hljs-string">&#x27;\n&#x27;</span>; <span class="hljs-comment">//避免自動輸出緩衝區</span><br></code></pre></div></td></tr></table></figure>
 <p><a target="_blank" rel="noopener" href="https://hackmd.io/@wiwiho/CPN-io-optimization">I/O優化</a></p>
