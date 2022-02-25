@@ -39,7 +39,7 @@
     
     <categories>
       
-      <category>學校</category>
+      <category>心得</category>
       
     </categories>
     
@@ -49,6 +49,35 @@
       <tag>選課</tag>
       
       <tag>大學</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>【題解】CSES - Two Knights</title>
+    <link href="/2021/12/29/CSES-Two-Knights/"/>
+    <url>/2021/12/29/CSES-Two-Knights/</url>
+    
+    <content type="html"><![CDATA[<h2 id="題目"><a class="markdownIt-Anchor" href="#題目"></a> <a href="https://cses.fi/problemset/task/1072/">題目</a></h2><p>Your task is to count for k=1,2,…,n the number of ways two knights can be placed on a k×k chessboard so that they do not attack each other.</p><h3 id="input"><a class="markdownIt-Anchor" href="#input"></a> Input</h3><p>The only input line contains an integer n.</p><ul><li>1≤n≤10000</li></ul><h3 id="output"><a class="markdownIt-Anchor" href="#output"></a> Output</h3><p>Print n integers: the results.</p><h3 id="example"><a class="markdownIt-Anchor" href="#example"></a> Example</h3><p>Input:</p><blockquote><p>8</p></blockquote><p>Output:</p><blockquote><p>0<br />6<br />28<br />96<br />252<br />550<br />1056<br />1848</p></blockquote><h2 id="想法"><a class="markdownIt-Anchor" href="#想法"></a> 想法</h2><ol><li>這題基本上在考排列組合，首先算出在n*n正方形中，能放兩個棋子的擺放方法數量，即:</li></ol><p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">令</mi><mi>X</mi><mo>=</mo><msup><mi>n</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">令 X=n^2  </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord cjk_fallback">令</span><span class="mord mathdefault" style="margin-right:0.07847em;">X</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8641079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641079999999999em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span></span></p><p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mi>C</mi><mn>2</mn><mi>X</mi></msubsup><mo>=</mo><mfrac><mrow><mi>X</mi><mo stretchy="false">!</mo></mrow><mrow><mn>2</mn><mo stretchy="false">!</mo><mo stretchy="false">(</mo><mi>X</mi><mo>−</mo><mn>2</mn><mo stretchy="false">)</mo><mo stretchy="false">!</mo></mrow></mfrac><mo>=</mo><mfrac><mrow><msup><mi>n</mi><mn>2</mn></msup><mo stretchy="false">(</mo><msup><mi>n</mi><mn>2</mn></msup><mo>−</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><mn>2</mn></mfrac></mrow><annotation encoding="application/x-tex">C_2^X = \frac{X!}{2!(X-2)!} = \frac{n^2(n^2-1)}{2} </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.138331em;vertical-align:-0.247em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8913309999999999em;"><span style="top:-2.4530000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.07847em;">X</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.247em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.30744em;vertical-align:-0.936em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.37144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">2</span><span class="mclose">!</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.07847em;">X</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">2</span><span class="mclose">)</span><span class="mclose">!</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07847em;">X</span><span class="mclose">!</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.936em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.177108em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.491108em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">2</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">1</span><span class="mclose">)</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></p><ol start="2"><li>再扣除不適用的擺放方法:</li></ol><h3 id="code"><a class="markdownIt-Anchor" href="#code"></a> Code</h3><figure class="highlight cpp"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs cpp"><span class="hljs-comment">//Author: Jinlk</span><br><span class="hljs-comment">//https://cses.fi/problemset/task/1072</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> ull unsigned long long </span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">int</span> n;<br>    cin&gt;&gt;n;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">1</span>; i&lt;=n; i++)<br>    &#123;<br>        ull <span class="hljs-keyword">int</span> all=i*i; <span class="hljs-comment">//格子數量</span><br>        ull <span class="hljs-keyword">int</span> c=all*(all<span class="hljs-number">-1</span>)/<span class="hljs-number">2</span>; <span class="hljs-comment">//共有c種選擇來放置兩個棋</span><br>        ull <span class="hljs-keyword">int</span> d=<span class="hljs-number">4</span>*(i<span class="hljs-number">-1</span>)*(i<span class="hljs-number">-2</span>); <span class="hljs-comment">//須被扣除的擺法</span><br>        ull <span class="hljs-keyword">int</span> ans=c-d;<br>        cout&lt;&lt;ans&lt;&lt;endl;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>解題筆記</category>
+      
+      <category>CSES</category>
+      
+      <category>Introductory</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>CSES</tag>
       
     </tags>
     
@@ -84,7 +113,36 @@
   
   
   <entry>
-    <title>大一CPE初體驗心得</title>
+    <title>【題解】CSES - Missing Number</title>
+    <link href="/2021/12/22/CSES-Missing-Number/"/>
+    <url>/2021/12/22/CSES-Missing-Number/</url>
+    
+    <content type="html"><![CDATA[<h2 id="題目"><a class="markdownIt-Anchor" href="#題目"></a> <a href="https://cses.fi/problemset/task/1083">題目</a></h2><p>You are given all numbers between 1,2,…,n except one. Your task is to find the missing number.</p><h3 id="input"><a class="markdownIt-Anchor" href="#input"></a> Input</h3><p>The first input line contains an integer n.</p><p>The second line contains n−1 numbers. Each number is distinct and between 1 and n (inclusive).</p><ul><li>2≤n≤2⋅105</li></ul><h3 id="output"><a class="markdownIt-Anchor" href="#output"></a> Output</h3><p>Print the missing number.</p><h3 id="example"><a class="markdownIt-Anchor" href="#example"></a> Example</h3><p>Input:</p><blockquote><p>5<br />2 3 1 5</p></blockquote><p>Output:</p><blockquote><p>4</p></blockquote><h3 id="code"><a class="markdownIt-Anchor" href="#code"></a> Code</h3><figure class="highlight cpp"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs cpp"><span class="hljs-comment">//Author: Jinlk</span><br><span class="hljs-comment">//https://cses.fi/problemset/task/1083</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> <span class="hljs-keyword">int</span> n; <br>    cin&gt;&gt;n;<br>    <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> <span class="hljs-keyword">int</span> x=<span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;n<span class="hljs-number">-1</span>;i++)<br>    &#123;<br>        <span class="hljs-keyword">int</span> y;<br>        cin&gt;&gt;y;<br>        x+=y;<br>    &#125;<br>    cout&lt;&lt;(n*(<span class="hljs-number">1</span>+n))/<span class="hljs-number">2</span>-x; <br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure><h2 id="想法"><a class="markdownIt-Anchor" href="#想法"></a> 想法</h2><p>拿測資來舉例，算出1加到5的合(<strong>等差 梯形公式</strong>  )，在扣掉Input的每一項加總，即為Missing Number.</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>解題筆記</category>
+      
+      <category>CSES</category>
+      
+      <category>Introductory</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>CSES</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>CPE初體驗心得</title>
     <link href="/2021/12/21/CPE-first-time/"/>
     <url>/2021/12/21/CPE-first-time/</url>
     
@@ -101,6 +159,76 @@
     <tags>
       
       <tag>CPE</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>【題解】CSES - Weird Algorithm</title>
+    <link href="/2021/12/20/CSES-Weird-Algorithm/"/>
+    <url>/2021/12/20/CSES-Weird-Algorithm/</url>
+    
+    <content type="html"><![CDATA[<h2 id="題目"><a class="markdownIt-Anchor" href="#題目"></a> <a href="https://cses.fi/problemset/task/1068">題目</a></h2><p>Consider an algorithm that takes as input a positive integer n. If n is even, the algorithm divides it by two, and if n is odd, the algorithm multiplies it by three and adds one. The algorithm repeats this, until n is one. For example, the sequence for n=3 is as follows:<br />3→10→5→16→8→4→2→1</p><p>Your task is to simulate the execution of the algorithm for a given value of n.</p><h3 id="input"><a class="markdownIt-Anchor" href="#input"></a> Input</h3><p>The only input line has an integer n.</p><ul><li>1≤n≤10^6</li></ul><h3 id="output"><a class="markdownIt-Anchor" href="#output"></a> Output</h3><p>Print a line that contains all values of n during the algorithm.</p><h3 id="example"><a class="markdownIt-Anchor" href="#example"></a> Example</h3><p>Input:<br />3</p><p>Output:<br />3 10 5 16 8 4 2 1</p><h3 id="code"><a class="markdownIt-Anchor" href="#code"></a> Code</h3><figure class="highlight cpp"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs CPP"><span class="hljs-comment">//Author: jinlk</span><br><span class="hljs-comment">//https://cses.fi/problemset/task/1068/</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> <span class="hljs-keyword">int</span> n;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123; <br>    cin&gt;&gt;n;<br>    <span class="hljs-keyword">while</span>(n!=<span class="hljs-number">1</span>)<br>    &#123;<br>        cout&lt;&lt;n&lt;&lt;<span class="hljs-string">&quot; &quot;</span>;<br>        <span class="hljs-keyword">if</span>(n%<span class="hljs-number">2</span>)<br>            n=(n*<span class="hljs-number">3</span>)+<span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">else</span><br>            n/=<span class="hljs-number">2</span>;<br>    &#125;<br>    cout&lt;&lt;n;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>解題筆記</category>
+      
+      <category>CSES</category>
+      
+      <category>Introductory</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>CSES</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>【題解】CSES - Bit Strings</title>
+    <link href="/2021/12/19/CSES-Bit-Strings/"/>
+    <url>/2021/12/19/CSES-Bit-Strings/</url>
+    
+    <content type="html"><![CDATA[<h2 id="題目"><a class="markdownIt-Anchor" href="#題目"></a> <a href="https://cses.fi/problemset/task/1617">題目</a></h2><p>Your task is to calculate the number of bit strings of length n.</p><p>For example, if n=3, the correct answer is 8, because the possible bit strings are 000, 001, 010, 011, 100, 101, 110, and 111.</p><h3 id="input"><a class="markdownIt-Anchor" href="#input"></a> Input</h3><p>The only input line has an integer n.</p><ul><li>1≤n≤10^6</li></ul><h3 id="output"><a class="markdownIt-Anchor" href="#output"></a> Output</h3><p>Print the result modulo 10^9+7.</p><h3 id="example"><a class="markdownIt-Anchor" href="#example"></a> Example</h3><p>Input:<br />3</p><p>Output:<br />8</p><h3 id="code"><a class="markdownIt-Anchor" href="#code"></a> Code</h3><figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs C++"><span class="hljs-comment">//Author: Jinlk</span><br><span class="hljs-comment">//https://cses.fi/problemset/task/1617</span><br><span class="hljs-comment">//Binary Exponentiation</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-function"><span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> <span class="hljs-title">binpow</span><span class="hljs-params">(<span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> a, <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> b, <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> m)</span> </span>&#123;<br>    a %= m;<br>    <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> res = <span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">while</span> (b &gt; <span class="hljs-number">0</span>) &#123;<br>        <span class="hljs-keyword">if</span> (b &amp; <span class="hljs-number">1</span>)<br>            res = res * a % m;<br>        a = a * a % m;<br>        b &gt;&gt;= <span class="hljs-number">1</span>;<br>    &#125;<br>    <span class="hljs-keyword">return</span> res;<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">int</span> n;<br>    cin&gt;&gt;n;<br>    cout&lt;&lt;<span class="hljs-built_in">binpow</span>(<span class="hljs-number">2</span>,n,<span class="hljs-built_in">pow</span>(<span class="hljs-number">10</span>,<span class="hljs-number">9</span>)+<span class="hljs-number">7</span>);<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure><h2 id="binary-exponentiation"><a class="markdownIt-Anchor" href="#binary-exponentiation"></a> Binary Exponentiation</h2><p><a href="https://cp-algorithms.com/algebra/binary-exp.html">CP-Algorithm連結</a><br />遞迴寫法</p><figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs C++"><span class="hljs-function"><span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> <span class="hljs-title">binpow</span><span class="hljs-params">(<span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> a, <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> b)</span> </span>&#123;<br>    <span class="hljs-keyword">if</span> (b == <span class="hljs-number">0</span>)<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> res = <span class="hljs-built_in">binpow</span>(a, b / <span class="hljs-number">2</span>);<br>    <span class="hljs-keyword">if</span> (b % <span class="hljs-number">2</span>)<br>        <span class="hljs-keyword">return</span> res * res * a;<br>    <span class="hljs-keyword">else</span><br>        <span class="hljs-keyword">return</span> res * res;<br>&#125;<br></code></pre></div></td></tr></table></figure><p>迴圈寫法</p><figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs C++"><span class="hljs-function"><span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> <span class="hljs-title">binpow</span><span class="hljs-params">(<span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> a, <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> b)</span> </span>&#123;<br>    <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> res = <span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">while</span> (b &gt; <span class="hljs-number">0</span>) &#123;<br>        <span class="hljs-keyword">if</span> (b &amp; <span class="hljs-number">1</span>)<br>            res = res * a;<br>        a = a * a;<br>        b &gt;&gt;= <span class="hljs-number">1</span>;<br>    &#125;<br>    <span class="hljs-keyword">return</span> res;<br>&#125;<br></code></pre></div></td></tr></table></figure><p>Effective computation of large exponents modulo a number</p><figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs C++"><span class="hljs-function"><span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> <span class="hljs-title">binpow</span><span class="hljs-params">(<span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> a, <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> b, <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> m)</span> </span>&#123;<br>    a %= m;<br>    <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> res = <span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">while</span> (b &gt; <span class="hljs-number">0</span>) &#123;<br>        <span class="hljs-keyword">if</span> (b &amp; <span class="hljs-number">1</span>)<br>            res = res * a % m;<br>        a = a * a % m;<br>        b &gt;&gt;= <span class="hljs-number">1</span>;<br>    &#125;<br>    <span class="hljs-keyword">return</span> res;<br>&#125;<br></code></pre></div></td></tr></table></figure><h2 id="109-7"><a class="markdownIt-Anchor" href="#109-7"></a> 10^9 + 7</h2><p><a href="https://www.hackerearth.com/practice/notes/abhinav92003/why-output-the-answer-modulo-109-7/">Why ???OUTPUT THE ANSWER MODULO 10^9 + 7&quot;?</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>解題筆記</category>
+      
+      <category>CSES</category>
+      
+      <category>Introductory</category>
+      
+      <category>演算法</category>
+      
+      <category>Algebra</category>
+      
+      <category>Fundamentals</category>
+      
+      <category>Binary Exponentiation</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>CSES</tag>
+      
+      <tag>Binary Exponentiation</tag>
+      
+      <tag>10^9 + 7</tag>
       
     </tags>
     
