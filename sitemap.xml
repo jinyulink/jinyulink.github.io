@@ -119,6 +119,13 @@
 
   
   <url>
+    <loc>http://jinlk.site/tags/CPE/</loc>
+    <lastmod>2022-02-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://jinlk.site/tags/CSES/</loc>
     <lastmod>2022-02-25</lastmod>
     <changefreq>weekly</changefreq>
@@ -134,13 +141,6 @@
   
   <url>
     <loc>http://jinlk.site/tags/10-9-7/</loc>
-    <lastmod>2022-02-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://jinlk.site/tags/CPE/</loc>
     <lastmod>2022-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -177,14 +177,14 @@
 
   
   <url>
-    <loc>http://jinlk.site/categories/%E8%A7%A3%E9%A1%8C%E7%AD%86%E8%A8%98/</loc>
+    <loc>http://jinlk.site/categories/%E5%BF%83%E5%BE%97/</loc>
     <lastmod>2022-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://jinlk.site/categories/%E5%BF%83%E5%BE%97/</loc>
+    <loc>http://jinlk.site/categories/%E8%A7%A3%E9%A1%8C%E7%AD%86%E8%A8%98/</loc>
     <lastmod>2022-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -199,13 +199,6 @@
   
   <url>
     <loc>http://jinlk.site/categories/%E8%A7%A3%E9%A1%8C%E7%AD%86%E8%A8%98/CSES/Introductory/</loc>
-    <lastmod>2022-02-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://jinlk.site/categories/%E7%B6%B2%E7%AB%99/</loc>
     <lastmod>2022-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -234,6 +227,13 @@
   
   <url>
     <loc>http://jinlk.site/categories/%E6%BC%94%E7%AE%97%E6%B3%95/Algebra/Fundamentals/Binary-Exponentiation/</loc>
+    <lastmod>2022-02-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://jinlk.site/categories/%E7%B6%B2%E7%AB%99/</loc>
     <lastmod>2022-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
