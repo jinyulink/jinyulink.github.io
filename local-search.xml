@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>做一個Youtube不間斷電台</title>
+    <link href="/2022/03/05/vps_247/"/>
+    <url>/2022/03/05/vps_247/</url>
+    
+    <content type="html"><![CDATA[<h1 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h1><p>從三四年前開始，youtube上的24/7音樂電台雨後春筍般地出現，那時我就有想自己架設一個電台的想法，然而我的技術能力及硬體設備都不足，只好作罷。<br />最近因學校社團有幫我們弄DigitalOcean的充5美金送100美金，於是我就把這些Credits拿去架了一個Youtube電台，查了網上許多教學，這邊把學習歷程打成文章，參考參考。</p><p><strong>注意事項</strong>: 我原本是打算用OBS的，但後來發現OBS需要gpu才能運作，而這個虛擬機沒有gpu所以跑不了…，事故使用ffmpeg，如果你的虛擬機有gpu的話，可以直接裝OBS。</p><h1 id="硬體規格"><a class="markdownIt-Anchor" href="#硬體規格"></a> 硬體規格</h1><p>我這邊選用的是一般CPU的 4gb ram版本，一個月20美金，這樣的規格夠720p 24fps的直播，當然如果你希望有更高的解析度，就花多一點錢。<br />我這樣實測下來，ram大概使用50%，流量每秒1.6mb。</p><h1 id="軟體"><a class="markdownIt-Anchor" href="#軟體"></a> 軟體</h1><h2 id="客戶端"><a class="markdownIt-Anchor" href="#客戶端"></a> 客戶端</h2><ol><li><a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html">Putty</a> - 用來連虛擬機的程式(當然如果你直接ssh也是可以)</li><li><a href="https://filezilla-project.org/download.php">FileZilla</a> - 將所要直播的背景影片上傳至虛擬機</li></ol><h2 id="虛擬機"><a class="markdownIt-Anchor" href="#虛擬機"></a> 虛擬機</h2><ol><li>Azuracast - DigitalOcean有內建一鍵安裝，裝好後去Azuracast頁面先註冊好帳號，然後操作基本設定。如果你不是使用DigitalOcean的話，需要自己安裝Azuracast。</li></ol><h1 id="步驟"><a class="markdownIt-Anchor" href="#步驟"></a> 步驟</h1><ol><li><p>[Azuracast] 進去Azuracast設定頁面將所有要撥放的音樂mp3檔案上傳至播放列表的Default。<br /><img src="/img/image_2022-03-07_15-10-35.png" alt="" /><br />上傳完音樂，並把音樂加入播放表後，可以至 <strong>個人資料</strong> &gt; <strong>廣播服務</strong> 按開始，現在去 <strong>公開頁面</strong> 就會看到電台開始運作了，</p></li><li><p>[Filezilla] 把背景影片檔案透過Filezilla上傳至虛擬機，記得將該檔案在虛擬機上的位置記下。<br />首先選擇左上角，新增一個站台。<br /><img src="/img/image_2022-03-07_15-14-16.png" alt="" /><br />選擇sftp，接著輸入你的虛擬機ip及使用者帳密。<br /><img src="/img/photo_2022-03-07_15-17-40.jpg" alt="" /></p></li><li><p>[虛擬機] 安裝ffmpeg (可以用obs的人可以不用ffmpeg)<br />用putty連線到虛擬機，在終端機輸入:</p></li></ol><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">sudo apt install ffmpeg<br></code></pre></div></td></tr></table></figure><ol start="4"><li>開始運行直播!<br />將下面的指令複製，把參數改成自己的:</li></ol><ul><li>KEY - youtube直播key</li><li>VIDEO_SOURCE - 背景影片在虛擬機上的位置</li><li>AUDIO_SOURCE - 音樂播放的位置(如果你用Azuracast的話，直接打http://localhost:8000/radio.mp3)</li></ul><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash"><span class="hljs-meta">#! /bin/bash</span><br><br>VBR=<span class="hljs-string">&quot;1500k&quot;</span><br>FPS=<span class="hljs-string">&quot;24&quot;</span><br>QUAL=<span class="hljs-string">&quot;superfast&quot;</span><br><br>YOUTUBE_URL=<span class="hljs-string">&quot;rtmp://a.rtmp.youtube.com/live2&quot;</span><br>KEY=<span class="hljs-string">&quot;你的Youtube直播key&quot;</span><br><br>VIDEO_SOURCE=<span class="hljs-string">&quot;背景影片檔案位置.mp4&quot;</span><br>AUDIO_SOURCE=<span class="hljs-string">&quot;http://localhost:8000/radio.mp3&quot;</span><br><br>ffmpeg \<br>    -re -f lavfi -i <span class="hljs-string">&quot;movie=filename=<span class="hljs-variable">$VIDEO_SOURCE</span>:loop=0, setpts=N/(FRAME_RATE*TB)&quot;</span> \<br>    -thread_queue_size 512 -i <span class="hljs-string">&quot;<span class="hljs-variable">$AUDIO_SOURCE</span>&quot;</span> \<br>    -map 0:v:0 -map 1:a:0 \<br>    -map_metadata:g 1:g \<br>    -vcodec libx264 -pix_fmt yuv420p -preset <span class="hljs-variable">$QUAL</span> -r <span class="hljs-variable">$FPS</span> -g $((<span class="hljs-variable">$FPS</span> * <span class="hljs-number">2</span>)) -b:v <span class="hljs-variable">$VBR</span> \<br>    -acodec libmp3lame -ar 44100 -threads 6 -qscale:v 3 -b:a 320000 -bufsize 512k \<br>    -f flv <span class="hljs-string">&quot;<span class="hljs-variable">$YOUTUBE_URL</span>/<span class="hljs-variable">$KEY</span>&quot;</span><br></code></pre></div></td></tr></table></figure><p>改好後，用putty連線到虛擬機，將整串指令複製起來，貼上終端機，按enter開始運行。<br />沒意外的話，直播就會開始了。<br /><img src="photo_2022-03-07_15-26-30.jpg" alt="" /></p><h1 id="硬體使用量"><a class="markdownIt-Anchor" href="#硬體使用量"></a> 硬體使用量</h1><ol><li>CPU<br /><img src="/img/photo_2022-03-07_15-30-20.jpg" alt="" /></li><li>RAM<br /><img src="/img/photo_2022-03-07_15-31-21.jpg" alt="" /></li><li>Bandwidth<br /><img src="/img/photo_2022-03-07_15-31-56.jpg" alt="" /></li></ol><h1 id="參考資料"><a class="markdownIt-Anchor" href="#參考資料"></a> 參考資料</h1><ol><li><a href="https://okhlopkov.medium.com/how-to-create-your-24-7-youtube-online-radio-ca9e6834c192">How to create your 24/7 YouTube online radio</a> - Medium</li><li><a href="https://www.youtube.com/watch?v=9Jj0pVKRaOE">YouTube Live Stream from Free VPS without OBS</a> - Youtube</li></ol>]]></content>
+    
+    
+    <categories>
+      
+      <category>心得</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>教學</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>CS50筆記 Lecture 8 - HTML, CSS, JavaScript</title>
     <link href="/2022/02/21/cs50_frontend/"/>
     <url>/2022/02/21/cs50_frontend/</url>
