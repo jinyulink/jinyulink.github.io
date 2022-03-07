@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://jinlk.site/2021/12/21/CPE-first-time/</loc>
+    
+    <lastmod>2022-03-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://jinlk.site/2022/03/05/vps_247/</loc>
     
     <lastmod>2022-03-07</lastmod>
@@ -66,15 +75,6 @@
   
   <url>
     <loc>http://jinlk.site/2022/01/27/course2021_1/</loc>
-    
-    <lastmod>2022-02-25</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://jinlk.site/2021/12/21/CPE-first-time/</loc>
     
     <lastmod>2022-02-25</lastmod>
     
