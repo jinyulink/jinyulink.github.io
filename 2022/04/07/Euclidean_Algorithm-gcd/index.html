@@ -16,32 +16,23 @@
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
   
   <meta name="theme-color" content="#252626">
-  <meta name="description" content="自己做一個Youtube 24/7 電台。">
+  <meta name="description" content="演算法筆記整理">
   <meta name="author" content="Jinlk">
   <meta name="keywords" content="Jinlk , jinlk , jinyulink , jin , jin blog">
-  <meta name="description" content="自己做一個Youtube 24&#x2F;7 電台。">
+  <meta name="description" content="演算法筆記整理">
 <meta property="og:type" content="article">
-<meta property="og:title" content="做一個Youtube音樂電台 [24&#x2F;7]">
-<meta property="og:url" content="http://jinlk.site/2022/03/05/vps_247/index.html">
+<meta property="og:title" content="Euclidean algorithm [GCD]">
+<meta property="og:url" content="http://jinlk.site/2022/04/07/Euclidean_Algorithm-gcd/index.html">
 <meta property="og:site_name" content="JINLK BLOG">
-<meta property="og:description" content="自己做一個Youtube 24&#x2F;7 電台。">
+<meta property="og:description" content="演算法筆記整理">
 <meta property="og:locale" content="zh_TW">
-<meta property="og:image" content="http://jinlk.site/img/photo_2022-03-07_15-52-55.jpg">
-<meta property="og:image" content="http://jinlk.site/img/image_2022-03-07_15-10-35.png">
-<meta property="og:image" content="http://jinlk.site/img/image_2022-03-07_15-14-16.png">
-<meta property="og:image" content="http://jinlk.site/img/photo_2022-03-07_15-17-40.jpg">
-<meta property="og:image" content="http://jinlk.site/img/photo_2022-03-07_15-26-30.jpg">
-<meta property="og:image" content="http://jinlk.site/img/photo_2022-03-07_15-30-20.jpg">
-<meta property="og:image" content="http://jinlk.site/img/photo_2022-03-07_15-31-21.jpg">
-<meta property="og:image" content="http://jinlk.site/img/photo_2022-03-07_15-31-56.jpg">
-<meta property="article:published_time" content="2022-03-05T14:35:18.936Z">
-<meta property="article:modified_time" content="2022-03-07T07:53:14.189Z">
+<meta property="article:published_time" content="2022-04-07T15:20:35.000Z">
+<meta property="article:modified_time" content="2022-04-07T15:50:43.607Z">
 <meta property="article:author" content="Jinlk">
-<meta property="article:tag" content="教學">
+<meta property="article:tag" content="Euclidean algorithm">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://jinlk.site/img/photo_2022-03-07_15-52-55.jpg">
   
-  <title>做一個Youtube音樂電台 [24/7] | JINLK BLOG</title>
+  <title>Euclidean algorithm [GCD] | JINLK BLOG</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -240,12 +231,12 @@
 </nav>
 
     <div class="banner" id="banner" parallax=true
-         style="background: url('/img/photo_2022-03-07_15-46-29.jpg') no-repeat center center;
+         style="background: url('/img/default1.png') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="做一個Youtube音樂電台 [24/7]">
+            <span class="h2" id="subtitle" title="Euclidean algorithm [GCD]">
               
             </span>
 
@@ -255,8 +246,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-03-05 22:35" pubdate>
-        2022年3月5日 晚上
+      <time datetime="2022-04-07 23:20" pubdate>
+        2022年4月7日 晚上
       </time>
     </span>
   
@@ -266,7 +257,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1.7k 字
+      1.2k 字
     </span>
   
 
@@ -275,7 +266,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      5 分鐘
+      4 分鐘
     </span>
   
 
@@ -311,74 +302,43 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">做一個Youtube音樂電台 [24/7]</h1>
+            <h1 style="display: none">Euclidean algorithm [GCD]</h1>
             
             <div class="markdown-body">
-              <h1 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h1>
-<p>從三四年前開始，youtube上的24/7音樂電台雨後春筍般地出現，那時我就有想自己架設一個電台的想法，然而我的技術能力及硬體設備都不足，只好作罷。<br />
-最近因學校社團有幫我們弄DigitalOcean的充5美金送100美金，於是我就把這些Credits拿去架了一個Youtube電台，查了網上許多教學，這邊把學習歷程打成文章，參考參考。</p>
-<p><strong>注意事項</strong>: 我原本是打算用OBS的，但後來發現OBS需要gpu才能運作，而這個虛擬機沒有gpu所以跑不了…，事故使用ffmpeg，如果你的虛擬機有gpu的話，可以直接裝OBS。</p>
-<h1 id="硬體規格"><a class="markdownIt-Anchor" href="#硬體規格"></a> 硬體規格</h1>
-<p>我這邊選用的是一般CPU的 4gb ram版本，一個月20美金，這樣的規格夠720p 24fps的直播，當然如果你希望有更高的解析度，就花多一點錢。<br />
-<img src="/img/photo_2022-03-07_15-52-55.jpg" srcset="/img/loading.gif" lazyload alt="" /><br />
-我這樣實測下來，ram大概使用50%，流量每秒1.6mb。</p>
-<h1 id="軟體"><a class="markdownIt-Anchor" href="#軟體"></a> 軟體</h1>
-<h2 id="客戶端"><a class="markdownIt-Anchor" href="#客戶端"></a> 客戶端</h2>
+              <p>給定兩個正整數 a, b，請輸出兩個數的最大公因數(GCD - greatest common divisor)。</p>
+<h2 id="euclidean-algorithm"><a class="markdownIt-Anchor" href="#euclidean-algorithm"></a> Euclidean algorithm</h2>
+<p>Euclidean algorithm 可以在 <strong>O(log(min(a, b)))</strong> 的時間計算出最大公因數。</p>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">time: O(<span class="hljs-built_in">log</span>(min(a, b)))<br></code></pre></div></td></tr></table></figure>
+<h3 id="條件"><a class="markdownIt-Anchor" href="#條件"></a> 條件</h3>
 <ol>
-<li><a target="_blank" rel="noopener" href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html">Putty</a> - 用來連虛擬機的程式(當然如果你直接ssh也是可以)</li>
-<li><a target="_blank" rel="noopener" href="https://filezilla-project.org/download.php">FileZilla</a> - 將所要直播的背景影片上傳至虛擬機</li>
+<li>當其中一整數為零時: return 另一整數。</li>
+<li>當兩整數皆為零時，則最大公因數未知(0)。</li>
 </ol>
-<h2 id="虛擬機"><a class="markdownIt-Anchor" href="#虛擬機"></a> 虛擬機</h2>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>gcd</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>a</mi><mo separator="true">,</mo><mi>b</mi><mo stretchy="false">)</mo><mo>=</mo><mrow><mo fence="true">{</mo><mtable rowspacing="0.3599999999999999em" columnalign="left left" columnspacing="1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mi>a</mi><mo separator="true">,</mo></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mtext>if </mtext><mi>b</mi><mo>=</mo><mn>0</mn></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mi>gcd</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>b</mi><mo separator="true">,</mo><mi>a</mi><mtext> </mtext><mrow><mi mathvariant="normal">m</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">d</mi></mrow><mtext> </mtext><mi>b</mi><mo stretchy="false">)</mo><mo separator="true">,</mo></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mtext>otherwise.</mtext></mstyle></mtd></mtr></mtable></mrow></mrow><annotation encoding="application/x-tex">\gcd(a, b) = \begin{cases}a,&amp;\text{if }b = 0 \\ \gcd(b, a \bmod b),&amp;\text{otherwise.}\end{cases} 
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop"><span style="margin-right:0.01389em;">g</span>cd</span><span class="mopen">(</span><span class="mord mathdefault">a</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">b</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:3.0000299999999998em;vertical-align:-1.25003em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size4">{</span></span><span class="mord"><span class="mtable"><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.69em;"><span style="top:-3.69em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="mpunct">,</span></span></span><span style="top:-2.25em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mop"><span style="margin-right:0.01389em;">g</span>cd</span><span class="mopen">(</span><span class="mord mathdefault">b</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">a</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mspace" style="margin-right:0.05555555555555555em;"></span><span class="mbin"><span class="mord"><span class="mord mathrm">m</span><span class="mord mathrm">o</span><span class="mord mathrm">d</span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mspace" style="margin-right:0.05555555555555555em;"></span><span class="mord mathdefault">b</span><span class="mclose">)</span><span class="mpunct">,</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.19em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:1em;"></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.69em;"><span style="top:-3.69em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mord text"><span class="mord">if </span></span><span class="mord mathdefault">b</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord">0</span></span></span><span style="top:-2.25em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mord text"><span class="mord">otherwise.</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.19em;"><span></span></span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></p>
+<p>程式:</p>
+<figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">gcd</span> <span class="hljs-params">(<span class="hljs-keyword">int</span> a, <span class="hljs-keyword">int</span> b)</span> </span>&#123;<br>    <span class="hljs-keyword">return</span> b ? <span class="hljs-built_in">gcd</span> (b, a % b) : a;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<p>迴圈版本:</p>
+<figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">gcd</span> <span class="hljs-params">(<span class="hljs-keyword">int</span> a, <span class="hljs-keyword">int</span> b)</span> </span>&#123;<br>    <span class="hljs-keyword">while</span> (b) &#123;<br>        a %= b;<br>        <span class="hljs-built_in">swap</span>(a, b);<br>    &#125;<br>    <span class="hljs-keyword">return</span> a;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<h2 id="lcm-最大公倍數"><a class="markdownIt-Anchor" href="#lcm-最大公倍數"></a> LCM 最大公倍數</h2>
+<p>LCM - Least common multiple 公式:</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext>lcm</mtext><mo stretchy="false">(</mo><mi>a</mi><mo separator="true">,</mo><mi>b</mi><mo stretchy="false">)</mo><mo>=</mo><mfrac><mrow><mi>a</mi><mo>⋅</mo><mi>b</mi></mrow><mrow><mi>gcd</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>a</mi><mo separator="true">,</mo><mi>b</mi><mo stretchy="false">)</mo></mrow></mfrac></mrow><annotation encoding="application/x-tex">\text{lcm}(a, b) = \frac{a \cdot b}{\gcd(a, b)} 
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord text"><span class="mord">lcm</span></span><span class="mopen">(</span><span class="mord mathdefault">a</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">b</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.30744em;vertical-align:-0.936em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.37144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mop"><span style="margin-right:0.01389em;">g</span>cd</span><span class="mopen">(</span><span class="mord mathdefault">a</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">b</span><span class="mclose">)</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathdefault">b</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.936em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></p>
+<p>時間複雜度同樣是 <strong>O(log(min(a, b)))</strong><br />
+程式:</p>
+<figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">lcm</span> <span class="hljs-params">(<span class="hljs-keyword">int</span> a, <span class="hljs-keyword">int</span> b)</span> </span>&#123;<br>    <span class="hljs-keyword">return</span> a / <span class="hljs-built_in">gcd</span>(a, b) * b;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<h2 id="binary-gcd"><a class="markdownIt-Anchor" href="#binary-gcd"></a> Binary GCD</h2>
+<p>基於 Euclidean 的優化演算法。 原本的速度會較慢因為取餘數(%)的部分，雖然是O(1)，但實際上它比一般的加法或減法慢的許多，而 Binary GCD 則避免了使用取餘數。</p>
+<h3 id="條件-2"><a class="markdownIt-Anchor" href="#條件-2"></a> 條件</h3>
 <ol>
-<li>Azuracast - DigitalOcean有內建一鍵安裝，裝好後去Azuracast頁面先註冊好帳號，然後操作基本設定。如果你不是使用DigitalOcean的話，需要自己安裝Azuracast。</li>
+<li>如果兩數皆為偶數: $$ \gcd(2a, 2b) = 2 \gcd(a, b) $$</li>
+<li>如果一個奇數一個偶數: $$ \gcd(2a, b) = \gcd(a, b) $$</li>
+<li>如果兩數皆為奇數: $$ \gcd(a, b) = \gcd(b, a-b) $$</li>
 </ol>
-<h1 id="步驟"><a class="markdownIt-Anchor" href="#步驟"></a> 步驟</h1>
-<ol>
-<li>
-<p>[Azuracast] 進去Azuracast設定頁面將所有要撥放的音樂mp3檔案上傳至播放列表的Default。<br />
-<img src="/img/image_2022-03-07_15-10-35.png" srcset="/img/loading.gif" lazyload alt="" /><br />
-上傳完音樂，並把音樂加入播放表後，可以至 <strong>個人資料</strong> &gt; <strong>廣播服務</strong> 按開始，現在去 <strong>公開頁面</strong> 就會看到電台開始運作了，</p>
-</li>
-<li>
-<p>[Filezilla] 把背景影片檔案透過Filezilla上傳至虛擬機，記得將該檔案在虛擬機上的位置記下。<br />
-首先選擇左上角，新增一個站台。<br />
-<img src="/img/image_2022-03-07_15-14-16.png" srcset="/img/loading.gif" lazyload alt="" /><br />
-選擇sftp，接著輸入你的虛擬機ip及使用者帳密。<br />
-<img src="/img/photo_2022-03-07_15-17-40.jpg" srcset="/img/loading.gif" lazyload alt="" /></p>
-</li>
-<li>
-<p>[虛擬機] 安裝ffmpeg (可以用obs的人可以不用ffmpeg)<br />
-用putty連線到虛擬機，在終端機輸入:</p>
-</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">sudo apt install ffmpeg<br></code></pre></div></td></tr></table></figure>
-<ol start="4">
-<li>開始運行直播!<br />
-將下面的指令複製，把參數改成自己的:</li>
-</ol>
-<ul>
-<li>KEY - youtube直播key</li>
-<li>VIDEO_SOURCE - 背景影片在虛擬機上的位置</li>
-<li>AUDIO_SOURCE - 音樂播放的位置(如果你用Azuracast的話，直接打http://localhost:8000/radio.mp3)</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash"><span class="hljs-meta">#! /bin/bash</span><br><br>VBR=<span class="hljs-string">&quot;1500k&quot;</span><br>FPS=<span class="hljs-string">&quot;24&quot;</span><br>QUAL=<span class="hljs-string">&quot;superfast&quot;</span><br><br>YOUTUBE_URL=<span class="hljs-string">&quot;rtmp://a.rtmp.youtube.com/live2&quot;</span><br>KEY=<span class="hljs-string">&quot;你的Youtube直播key&quot;</span><br><br>VIDEO_SOURCE=<span class="hljs-string">&quot;背景影片檔案位置.mp4&quot;</span><br>AUDIO_SOURCE=<span class="hljs-string">&quot;http://localhost:8000/radio.mp3&quot;</span><br><br>ffmpeg \<br>    -re -f lavfi -i <span class="hljs-string">&quot;movie=filename=<span class="hljs-variable">$VIDEO_SOURCE</span>:loop=0, setpts=N/(FRAME_RATE*TB)&quot;</span> \<br>    -thread_queue_size 512 -i <span class="hljs-string">&quot;<span class="hljs-variable">$AUDIO_SOURCE</span>&quot;</span> \<br>    -map 0:v:0 -map 1:a:0 \<br>    -map_metadata:g 1:g \<br>    -vcodec libx264 -pix_fmt yuv420p -preset <span class="hljs-variable">$QUAL</span> -r <span class="hljs-variable">$FPS</span> -g $((<span class="hljs-variable">$FPS</span> * <span class="hljs-number">2</span>)) -b:v <span class="hljs-variable">$VBR</span> \<br>    -acodec libmp3lame -ar 44100 -threads 6 -qscale:v 3 -b:a 320000 -bufsize 512k \<br>    -f flv <span class="hljs-string">&quot;<span class="hljs-variable">$YOUTUBE_URL</span>/<span class="hljs-variable">$KEY</span>&quot;</span><br></code></pre></div></td></tr></table></figure>
-<p>改好後，用putty連線到虛擬機，將整串指令複製起來，貼上終端機，按enter開始運行。<br />
-沒意外的話，直播就會開始了。<br />
-<img src="/img/photo_2022-03-07_15-26-30.jpg" srcset="/img/loading.gif" lazyload alt="" /></p>
-<h1 id="硬體使用量"><a class="markdownIt-Anchor" href="#硬體使用量"></a> 硬體使用量</h1>
-<ol>
-<li>CPU<br />
-<img src="/img/photo_2022-03-07_15-30-20.jpg" srcset="/img/loading.gif" lazyload alt="" /></li>
-<li>RAM<br />
-<img src="/img/photo_2022-03-07_15-31-21.jpg" srcset="/img/loading.gif" lazyload alt="" /></li>
-<li>Bandwidth<br />
-<img src="/img/photo_2022-03-07_15-31-56.jpg" srcset="/img/loading.gif" lazyload alt="" /></li>
-</ol>
-<h1 id="參考資料"><a class="markdownIt-Anchor" href="#參考資料"></a> 參考資料</h1>
-<ol>
-<li><a target="_blank" rel="noopener" href="https://okhlopkov.medium.com/how-to-create-your-24-7-youtube-online-radio-ca9e6834c192">How to create your 24/7 YouTube online radio</a> - Medium</li>
-<li><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=9Jj0pVKRaOE">YouTube Live Stream from Free VPS without OBS</a> - Youtube</li>
-</ol>
+<p>程式:</p>
+<figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">gcd</span><span class="hljs-params">(<span class="hljs-keyword">int</span> a, <span class="hljs-keyword">int</span> b)</span> </span>&#123;<br>    <span class="hljs-keyword">if</span> (!a || !b)<br>        <span class="hljs-keyword">return</span> a | b;<br>    <span class="hljs-keyword">unsigned</span> shift = __builtin_ctz(a | b);<br>    a &gt;&gt;= __builtin_ctz(a);<br>    <span class="hljs-keyword">do</span> &#123;<br>        b &gt;&gt;= __builtin_ctz(b);<br>        <span class="hljs-keyword">if</span> (a &gt; b)<br>            <span class="hljs-built_in">swap</span>(a, b);<br>        b -= a;<br>    &#125; <span class="hljs-keyword">while</span> (b);<br>    <span class="hljs-keyword">return</span> a &lt;&lt; shift;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<h2 id="來源"><a class="markdownIt-Anchor" href="#來源"></a> 來源</h2>
+<p><a target="_blank" rel="noopener" href="https://cp-algorithms.com/algebra/euclid-algorithm.html">Euclidean algorithm for computing the greatest common divisor</a> - cp-algorithms</p>
 
             </div>
             <hr>
@@ -388,7 +348,13 @@
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/%E5%BF%83%E5%BE%97/">心得</a>
+                      <a class="hover-with-bg" href="/categories/%E6%BC%94%E7%AE%97%E6%B3%95/">演算法</a>
+                    
+                      <a class="hover-with-bg" href="/categories/%E6%BC%94%E7%AE%97%E6%B3%95/Algebra/">Algebra</a>
+                    
+                      <a class="hover-with-bg" href="/categories/%E6%BC%94%E7%AE%97%E6%B3%95/Algebra/Fundamentals/">Fundamentals</a>
+                    
+                      <a class="hover-with-bg" href="/categories/%E6%BC%94%E7%AE%97%E6%B3%95/Algebra/Fundamentals/Euclidean-algorithm/">Euclidean algorithm</a>
                     
                   </div>
                 
@@ -396,7 +362,7 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/%E6%95%99%E5%AD%B8/">教學</a>
+                      <a class="hover-with-bg" href="/tags/Euclidean-algorithm/">Euclidean algorithm</a>
                     
                   </div>
                 
@@ -413,15 +379,15 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/04/07/Euclidean_Algorithm-gcd/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Euclidean algorithm [GCD]</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
+                    
+                      <a href="/2022/03/05/vps_247/">
+                        <span class="hidden-mobile">做一個Youtube音樂電台 [24/7]</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
                     
                   </article>
                 </div>
@@ -633,6 +599,13 @@
 
 
 
+
+  
+
+  
+    <!-- KaTeX -->
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0/dist/katex.min.css" />
+  
 
 
 
