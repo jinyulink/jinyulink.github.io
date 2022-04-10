@@ -35,37 +35,6 @@
   
   
   <entry>
-    <title>Breadth-first search</title>
-    <link href="/2022/04/09/BFS/"/>
-    <url>/2022/04/09/BFS/</url>
-    
-    <content type="html"><![CDATA[]]></content>
-    
-    
-    <categories>
-      
-      <category>演算法</category>
-      
-      <category>Graphs</category>
-      
-      <category>Graph traversal</category>
-      
-      <category>Breadth First Search</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>Euclidean algorithm</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>Euclidean algorithm [GCD]</title>
     <link href="/2022/04/07/Euclidean_Algorithm-gcd/"/>
     <url>/2022/04/07/Euclidean_Algorithm-gcd/</url>
