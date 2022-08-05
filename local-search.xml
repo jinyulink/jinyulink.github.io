@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>C++ - Vector (STL)</title>
+    <link href="/2022/08/05/vector/"/>
+    <url>/2022/08/05/vector/</url>
+    
+    <content type="html"><![CDATA[<div class="hljs code-wrapper"><pre class="highlight"><code class="C"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;iostream&gt;</span></span><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;vector&gt;</span></span><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;    <span class="hljs-function"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; <span class="hljs-title">v</span><span class="hljs-params">(<span class="hljs-number">10</span>,<span class="hljs-number">0</span>)</span></span>; <span class="hljs-comment">//宣告一長度10 元素值皆為0的vector</span>    v.push_back(<span class="hljs-number">1</span>); <span class="hljs-comment">//將1插入vector的最後一個位置</span>    v.pop_back(); <span class="hljs-comment">//刪除vector的最後一個元素</span>    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">auto</span> i : v) <span class="hljs-built_in">cout</span>&lt;&lt;i&lt;&lt;<span class="hljs-string">" "</span>;    v.<span class="hljs-built_in">clear</span>(); <span class="hljs-comment">//清空vector</span>    sort(v.<span class="hljs-built_in">begin</span>(),v.<span class="hljs-built_in">end</span>()); <span class="hljs-comment">//將vector排序</span>    v.<span class="hljs-built_in">size</span>(); <span class="hljs-comment">//取得vector的長度</span>    v.empty(); <span class="hljs-comment">//判斷vector是否為空 返回值為true或false</span>    <span class="hljs-function"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; <span class="hljs-title">a</span><span class="hljs-params">(<span class="hljs-number">3</span>,<span class="hljs-number">4</span>)</span>,<span class="hljs-title">b</span><span class="hljs-params">(<span class="hljs-number">3</span>,<span class="hljs-number">3</span>)</span></span>; <span class="hljs-comment">//vector可以比大小(字典序)</span>    <span class="hljs-keyword">if</span>(a&gt;b) <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"a"</span>; <span class="hljs-comment">//印出"a"</span>    <span class="hljs-keyword">else</span> <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"b"</span>;    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;&#125;</code></pre></div>]]></content>
+    
+    
+    <categories>
+      
+      <category>筆記</category>
+      
+      <category>STL</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>STL</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>HP Codewars 2022 小心得</title>
     <link href="/2022/05/15/HP_codewars/"/>
     <url>/2022/05/15/HP_codewars/</url>
