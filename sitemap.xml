@@ -2,6 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://jinlk.site/2022/08/05/transfercsie/</loc>
+    
+    <lastmod>2022-08-05</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://jinlk.site/2022/04/22/vps_247/</loc>
+    
+    <lastmod>2022-08-05</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://jinlk.site/2021/12/22/CPE-first-time/</loc>
+    
+    <lastmod>2022-08-05</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://jinlk.site/2022/05/15/HP_codewars/</loc>
+    
+    <lastmod>2022-08-05</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://jinlk.site/2022/08/05/leetcode322/</loc>
     
     <lastmod>2022-08-05</lastmod>
@@ -29,36 +65,9 @@
   </url>
   
   <url>
-    <loc>http://jinlk.site/2022/05/15/HP_codewars/</loc>
-    
-    <lastmod>2022-05-15</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://jinlk.site/2021/12/19/first-website/</loc>
     
     <lastmod>2022-03-26</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://jinlk.site/2021/12/21/CPE-first-time/</loc>
-    
-    <lastmod>2022-03-26</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://jinlk.site/2022/03/05/vps_247/</loc>
-    
-    <lastmod>2022-03-07</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -151,6 +160,20 @@
   
   <url>
     <loc>http://jinlk.site/tags/%E4%B8%80%E7%B6%ADdp/</loc>
+    <lastmod>2022-08-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://jinlk.site/tags/%E8%BD%89%E7%B3%BB/</loc>
+    <lastmod>2022-08-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://jinlk.site/tags/%E5%BF%83%E5%BE%97/</loc>
     <lastmod>2022-08-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
