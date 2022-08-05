@@ -4,6 +4,35 @@
   
   
   <entry>
+    <title>Leetcode 322 - Coin Change (一維dp)</title>
+    <link href="/2022/08/05/leetcode322/"/>
+    <url>/2022/08/05/leetcode322/</url>
+    
+    <content type="html"><![CDATA[<p><a href="https://leetcode.com/problems/coin-change/">連結</a></p><h2 id="題目"><a class="markdownIt-Anchor" href="#題目"></a> 題目</h2><p>You are given an integer array coins representing coins of different denominations and an integer amount representing a total amount of money.</p><p>Return the fewest number of coins that you need to make up that amount. If that amount of money cannot be made up by any combination of the coins, return -1.</p><p>You may assume that you have an infinite number of each kind of coin.<br /><strong>Example 1:</strong></p><figure class="highlight avrasm"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs avrasm"><span class="hljs-symbol">Input:</span> coins = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">5</span>], amount = <span class="hljs-number">11</span><br><span class="hljs-symbol">Output:</span> <span class="hljs-number">3</span><br><span class="hljs-symbol">Explanation:</span> <span class="hljs-number">11</span> = <span class="hljs-number">5</span> + <span class="hljs-number">5</span> + <span class="hljs-number">1</span><br></code></pre></div></td></tr></table></figure><p><strong>Example 2:</strong></p><figure class="highlight avrasm"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs avrasm"><span class="hljs-symbol">Input:</span> coins = [<span class="hljs-number">2</span>], amount = <span class="hljs-number">3</span><br><span class="hljs-symbol">Output:</span> <span class="hljs-number">-1</span><br></code></pre></div></td></tr></table></figure><p><strong>Example 3:</strong></p><figure class="highlight avrasm"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs avrasm"><span class="hljs-symbol">Input:</span> coins = [<span class="hljs-number">1</span>], amount = <span class="hljs-number">0</span><br><span class="hljs-symbol">Output:</span> <span class="hljs-number">0</span><br></code></pre></div></td></tr></table></figure><p><strong>Constraints:</strong></p><ul><li>1 &lt;= coins.length &lt;= 12</li><li>1 &lt;= coins[i] &lt;= 231 - 1</li><li>0 &lt;= amount &lt;= 104</li></ul><h2 id="code"><a class="markdownIt-Anchor" href="#code"></a> code</h2><figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs C"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> &#123;</span><br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">coinChange</span><span class="hljs-params">(<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&amp; coins, <span class="hljs-keyword">int</span> amount)</span> </span>&#123;<br>        <span class="hljs-function"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; <span class="hljs-title">dp</span><span class="hljs-params">(amount+<span class="hljs-number">1</span>,amount+<span class="hljs-number">1</span>)</span></span>;<br>        dp[<span class="hljs-number">0</span>]=<span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> coin:coins)<br>        &#123;<br>            <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=coin;i&lt;=amount;i++)<br>            &#123;<br>                dp[i]=min(dp[i],dp[i-coin]+<span class="hljs-number">1</span>);<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> dp[amount]==amount+<span class="hljs-number">1</span>?<span class="hljs-number">-1</span>:dp[amount];<br>    &#125;<br>&#125;;<br></code></pre></div></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>筆記</category>
+      
+      <category>Leetcode</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>dp</tag>
+      
+      <tag>一維dp</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>C++ - Vector (STL)</title>
     <link href="/2022/08/05/vector/"/>
     <url>/2022/08/05/vector/</url>

@@ -16,24 +16,42 @@
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
   
   <meta name="theme-color" content="#252626">
-  <meta name="description" content="Jinlk��Blog">
+  <meta name="description" content="leetcode dp 筆記">
   <meta name="author" content="Jinlk">
   <meta name="keywords" content="Jinlk , jinlk , jinyulink , jin , jin blog">
-  <meta name="description" content="Jinlk��Blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="分類 - 筆記">
-<meta property="og:url" content="http://jinlk.site/categories/%E7%AD%86%E8%A8%98/index.html">
+  <meta name="description" content="leetcode dp 筆記">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Leetcode 322 - Coin Change (一維dp)">
+<meta property="og:url" content="http://jinlk.site/2022/08/05/leetcode322/index.html">
 <meta property="og:site_name" content="JINLK BLOG">
-<meta property="og:description" content="Jinlk��Blog">
+<meta property="og:description" content="leetcode dp 筆記">
 <meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2022-08-05T13:17:43.729Z">
+<meta property="article:modified_time" content="2022-08-05T13:17:43.729Z">
 <meta property="article:author" content="Jinlk">
-<meta property="article:tag" content="Jinlk , jinlk , jinyulink , jin , jin blog">
+<meta property="article:tag" content="dp">
+<meta property="article:tag" content="一維dp">
 <meta name="twitter:card" content="summary_large_image">
   
-  <title>分類 - 筆記 | JINLK BLOG</title>
+  <title>Leetcode 322 - Coin Change (一維dp) | JINLK BLOG</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
 
 
 <!-- 主题依赖的图标库，不要自行修改 -->
@@ -71,7 +89,7 @@
 
 
 <body>
-  <header style="height: 60vh;">
+  <header style="height: 70vh;">
     
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
@@ -214,14 +232,56 @@
 </nav>
 
     <div class="banner" id="banner" parallax=true
-         style="background: url('/img/%E7%92%89%E6%A0%BC??.webp') no-repeat center center;
+         style="background: url('https://i.pinimg.com/originals/9c/f6/1b/9cf61b16e6344f1d6203c504f74e617b.gif') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="分類 - 筆記">
+            <span class="h2" id="subtitle" title="Leetcode 322 - Coin Change (一維dp)">
               
             </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-08-05 21:17" pubdate>
+        2022年8月5日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      858 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      3 分鐘
+    </span>
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
+</div>
 
             
           </div>
@@ -233,46 +293,154 @@
   </header>
   <main>
     
-      <div class="container nopadding-x-md">
-        <div class="py-5" id="board"
-          >
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-<div class="list-group">
-  <p class="h4">總共 2 篇文章</p>
-  <hr>
-  
-  
-    
       
-      <p class="h5">2022</p>
-    
-    <a href="/2022/08/05/leetcode322/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">Leetcode 322 - Coin Change (一維dp)</span>
-      <time style="float: right;">08-05</time>
-    </a>
-  
-    
-    <a href="/2022/08/05/vector/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">C++ - Vector (STL)</span>
-      <time style="float: right;">08-05</time>
-    </a>
-  
-</div>
 
-
-
-
-
-              </div>
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Leetcode 322 - Coin Change (一維dp)</h1>
+            
+            <div class="markdown-body">
+              <p><a target="_blank" rel="noopener" href="https://leetcode.com/problems/coin-change/">連結</a></p>
+<h2 id="題目"><a class="markdownIt-Anchor" href="#題目"></a> 題目</h2>
+<p>You are given an integer array coins representing coins of different denominations and an integer amount representing a total amount of money.</p>
+<p>Return the fewest number of coins that you need to make up that amount. If that amount of money cannot be made up by any combination of the coins, return -1.</p>
+<p>You may assume that you have an infinite number of each kind of coin.<br />
+<strong>Example 1:</strong></p>
+<figure class="highlight avrasm"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs avrasm"><span class="hljs-symbol">Input:</span> coins = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">5</span>], amount = <span class="hljs-number">11</span><br><span class="hljs-symbol">Output:</span> <span class="hljs-number">3</span><br><span class="hljs-symbol">Explanation:</span> <span class="hljs-number">11</span> = <span class="hljs-number">5</span> + <span class="hljs-number">5</span> + <span class="hljs-number">1</span><br></code></pre></div></td></tr></table></figure>
+<p><strong>Example 2:</strong></p>
+<figure class="highlight avrasm"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs avrasm"><span class="hljs-symbol">Input:</span> coins = [<span class="hljs-number">2</span>], amount = <span class="hljs-number">3</span><br><span class="hljs-symbol">Output:</span> <span class="hljs-number">-1</span><br></code></pre></div></td></tr></table></figure>
+<p><strong>Example 3:</strong></p>
+<figure class="highlight avrasm"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs avrasm"><span class="hljs-symbol">Input:</span> coins = [<span class="hljs-number">1</span>], amount = <span class="hljs-number">0</span><br><span class="hljs-symbol">Output:</span> <span class="hljs-number">0</span><br></code></pre></div></td></tr></table></figure>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li>1 &lt;= coins.length &lt;= 12</li>
+<li>1 &lt;= coins[i] &lt;= 231 - 1</li>
+<li>0 &lt;= amount &lt;= 104</li>
+</ul>
+<h2 id="code"><a class="markdownIt-Anchor" href="#code"></a> code</h2>
+<figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs C"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> &#123;</span><br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">coinChange</span><span class="hljs-params">(<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&amp; coins, <span class="hljs-keyword">int</span> amount)</span> </span>&#123;<br>        <span class="hljs-function"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; <span class="hljs-title">dp</span><span class="hljs-params">(amount+<span class="hljs-number">1</span>,amount+<span class="hljs-number">1</span>)</span></span>;<br>        dp[<span class="hljs-number">0</span>]=<span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> coin:coins)<br>        &#123;<br>            <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=coin;i&lt;=amount;i++)<br>            &#123;<br>                dp[i]=min(dp[i],dp[i-coin]+<span class="hljs-number">1</span>);<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> dp[amount]==amount+<span class="hljs-number">1</span>?<span class="hljs-number">-1</span>:dp[amount];<br>    &#125;<br>&#125;;<br></code></pre></div></td></tr></table></figure>
             </div>
-          </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E7%AD%86%E8%A8%98/">筆記</a>
+                    
+                      <a class="hover-with-bg" href="/categories/%E7%AD%86%E8%A8%98/Leetcode/">Leetcode</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/dp/">dp</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E4%B8%80%E7%B6%ADdp/">一維dp</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章採用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 協議，請轉載注明出處!
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/08/05/vector/">
+                        <span class="hidden-mobile">C++ - Vector (STL)</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#comments', function() {
+      var light = 'github-light';
+      var dark = 'dark-blue';
+      var schema = document.documentElement.getAttribute('data-user-color-scheme');
+      if (schema === 'dark') {
+        schema = dark;
+      } else {
+        schema = light;
+      }
+      window.UtterancesThemeLight = light;
+      window.UtterancesThemeDark = dark;
+      var s = document.createElement('script');
+      s.setAttribute('src', 'https://utteranc.es/client.js');
+      s.setAttribute('repo', 'jinyulink/blog-comment');
+      s.setAttribute('issue-term', 'pathname');
+      
+      s.setAttribute('theme', schema);
+      s.setAttribute('crossorigin', 'anonymous');
+      document.getElementById('comments').appendChild(s);
+    })
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
         </div>
       </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目錄</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+<!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4380085700423637"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-4380085700423637"
+     data-ad-slot="7977608502"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script> -->
     
 
     
@@ -379,6 +547,19 @@
   
 
 
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
 
 
 
