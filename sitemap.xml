@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://jinlk.site/2022/08/07/cf812div2/</loc>
+    
+    <lastmod>2022-08-06</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://jinlk.site/2022/08/05/transfercsie/</loc>
     
     <lastmod>2022-08-05</lastmod>
@@ -103,7 +112,7 @@
 
   <url>
     <loc>http://jinlk.site/</loc>
-    <lastmod>2022-08-05</lastmod>
+    <lastmod>2022-08-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -111,70 +120,77 @@
   
   <url>
     <loc>http://jinlk.site/tags/CPE/</loc>
-    <lastmod>2022-08-05</lastmod>
+    <lastmod>2022-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://jinlk.site/tags/Hexo/</loc>
-    <lastmod>2022-08-05</lastmod>
+    <lastmod>2022-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://jinlk.site/tags/Fluid/</loc>
-    <lastmod>2022-08-05</lastmod>
+    <lastmod>2022-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://jinlk.site/tags/%E6%95%99%E5%AD%B8/</loc>
-    <lastmod>2022-08-05</lastmod>
+    <lastmod>2022-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://jinlk.site/tags/Codewars/</loc>
-    <lastmod>2022-08-05</lastmod>
+    <lastmod>2022-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://jinlk.site/tags/dp/</loc>
-    <lastmod>2022-08-05</lastmod>
+    <lastmod>2022-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://jinlk.site/tags/STL/</loc>
-    <lastmod>2022-08-05</lastmod>
+    <lastmod>2022-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://jinlk.site/tags/%E4%B8%80%E7%B6%ADdp/</loc>
-    <lastmod>2022-08-05</lastmod>
+    <lastmod>2022-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://jinlk.site/tags/%E8%BD%89%E7%B3%BB/</loc>
-    <lastmod>2022-08-05</lastmod>
+    <lastmod>2022-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://jinlk.site/tags/%E5%BF%83%E5%BE%97/</loc>
-    <lastmod>2022-08-05</lastmod>
+    <lastmod>2022-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://jinlk.site/tags/codeforces/</loc>
+    <lastmod>2022-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -183,35 +199,42 @@
   
   <url>
     <loc>http://jinlk.site/categories/%E5%BF%83%E5%BE%97/</loc>
-    <lastmod>2022-08-05</lastmod>
+    <lastmod>2022-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://jinlk.site/categories/%E7%B6%B2%E7%AB%99/</loc>
-    <lastmod>2022-08-05</lastmod>
+    <lastmod>2022-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://jinlk.site/categories/%E7%AD%86%E8%A8%98/</loc>
-    <lastmod>2022-08-05</lastmod>
+    <lastmod>2022-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://jinlk.site/categories/%E7%AD%86%E8%A8%98/STL/</loc>
-    <lastmod>2022-08-05</lastmod>
+    <lastmod>2022-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://jinlk.site/categories/%E7%AD%86%E8%A8%98/Leetcode/</loc>
-    <lastmod>2022-08-05</lastmod>
+    <lastmod>2022-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://jinlk.site/categories/%E7%AD%86%E8%A8%98/Codeforces/</loc>
+    <lastmod>2022-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>

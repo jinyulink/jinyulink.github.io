@@ -16,24 +16,23 @@
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
   
   <meta name="theme-color" content="#252626">
-  <meta name="description" content="轉系成功 !">
+  <meta name="description" content="Codeforces Round 812 (Div. 2) 前三題">
   <meta name="author" content="Jinlk">
   <meta name="keywords" content="Jinlk , jinlk , jinyulink , jin , jin blog">
-  <meta name="description" content="轉系成功 !">
+  <meta name="description" content="Codeforces Round 812 (Div. 2) 前三題">
 <meta property="og:type" content="article">
-<meta property="og:title" content="轉系心得">
-<meta property="og:url" content="http://jinlk.site/2022/08/05/transfercsie/index.html">
+<meta property="og:title" content="Codeforces Round 812 (Div. 2) A-C">
+<meta property="og:url" content="http://jinlk.site/2022/08/07/cf812div2/index.html">
 <meta property="og:site_name" content="JINLK BLOG">
-<meta property="og:description" content="轉系成功 !">
+<meta property="og:description" content="Codeforces Round 812 (Div. 2) 前三題">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2022-08-05T13:30:38.000Z">
-<meta property="article:modified_time" content="2022-08-05T13:53:50.947Z">
+<meta property="article:published_time" content="2022-08-06T16:50:38.000Z">
+<meta property="article:modified_time" content="2022-08-06T17:10:04.413Z">
 <meta property="article:author" content="Jinlk">
-<meta property="article:tag" content="轉系">
-<meta property="article:tag" content="心得">
+<meta property="article:tag" content="codeforces">
 <meta name="twitter:card" content="summary_large_image">
   
-  <title>轉系心得 | JINLK BLOG</title>
+  <title>Codeforces Round 812 (Div. 2) A-C | JINLK BLOG</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -232,12 +231,12 @@
 </nav>
 
     <div class="banner" id="banner" parallax=true
-         style="background: url('https://i.pinimg.com/originals/da/4f/00/da4f0047275dbcc62465e06e5b29ea84.gif') no-repeat center center;
+         style="background: url('https://i.pinimg.com/564x/5f/29/cd/5f29cda502296b6229b8e8033be74a38.jpg') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="轉系心得">
+            <span class="h2" id="subtitle" title="Codeforces Round 812 (Div. 2) A-C">
               
             </span>
 
@@ -247,8 +246,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-08-05 21:30" pubdate>
-        2022年8月5日 晚上
+      <time datetime="2022-08-07 00:50" pubdate>
+        2022年8月7日 凌晨
       </time>
     </span>
   
@@ -258,7 +257,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      205 字
+      1.8k 字
     </span>
   
 
@@ -267,7 +266,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1 分鐘
+      6 分鐘
     </span>
   
 
@@ -303,12 +302,27 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">轉系心得</h1>
+            <h1 style="display: none">Codeforces Round 812 (Div. 2) A-C</h1>
             
             <div class="markdown-body">
-              <p>經過一年努力，總算如願以償，轉到資工系了，好開心。<br />
-說真的，一路以來，我覺得我很幸運，學測時，apcs組備取最後一個上的，到了大學後，上課都遇到分數給比較高的老師，讓我的成績單好看許多；也有同學帶我打比賽，得以學到許多以前沒碰過的知識，總之，希望能繼續努力，讓自己持續進步。</p>
-<p>現階段目標: 考到駕照 / cpe六題 / icpc / cf rating 上1400 / 繼續更新網站 / 成績hold住 / 學學vue laravel / 看原子習慣</p>
+              <h1 id="a-traveling-salesman-problem"><a class="markdownIt-Anchor" href="#a-traveling-salesman-problem"></a> A Traveling Salesman Problem</h1>
+<p><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1713/problem/A">題目連結</a><br />
+a=x軸最大值<br />
+b=x軸最小值(負數)<br />
+c=y軸最大值<br />
+d=y軸最小值(負數)<br />
+ans=2*a+(-2)<em>b+2</em>c+(-2)*d</p>
+<h2 id="code"><a class="markdownIt-Anchor" href="#code"></a> code</h2>
+<figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs C"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> IO cin.tie(0);ios_base::sync_with_stdio(false)</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> ll long long</span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br>ll t,n,x,y,a,b,c,d,ans;<br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">solve</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    ans=<span class="hljs-number">0</span>;<br>    <span class="hljs-built_in">cin</span>&gt;&gt;n;<br>    a=<span class="hljs-number">0</span>,b=<span class="hljs-number">0</span>,c=<span class="hljs-number">0</span>,d=<span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">while</span>(n--)<br>    &#123;<br>        <span class="hljs-built_in">cin</span>&gt;&gt;x&gt;&gt;y;<br>        a=max(a,x);<br>        b=min(b,x);<br>        c=max(c,y);<br>        d=min(d,y);<br>    &#125;<br>    ans=<span class="hljs-number">2</span>*a+<span class="hljs-number">-2</span>*b+<span class="hljs-number">2</span>*c+<span class="hljs-number">-2</span>*d;<br>    <span class="hljs-built_in">cout</span>&lt;&lt;ans&lt;&lt;<span class="hljs-string">&#x27;\n&#x27;</span>;<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-built_in">cin</span>&gt;&gt;t;<br>    <span class="hljs-keyword">while</span>(t--)  solve();<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<h1 id="b-optimal-reduction"><a class="markdownIt-Anchor" href="#b-optimal-reduction"></a> B Optimal Reduction</h1>
+<p><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1713/problem/B">題目連結</a><br />
+判斷所給陣列 最大值元素往左及往右是否呈遞減型態</p>
+<h2 id="code-2"><a class="markdownIt-Anchor" href="#code-2"></a> code</h2>
+<figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs C"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> IO cin.tie(0);ios_base::sync_with_stdio(false)</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> ll long long</span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><span class="hljs-keyword">const</span> ll MAXN = <span class="hljs-number">1e5</span>+<span class="hljs-number">10</span>;<br>ll t,n,ans;<br>ll a[MAXN];<br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">solve</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-built_in">cin</span>&gt;&gt;n;<br>    ans=<span class="hljs-number">1</span>;<br>    <span class="hljs-built_in">memset</span>(a,<span class="hljs-number">0</span>,<span class="hljs-keyword">sizeof</span>(a));<br>    ll c=<span class="hljs-number">0</span>,cc=<span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span>(ll i=<span class="hljs-number">0</span>;i&lt;n;i++) &#123;<span class="hljs-built_in">cin</span>&gt;&gt;a[i]; c=max(c,a[i]);&#125;<br>    <span class="hljs-keyword">for</span>(ll i=<span class="hljs-number">0</span>;i&lt;n;i++) <span class="hljs-keyword">if</span>(a[i]==c) cc=i;<br>    <span class="hljs-keyword">for</span>(ll i=cc;i&lt;n<span class="hljs-number">-1</span>;i++)    <span class="hljs-keyword">if</span>(a[i]&lt;a[i+<span class="hljs-number">1</span>])   ans=<span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span>(ll i=cc;i&gt;<span class="hljs-number">0</span>;i--)    <span class="hljs-keyword">if</span>(a[i]&lt;a[i<span class="hljs-number">-1</span>])   ans=<span class="hljs-number">0</span>;<br>    <span class="hljs-built_in">cout</span>&lt;&lt;(ans==<span class="hljs-number">1</span>?<span class="hljs-string">&quot;YES\n&quot;</span>:<span class="hljs-string">&quot;NO\n&quot;</span>);<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-built_in">cin</span>&gt;&gt;t;<br>    <span class="hljs-keyword">while</span>(t--)  solve();<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<h1 id="c-build-permutation"><a class="markdownIt-Anchor" href="#c-build-permutation"></a> C Build Permutation</h1>
+<p><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1713/problem/C">題目連結</a></p>
+<h2 id="code-3"><a class="markdownIt-Anchor" href="#code-3"></a> code</h2>
+<figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs C"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> IO cin.tie(0);ios_base::sync_with_stdio(false)</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> ll long long</span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><span class="hljs-keyword">const</span> ll MAXN = <span class="hljs-number">1e5</span>+<span class="hljs-number">10</span>;<br>ll t,n,x,ans;<br>ll a[MAXN],b[MAXN];<br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">solve</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-built_in">cin</span>&gt;&gt;n;<br>    <span class="hljs-built_in">memset</span>(a,<span class="hljs-number">0</span>,<span class="hljs-keyword">sizeof</span>(a));<br>    ll c=<span class="hljs-number">2</span>*(n<span class="hljs-number">-1</span>);<br>    <span class="hljs-keyword">for</span>(ll i=c;i&gt;=<span class="hljs-number">0</span>;i--)<br>    &#123;<br>        <span class="hljs-keyword">if</span>((ll)<span class="hljs-built_in">sqrt</span>(i)*(ll)<span class="hljs-built_in">sqrt</span>(i)==i)   &#123;c=<span class="hljs-built_in">sqrt</span>(i);<span class="hljs-keyword">break</span>;&#125;<br>    &#125;<br>    <span class="hljs-keyword">for</span>(ll i=n<span class="hljs-number">-1</span>;i&gt;=<span class="hljs-number">0</span>;i--)<br>    &#123;<br>        ll ii=c*c-i;<br>        <span class="hljs-keyword">while</span>(a[ii]!=<span class="hljs-number">0</span>)<br>        &#123;<br>            c--;<br>            ii=c*c-i;<br>        &#125;<br>        a[ii]=i;<br>    &#125;<br>    <span class="hljs-keyword">for</span>(ll i=<span class="hljs-number">0</span>;i&lt;n;i++) <span class="hljs-built_in">cout</span>&lt;&lt;a[i]&lt;&lt;<span class="hljs-string">&quot; &quot;</span>;<br>    <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">&#x27;\n&#x27;</span>;<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-built_in">cin</span>&gt;&gt;t;<br>    <span class="hljs-keyword">while</span>(t--)  solve();<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
 
             </div>
             <hr>
@@ -318,7 +332,9 @@
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/%E5%BF%83%E5%BE%97/">心得</a>
+                      <a class="hover-with-bg" href="/categories/%E7%AD%86%E8%A8%98/">筆記</a>
+                    
+                      <a class="hover-with-bg" href="/categories/%E7%AD%86%E8%A8%98/Codeforces/">Codeforces</a>
                     
                   </div>
                 
@@ -326,9 +342,7 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/%E8%BD%89%E7%B3%BB/">轉系</a>
-                    
-                      <a class="hover-with-bg" href="/tags/%E5%BF%83%E5%BE%97/">心得</a>
+                      <a class="hover-with-bg" href="/tags/codeforces/">codeforces</a>
                     
                   </div>
                 
@@ -345,18 +359,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/08/07/cf812div2/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Codeforces Round 812 (Div. 2) A-C</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/08/05/leetcode322/">
-                        <span class="hidden-mobile">Leetcode 322 - Coin Change (一維dp)</span>
+                      <a href="/2022/08/05/transfercsie/">
+                        <span class="hidden-mobile">轉系心得</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
