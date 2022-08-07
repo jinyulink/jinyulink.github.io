@@ -16,23 +16,26 @@
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
   
   <meta name="theme-color" content="#252626">
-  <meta name="description" content="vector 筆記">
+  <meta name="description" content="trie函數">
   <meta name="author" content="Jinlk">
   <meta name="keywords" content="Jinlk , jinlk , jinyulink , jin , jin blog">
-  <meta name="description" content="vector 筆記">
+  <meta name="description" content="trie函數">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C++ - Vector (STL)">
-<meta property="og:url" content="http://jinlk.site/2022/08/05/vector/index.html">
+<meta property="og:title" content="Trie">
+<meta property="og:url" content="http://jinlk.site/2022/08/07/trie/index.html">
 <meta property="og:site_name" content="JINLK BLOG">
-<meta property="og:description" content="vector 筆記">
+<meta property="og:description" content="trie函數">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2022-08-05T12:16:16.058Z">
-<meta property="article:modified_time" content="2022-08-07T15:29:56.852Z">
+<meta property="og:image" content="https://lh3.googleusercontent.com/bL0oqSbY7VRlGdGXfHUlyA4Uaeu6FsxJsTrgqAqXd5u79ZO47dp65ydtStMf6vqExMS-tfyRLPKA3bKmENCGp4vPX5NDLgtMv-rul1iprAKspOx2Lw2zVp-ZXtyT9V9s-GPA3VQGuEyo80TCuCSwbaKJF2nmoicG-9_NppiUGremBzKICkX0I3kiqReSowgm8uo5SqnxbrHRmRDRyBBFRsqmKcyvTc5CnORFXsjznyWGt0IhElWs1rNY4iit8XO9OtQRYFpF4DaHyN-V2dbYmHJNt3mNceeuEDAU-J0SJSrH4fL6x7ZP7i6uw00soZ7-qy4kJODOGLatrukuHvOJa1YVGd9DI40_-0nyp4aPVBgMOB2L7hjOMhPuiClulzZFBE_nHOy2yod6SCWsnhhPcoIWcIuXOdXgJB6w5nu_OX05KPVn6gCLCgqDw4xH_ZMg4rfTEBkATUg73h7NrkTNx3Ajxwwqvj3VlxYdhSwdyFXgOd18B5uy-JDn9_8LxSZtQsj4N-pajObLYNYB9oGpHOTZcuT_a7fb8Xt1gFJwSLGsfi3JL5RfkOfeEQUIqmTo6pcpbVDDib5E4LjWoxghPbY6q9aTGhMxgqHZ3Z32v0VJ_HeobMxiDH5To6atnAXUhz4f5L9nLyCEXBF-XFbfdzLadNyQLyUBwGucTzREnYo4OtGgBks_iTn3KIM9bXksOtsTpxDPRz1q3pmecdJgky8WgNFiqynW6jT409qIR28_C6-OE-t8lCyZ5LqrmGo=w654-h678-no?authuser=0">
+<meta property="article:published_time" content="2022-08-07T09:47:36.000Z">
+<meta property="article:modified_time" content="2022-08-07T15:49:32.264Z">
 <meta property="article:author" content="Jinlk">
-<meta property="article:tag" content="STL">
+<meta property="article:tag" content="trie">
+<meta property="article:tag" content="acw">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://lh3.googleusercontent.com/bL0oqSbY7VRlGdGXfHUlyA4Uaeu6FsxJsTrgqAqXd5u79ZO47dp65ydtStMf6vqExMS-tfyRLPKA3bKmENCGp4vPX5NDLgtMv-rul1iprAKspOx2Lw2zVp-ZXtyT9V9s-GPA3VQGuEyo80TCuCSwbaKJF2nmoicG-9_NppiUGremBzKICkX0I3kiqReSowgm8uo5SqnxbrHRmRDRyBBFRsqmKcyvTc5CnORFXsjznyWGt0IhElWs1rNY4iit8XO9OtQRYFpF4DaHyN-V2dbYmHJNt3mNceeuEDAU-J0SJSrH4fL6x7ZP7i6uw00soZ7-qy4kJODOGLatrukuHvOJa1YVGd9DI40_-0nyp4aPVBgMOB2L7hjOMhPuiClulzZFBE_nHOy2yod6SCWsnhhPcoIWcIuXOdXgJB6w5nu_OX05KPVn6gCLCgqDw4xH_ZMg4rfTEBkATUg73h7NrkTNx3Ajxwwqvj3VlxYdhSwdyFXgOd18B5uy-JDn9_8LxSZtQsj4N-pajObLYNYB9oGpHOTZcuT_a7fb8Xt1gFJwSLGsfi3JL5RfkOfeEQUIqmTo6pcpbVDDib5E4LjWoxghPbY6q9aTGhMxgqHZ3Z32v0VJ_HeobMxiDH5To6atnAXUhz4f5L9nLyCEXBF-XFbfdzLadNyQLyUBwGucTzREnYo4OtGgBks_iTn3KIM9bXksOtsTpxDPRz1q3pmecdJgky8WgNFiqynW6jT409qIR28_C6-OE-t8lCyZ5LqrmGo=w654-h678-no?authuser=0">
   
-  <title>C++ - Vector (STL) | JINLK BLOG</title>
+  <title>Trie | JINLK BLOG</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -231,12 +234,12 @@
 </nav>
 
     <div class="banner" id="banner" parallax=true
-         style="background: url('https://i.pinimg.com/originals/9c/f6/1b/9cf61b16e6344f1d6203c504f74e617b.gif') no-repeat center center;
+         style="background: url('https://i.pinimg.com/564x/5f/29/cd/5f29cda502296b6229b8e8033be74a38.jpg') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="C++ - Vector (STL)">
+            <span class="h2" id="subtitle" title="Trie">
               
             </span>
 
@@ -246,8 +249,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-08-05 20:16" pubdate>
-        2022年8月5日 晚上
+      <time datetime="2022-08-07 17:47" pubdate>
+        2022年8月7日 下午
       </time>
     </span>
   
@@ -257,7 +260,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      461 字
+      1.1k 字
     </span>
   
 
@@ -266,7 +269,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1 分鐘
+      3 分鐘
     </span>
   
 
@@ -302,37 +305,49 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">C++ - Vector (STL)</h1>
+            <h1 style="display: none">Trie</h1>
             
             <div class="markdown-body">
-              <div class="hljs code-wrapper"><pre class="highlight"><code class="C"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;iostream&gt;</span></span>
-<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;vector&gt;</span></span>
-<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
-<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
-</span>&#123;
-    <span class="hljs-function"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; <span class="hljs-title">v</span><span class="hljs-params">(<span class="hljs-number">10</span>,<span class="hljs-number">0</span>)</span></span>; <span class="hljs-comment">//宣告一長度10 元素值皆為0的vector</span>
-
-    v.push_back(<span class="hljs-number">1</span>); <span class="hljs-comment">//將1插入vector的最後一個位置 </span>
-
-    v.pop_back(); <span class="hljs-comment">//刪除vector的最後一個元素 O(1)</span>
-
-    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">auto</span> i : v) <span class="hljs-built_in">cout</span>&lt;&lt;i&lt;&lt;<span class="hljs-string">" "</span>;
-
-    v.<span class="hljs-built_in">clear</span>(); <span class="hljs-comment">//清空vector</span>
-
-    sort(v.<span class="hljs-built_in">begin</span>(),v.<span class="hljs-built_in">end</span>()); <span class="hljs-comment">//將vector排序</span>
-
-    v.<span class="hljs-built_in">size</span>(); <span class="hljs-comment">//取得vector的長度</span>
-
-    v.empty(); <span class="hljs-comment">//判斷vector是否為空 返回值為true或false</span>
-
-    <span class="hljs-function"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; <span class="hljs-title">a</span><span class="hljs-params">(<span class="hljs-number">3</span>,<span class="hljs-number">4</span>)</span>,<span class="hljs-title">b</span><span class="hljs-params">(<span class="hljs-number">3</span>,<span class="hljs-number">3</span>)</span></span>; <span class="hljs-comment">//vector可以比大小(字典序)</span>
-    <span class="hljs-keyword">if</span>(a&gt;b) <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"a"</span>; <span class="hljs-comment">//印出"a"</span>
-    <span class="hljs-keyword">else</span> <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"b"</span>;
-
-    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
-&#125;</code></pre></div>
-
+              <h2 id="trie"><a class="markdownIt-Anchor" href="#trie"></a> Trie</h2>
+<p><strong>高效存儲、查找字符串集合的數據結構</strong><br />
+用到Trie函數的，字符串一般是全小寫/全大寫/數字/0和1。</p>
+<h2 id="例題"><a class="markdownIt-Anchor" href="#例題"></a> 例題</h2>
+<p>維護一個字元串集合，支持兩種操作：</p>
+<ul>
+<li>I x 向集合中插入一個字元串 x；</li>
+<li>Q x 詢問一個字元串在集合中出現了多少次。</li>
+</ul>
+<p>共有 N 個操作，輸入的字元串總長度不超過 10^5，字元串僅包含小寫英文字母。</p>
+<p><strong>輸入格式</strong></p>
+<ul>
+<li>
+<p>第一行包含整數 N，表示操作數。</p>
+</li>
+<li>
+<p>接下來 N 行，每行包含一個操作指令，指令為 I x 或 Q x 中的一種。</p>
+</li>
+</ul>
+<p><strong>輸出格式</strong></p>
+<ul>
+<li>
+<p>對於每個詢問指令 Q x，都要輸出一個整數作為結果，表示 x 在集合中出現的次數。</p>
+</li>
+<li>
+<p>每個結果占一行。</p>
+</li>
+</ul>
+<p><strong>數據範圍</strong></p>
+<ul>
+<li>1≤N≤2e4</li>
+</ul>
+<p><strong>輸入樣例</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs css"><span class="hljs-number">5</span><br><span class="hljs-selector-tag">I</span> abc<br><span class="hljs-selector-tag">Q</span> abc<br><span class="hljs-selector-tag">I</span> ab<br><span class="hljs-selector-tag">I</span> abbc<br><span class="hljs-selector-tag">Q</span> ab<br></code></pre></div></td></tr></table></figure>
+<p><strong>輸出樣例</strong></p>
+<figure class="highlight"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs">1<br>1<br></code></pre></div></td></tr></table></figure>
+<p><strong>範例圖示</strong></p>
+<p><img src="https://lh3.googleusercontent.com/bL0oqSbY7VRlGdGXfHUlyA4Uaeu6FsxJsTrgqAqXd5u79ZO47dp65ydtStMf6vqExMS-tfyRLPKA3bKmENCGp4vPX5NDLgtMv-rul1iprAKspOx2Lw2zVp-ZXtyT9V9s-GPA3VQGuEyo80TCuCSwbaKJF2nmoicG-9_NppiUGremBzKICkX0I3kiqReSowgm8uo5SqnxbrHRmRDRyBBFRsqmKcyvTc5CnORFXsjznyWGt0IhElWs1rNY4iit8XO9OtQRYFpF4DaHyN-V2dbYmHJNt3mNceeuEDAU-J0SJSrH4fL6x7ZP7i6uw00soZ7-qy4kJODOGLatrukuHvOJa1YVGd9DI40_-0nyp4aPVBgMOB2L7hjOMhPuiClulzZFBE_nHOy2yod6SCWsnhhPcoIWcIuXOdXgJB6w5nu_OX05KPVn6gCLCgqDw4xH_ZMg4rfTEBkATUg73h7NrkTNx3Ajxwwqvj3VlxYdhSwdyFXgOd18B5uy-JDn9_8LxSZtQsj4N-pajObLYNYB9oGpHOTZcuT_a7fb8Xt1gFJwSLGsfi3JL5RfkOfeEQUIqmTo6pcpbVDDib5E4LjWoxghPbY6q9aTGhMxgqHZ3Z32v0VJ_HeobMxiDH5To6atnAXUhz4f5L9nLyCEXBF-XFbfdzLadNyQLyUBwGucTzREnYo4OtGgBks_iTn3KIM9bXksOtsTpxDPRz1q3pmecdJgky8WgNFiqynW6jT409qIR28_C6-OE-t8lCyZ5LqrmGo=w654-h678-no?authuser=0" srcset="/img/loading.gif" lazyload alt="" /></p>
+<h2 id="code"><a class="markdownIt-Anchor" href="#code"></a> code</h2>
+<figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs C"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> IO cin.tie(0);ios_base::sync_with_stdio(false)</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> ll long long</span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><span class="hljs-keyword">const</span> ll MAXN = <span class="hljs-number">1e5</span>+<span class="hljs-number">10</span>;<br>ll n;<br><span class="hljs-keyword">char</span> q;<br><span class="hljs-built_in">string</span> x;<br>ll son[MAXN][<span class="hljs-number">26</span>],cnt[MAXN],idx=<span class="hljs-number">0</span>; <span class="hljs-comment">//idx會一直累加</span><br><span class="hljs-comment">//cnt是以當前這個點為結尾的字串有幾個</span><br><span class="hljs-comment">//trie樹是從0層開始，但是下一層不一定是1層，這個是由son[p][u]里的編號idx的值決定</span><br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">insert</span><span class="hljs-params">(<span class="hljs-built_in">string</span> x)</span></span><br><span class="hljs-function"></span>&#123;<br>    ll p=<span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span>(ll i=<span class="hljs-number">0</span>;x[i];i++)<br>    &#123;<br>        ll u=x[i]-<span class="hljs-string">&#x27;a&#x27;</span>;<br>        <span class="hljs-keyword">if</span>(!son[p][u])  son[p][u]=++idx; <span class="hljs-comment">//如果沒有這個子節點，就建一條路</span><br>        p=son[p][u];<br>    &#125;<br>    cnt[p]++;<br>&#125;<br><span class="hljs-function">ll <span class="hljs-title">query</span><span class="hljs-params">(<span class="hljs-built_in">string</span> x)</span></span><br><span class="hljs-function"></span>&#123;<br>    ll p=<span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span>(ll i=<span class="hljs-number">0</span>;x[i];i++)<br>    &#123;<br>        ll u=x[i]-<span class="hljs-string">&#x27;a&#x27;</span>;<br>        <span class="hljs-keyword">if</span>(!son[p][u])  <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>        p=son[p][u];<br>    &#125;<br>    <span class="hljs-keyword">return</span> cnt[p];<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-built_in">cin</span>&gt;&gt;n;<br>    <span class="hljs-keyword">while</span>(n--)<br>    &#123;<br>        <span class="hljs-built_in">cin</span>&gt;&gt;q&gt;&gt;x;<br>        <span class="hljs-keyword">if</span>(q==<span class="hljs-string">&#x27;I&#x27;</span>)  insert(x);<br>        <span class="hljs-keyword">else</span>    <span class="hljs-built_in">cout</span>&lt;&lt;query(x)&lt;&lt;<span class="hljs-string">&#x27;\n&#x27;</span>;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
             </div>
             <hr>
             <div>
@@ -351,7 +366,9 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/STL/">STL</a>
+                      <a class="hover-with-bg" href="/tags/trie/">trie</a>
+                    
+                      <a class="hover-with-bg" href="/tags/acw/">acw</a>
                     
                   </div>
                 
@@ -368,18 +385,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/08/05/leetcode322/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Leetcode 322 - Coin Change (一維dp)</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/05/15/HP_codewars/">
-                        <span class="hidden-mobile">HP Codewars 2022 小心得</span>
+                      <a href="/2022/08/07/acw143/">
+                        <span class="hidden-mobile">題目 - 最大Xor對 (Trie)</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
