@@ -4,6 +4,35 @@
   
   
   <entry>
+    <title>題目 - 字串消除 (Stack)</title>
+    <link href="/2022/08/08/acw4504/"/>
+    <url>/2022/08/08/acw4504/</url>
+    
+    <content type="html"><![CDATA[<h2 id="題目"><a class="markdownIt-Anchor" href="#題目"></a> 題目</h2><p>李華和張紅正在玩字元串消除游戲。</p><p>游戲規則如下：</p><p>給定一個由小寫字母構成的字元串 s。<br />兩人輪流進行消除操作，當輪到一人時，其任務是在當前 s 中找到兩個連續且相同的字母，並將它們從 s 中消除。例如，當 s 為 abba 時，可以消除 bb，使 s 變為 aa。<br />第一個無法進行消除操作的選手視為失敗。<br />已知，游戲由李華執先手，且兩人都採取最優策略。</p><p>請問，李華是否可以獲勝。</p><p><strong>輸入格式</strong></p><ul><li>一行，一個字元串 s。</li></ul><p><strong>輸出格式</strong></p><ul><li>如果李華可以獲勝，則輸出 Yes，否則輸出 No。</li></ul><p><strong>數據範圍</strong></p><ul><li>前 5 個測試點滿足 1≤|s|≤10。</li><li>所有測試點滿足 1≤|s|≤1e5。</li></ul><p><strong>輸入樣例1</strong></p><figure class="highlight ebnf"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs ebnf"><span class="hljs-attribute">abacaba</span><br></code></pre></div></td></tr></table></figure><p><strong>輸出樣例1</strong></p><figure class="highlight ebnf"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs ebnf"><span class="hljs-attribute">No</span><br></code></pre></div></td></tr></table></figure><p><strong>輸入樣例2</strong></p><figure class="highlight ebnf"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs ebnf"><span class="hljs-attribute">iiq</span><br></code></pre></div></td></tr></table></figure><p><strong>輸出樣例2</strong></p><figure class="highlight ebnf"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs ebnf"><span class="hljs-attribute">Yes</span><br></code></pre></div></td></tr></table></figure><h2 id="code"><a class="markdownIt-Anchor" href="#code"></a> code</h2><figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs C"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> IO cin.tie(0);ios_base::sync_with_stdio(false)</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> ll long long</span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br>ll ans;<br><span class="hljs-built_in">string</span> s;<br><span class="hljs-built_in">stack</span>&lt;ll&gt; ss;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    IO;<br>    <span class="hljs-built_in">cin</span>&gt;&gt;s;<br>    ss.push(s[<span class="hljs-number">0</span>]);<br>    <span class="hljs-keyword">for</span>(ll i=<span class="hljs-number">1</span>;s[i];i++)<br>    &#123;<br>        <span class="hljs-keyword">if</span>(!ss.empty()&amp;&amp;s[i]==ss.top())  ans++,ss.pop();<br>        <span class="hljs-keyword">else</span>    ss.push(s[i]);<br>    &#125;<br>    <span class="hljs-built_in">cout</span>&lt;&lt;(ans%<span class="hljs-number">2</span>?<span class="hljs-string">&quot;Yes\n&quot;</span>:<span class="hljs-string">&quot;No\n&quot;</span>);<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>筆記</category>
+      
+      <category>數據結構</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>acw</tag>
+      
+      <tag>stack</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Trie</title>
     <link href="/2022/08/07/trie/"/>
     <url>/2022/08/07/trie/</url>
