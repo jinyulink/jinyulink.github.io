@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://jinlk.site/2022/08/09/acw843/</loc>
+    
+    <lastmod>2022-08-09</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://jinlk.site/2022/08/09/leetcode1413/</loc>
     
     <lastmod>2022-08-09</lastmod>
@@ -332,6 +341,13 @@
   
   <url>
     <loc>http://jinlk.site/tags/%E5%89%8D%E7%B6%B4%E5%92%8C/</loc>
+    <lastmod>2022-08-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://jinlk.site/tags/n%E7%9A%87%E5%90%8E/</loc>
     <lastmod>2022-08-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
