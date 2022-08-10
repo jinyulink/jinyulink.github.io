@@ -16,24 +16,43 @@
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
   
   <meta name="theme-color" content="#252626">
-  <meta name="description" content="Jinlk��Blog">
+  <meta name="description" content="bfs例題">
   <meta name="author" content="Jinlk">
   <meta name="keywords" content="Jinlk , jinlk , jinyulink , jin , jin blog">
-  <meta name="description" content="Jinlk��Blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="封存">
-<meta property="og:url" content="http://jinlk.site/archives/2022/05/index.html">
+  <meta name="description" content="bfs例題">
+<meta property="og:type" content="article">
+<meta property="og:title" content="題目 - 走迷宮 (bfs)">
+<meta property="og:url" content="http://jinlk.site/2022/08/10/acw844/index.html">
 <meta property="og:site_name" content="JINLK BLOG">
-<meta property="og:description" content="Jinlk��Blog">
+<meta property="og:description" content="bfs例題">
 <meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2022-08-10T07:57:36.000Z">
+<meta property="article:modified_time" content="2022-08-10T15:47:07.281Z">
 <meta property="article:author" content="Jinlk">
-<meta property="article:tag" content="Jinlk , jinlk , jinyulink , jin , jin blog">
+<meta property="article:tag" content="acw">
+<meta property="article:tag" content="bfs">
+<meta property="article:tag" content="迷宮">
 <meta name="twitter:card" content="summary_large_image">
   
-  <title>封存 | JINLK BLOG</title>
+  <title>題目 - 走迷宮 (bfs) | JINLK BLOG</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
 
 
 <!-- 主题依赖的图标库，不要自行修改 -->
@@ -71,7 +90,7 @@
 
 
 <body>
-  <header style="height: 60vh;">
+  <header style="height: 70vh;">
     
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
@@ -214,14 +233,56 @@
 </nav>
 
     <div class="banner" id="banner" parallax=true
-         style="background: url('/img/default.png') no-repeat center center;
+         style="background: url('https://i.pinimg.com/originals/98/df/7d/98df7d973edb58ceaaf5cd00cdf1f87e.jpg') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="封存">
+            <span class="h2" id="subtitle" title="題目 - 走迷宮 (bfs)">
               
             </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-08-10 15:57" pubdate>
+        2022年8月10日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      313 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      1 分鐘
+    </span>
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
+</div>
 
             
           </div>
@@ -233,40 +294,171 @@
   </header>
   <main>
     
-      <div class="container nopadding-x-md">
-        <div class="py-5" id="board"
-          >
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-<div class="list-group">
-  <p class="h4">總共 22 篇文章</p>
-  <hr>
-  
-  
-    
       
-      <p class="h5">2022</p>
-    
-    <a href="/2022/05/15/HP_codewars/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">HP Codewars 2022 小心得</span>
-      <time style="float: right;">05-15</time>
-    </a>
-  
-</div>
 
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">題目 - 走迷宮 (bfs)</h1>
+            
+            <div class="markdown-body">
+              <h2 id="題目"><a class="markdownIt-Anchor" href="#題目"></a> 題目</h2>
+<p>给定一个 n×m 的二维整数数组，用来表示一个迷宫，数组中只包含 0 或 1，其中 0 表示可以走的路，1 表示不可通过的墙壁。</p>
+<p>最初，有一个人位于左上角 (1,1) 处，已知该人每次可以向上、下、左、右任意一个方向移动一个位置。</p>
+<p>请问，该人从左上角移动至右下角 (n,m) 处，至少需要移动多少次。</p>
+<p>数据保证 (1,1) 处和 (n,m) 处的数字为 0，且一定至少存在一条通路。</p>
+<p><strong>输入格式</strong></p>
+<ul>
+<li>
+<p>第一行包含两个整数 n 和 m。</p>
+</li>
+<li>
+<p>接下来 n 行，每行包含 m 个整数（0 或 1），表示完整的二维数组迷宫。</p>
+</li>
+</ul>
+<p><strong>输出格式</strong></p>
+<ul>
+<li>输出一个整数，表示从左上角移动至右下角的最少移动次数。</li>
+</ul>
+<p><strong>数据范围</strong></p>
+<ul>
+<li>1≤n,m≤100</li>
+</ul>
+<p><strong>输入样例</strong></p>
+<figure class="highlight basic"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs basic"><span class="hljs-symbol">5 </span><span class="hljs-number">5</span><br><span class="hljs-symbol">0 </span><span class="hljs-number">1</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span><br><span class="hljs-symbol">0 </span><span class="hljs-number">1</span> <span class="hljs-number">0</span> <span class="hljs-number">1</span> <span class="hljs-number">0</span><br><span class="hljs-symbol">0 </span><span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span><br><span class="hljs-symbol">0 </span><span class="hljs-number">1</span> <span class="hljs-number">1</span> <span class="hljs-number">1</span> <span class="hljs-number">0</span><br><span class="hljs-symbol">0 </span><span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">1</span> <span class="hljs-number">0</span><br></code></pre></div></td></tr></table></figure>
+<p><strong>输出样例</strong></p>
+<figure class="highlight"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs">8<br></code></pre></div></td></tr></table></figure>
+<h2 id="code"><a class="markdownIt-Anchor" href="#code"></a> code</h2>
 
-
-
-
-              </div>
             </div>
-          </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E7%AD%86%E8%A8%98/">筆記</a>
+                    
+                      <a class="hover-with-bg" href="/categories/%E7%AD%86%E8%A8%98/%E6%90%9C%E7%B4%A2%E8%88%87%E5%9C%96%E8%AB%96/">搜索與圖論</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/acw/">acw</a>
+                    
+                      <a class="hover-with-bg" href="/tags/bfs/">bfs</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E8%BF%B7%E5%AE%AE/">迷宮</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章採用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 協議，請轉載注明出處!
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/08/10/acw787/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">合併排序</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/08/09/acw843/">
+                        <span class="hidden-mobile">題目 - n皇后問題 (dfs)</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#comments', function() {
+      var light = 'github-light';
+      var dark = 'dark-blue';
+      var schema = document.documentElement.getAttribute('data-user-color-scheme');
+      if (schema === 'dark') {
+        schema = dark;
+      } else {
+        schema = light;
+      }
+      window.UtterancesThemeLight = light;
+      window.UtterancesThemeDark = dark;
+      var s = document.createElement('script');
+      s.setAttribute('src', 'https://utteranc.es/client.js');
+      s.setAttribute('repo', 'jinyulink/blog-comment');
+      s.setAttribute('issue-term', 'pathname');
+      
+      s.setAttribute('theme', schema);
+      s.setAttribute('crossorigin', 'anonymous');
+      document.getElementById('comments').appendChild(s);
+    })
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
         </div>
       </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目錄</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+<!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4380085700423637"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-4380085700423637"
+     data-ad-slot="7977608502"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script> -->
     
 
     
@@ -373,6 +565,19 @@
   
 
 
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
 
 
 
