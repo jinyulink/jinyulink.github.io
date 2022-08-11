@@ -16,24 +16,44 @@
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
   
   <meta name="theme-color" content="#252626">
-  <meta name="description" content="Jinlk��Blog">
+  <meta name="description" content="dfs例題">
   <meta name="author" content="Jinlk">
   <meta name="keywords" content="Jinlk , jinlk , jinyulink , jin , jin blog">
-  <meta name="description" content="Jinlk��Blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="封存">
-<meta property="og:url" content="http://jinlk.site/archives/index.html">
+  <meta name="description" content="dfs例題">
+<meta property="og:type" content="article">
+<meta property="og:title" content="題目 - 樹的重心 (dfs)">
+<meta property="og:url" content="http://jinlk.site/2022/08/11/acw846/index.html">
 <meta property="og:site_name" content="JINLK BLOG">
-<meta property="og:description" content="Jinlk��Blog">
+<meta property="og:description" content="dfs例題">
 <meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2022-08-11T13:24:20.000Z">
+<meta property="article:modified_time" content="2022-08-11T13:29:02.519Z">
 <meta property="article:author" content="Jinlk">
-<meta property="article:tag" content="Jinlk , jinlk , jinyulink , jin , jin blog">
+<meta property="article:tag" content="acw">
+<meta property="article:tag" content="dfs">
+<meta property="article:tag" content="linkedlist">
+<meta property="article:tag" content="連結列表">
 <meta name="twitter:card" content="summary_large_image">
   
-  <title>封存 | JINLK BLOG</title>
+  <title>題目 - 樹的重心 (dfs) | JINLK BLOG</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
 
 
 <!-- 主题依赖的图标库，不要自行修改 -->
@@ -71,7 +91,7 @@
 
 
 <body>
-  <header style="height: 60vh;">
+  <header style="height: 70vh;">
     
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
@@ -214,14 +234,56 @@
 </nav>
 
     <div class="banner" id="banner" parallax=true
-         style="background: url('/img/default.png') no-repeat center center;
+         style="background: url('https://pbs.twimg.com/media/D9rwUsqVUAAq2Wi?format=jpg&name=medium') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="封存">
+            <span class="h2" id="subtitle" title="題目 - 樹的重心 (dfs)">
               
             </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-08-11 21:24" pubdate>
+        2022年8月11日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      267 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      1 分鐘
+    </span>
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
+</div>
 
             
           </div>
@@ -233,100 +295,167 @@
   </header>
   <main>
     
-      <div class="container nopadding-x-md">
-        <div class="py-5" id="board"
-          >
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-<div class="list-group">
-  <p class="h4">總共 25 篇文章</p>
-  <hr>
-  
-  
-    
       
-      <p class="h5">2022</p>
-    
-    <a href="/2022/08/11/acw846/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">題目 - 樹的重心 (dfs)</span>
-      <time style="float: right;">08-11</time>
-    </a>
-  
-    
-    <a href="/2022/08/11/acw845/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">題目 - 八數位 (bfs)</span>
-      <time style="float: right;">08-11</time>
-    </a>
-  
-    
-    <a href="/2022/08/11/queue/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">C++ - Queue (STL)</span>
-      <time style="float: right;">08-11</time>
-    </a>
-  
-    
-    <a href="/2022/08/10/acw788/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">題目 - 逆序對數量 (合併排序)</span>
-      <time style="float: right;">08-10</time>
-    </a>
-  
-    
-    <a href="/2022/08/10/acw787/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">合併排序</span>
-      <time style="float: right;">08-10</time>
-    </a>
-  
-    
-    <a href="/2022/08/10/acw844/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">題目 - 走迷宮 (bfs)</span>
-      <time style="float: right;">08-10</time>
-    </a>
-  
-    
-    <a href="/2022/08/09/acw843/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">題目 - n皇后問題 (dfs)</span>
-      <time style="float: right;">08-09</time>
-    </a>
-  
-    
-    <a href="/2022/08/09/leetcode1413/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">Leetcode 1413 - Minimum Value to Get Positive Step by Step Sum (前綴和)</span>
-      <time style="float: right;">08-09</time>
-    </a>
-  
-    
-    <a href="/2022/08/08/acw842/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">題目 - 排列數字 (dfs)</span>
-      <time style="float: right;">08-08</time>
-    </a>
-  
-    
-    <a href="/2022/08/08/leetcode70/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">Leetcode 70 - Climbing Stairs (一維dp)</span>
-      <time style="float: right;">08-08</time>
-    </a>
-  
-</div>
 
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">題目 - 樹的重心 (dfs)</h1>
+            
+            <div class="markdown-body">
+              <h2 id="題目"><a class="markdownIt-Anchor" href="#題目"></a> 題目</h2>
+<p>給定一顆樹，樹中包含 n 個結點（編號 1∼n）和 n−1 條無向邊。</p>
+<p>請你找到樹的重心，並輸出將重心刪除後，剩餘各個連通塊中點數的最大值。</p>
+<p>重心定義：重心是指樹中的一個結點，如果將這個點刪除後，剩餘各個連通塊中點數的最大值最小，那麼這個節點被稱為樹的重心。</p>
+<p><strong>輸入格式</strong></p>
+<ul>
+<li>
+<p>第一行包含整數 n，表示樹的結點數。</p>
+</li>
+<li>
+<p>接下來 n−1 行，每行包含兩個整數 a 和 b，表示點 a 和點 b 之間存在一條邊。</p>
+</li>
+</ul>
+<p><strong>輸出格式</strong></p>
+<ul>
+<li>輸出一個整數 m，表示將重心刪除後，剩餘各個連通塊中點數的最大值。</li>
+</ul>
+<p><strong>數據範圍</strong></p>
+<ul>
+<li>1≤n≤1e5</li>
+</ul>
+<p><strong>輸入樣例</strong></p>
+<figure class="highlight basic"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs basic"><span class="hljs-number">9</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">2</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">7</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">4</span><br><span class="hljs-symbol">2 </span><span class="hljs-number">8</span><br><span class="hljs-symbol">2 </span><span class="hljs-number">5</span><br><span class="hljs-symbol">4 </span><span class="hljs-number">3</span><br><span class="hljs-symbol">3 </span><span class="hljs-number">9</span><br><span class="hljs-symbol">4 </span><span class="hljs-number">6</span><br></code></pre></div></td></tr></table></figure>
+<p><strong>輸出樣例</strong></p>
+<figure class="highlight"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs">4<br></code></pre></div></td></tr></table></figure>
+<h2 id="code"><a class="markdownIt-Anchor" href="#code"></a> code</h2>
+<div class="hljs code-wrapper"><pre class="highlight"><code class="C"></code></pre></div>
 
-  <nav aria-label="navigation">
-    <span class="pagination" id="pagination">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/#board">2</a><a class="page-number" href="/archives/page/3/#board">3</a><a class="extend next" rel="next" href="/archives/page/2/#board"><i class="iconfont icon-arrowright"></i></a>
-    </span>
-  </nav>
-
-
-
-
-              </div>
             </div>
-          </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E7%AD%86%E8%A8%98/">筆記</a>
+                    
+                      <a class="hover-with-bg" href="/categories/%E7%AD%86%E8%A8%98/%E6%90%9C%E7%B4%A2%E8%88%87%E5%9C%96%E8%AB%96/">搜索與圖論</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/acw/">acw</a>
+                    
+                      <a class="hover-with-bg" href="/tags/dfs/">dfs</a>
+                    
+                      <a class="hover-with-bg" href="/tags/linkedlist/">linkedlist</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E9%80%A3%E7%B5%90%E5%88%97%E8%A1%A8/">連結列表</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章採用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 協議，請轉載注明出處!
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/08/11/acw845/">
+                        <span class="hidden-mobile">題目 - 八數位 (bfs)</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#comments', function() {
+      var light = 'github-light';
+      var dark = 'dark-blue';
+      var schema = document.documentElement.getAttribute('data-user-color-scheme');
+      if (schema === 'dark') {
+        schema = dark;
+      } else {
+        schema = light;
+      }
+      window.UtterancesThemeLight = light;
+      window.UtterancesThemeDark = dark;
+      var s = document.createElement('script');
+      s.setAttribute('src', 'https://utteranc.es/client.js');
+      s.setAttribute('repo', 'jinyulink/blog-comment');
+      s.setAttribute('issue-term', 'pathname');
+      
+      s.setAttribute('theme', schema);
+      s.setAttribute('crossorigin', 'anonymous');
+      document.getElementById('comments').appendChild(s);
+    })
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
         </div>
       </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目錄</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+<!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4380085700423637"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-4380085700423637"
+     data-ad-slot="7977608502"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script> -->
     
 
     
@@ -433,6 +562,19 @@
   
 
 
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
 
 
 

@@ -16,18 +16,18 @@
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
   
   <meta name="theme-color" content="#252626">
-  <meta name="description" content="bfs例題">
+  <meta name="description" content="bfs例題(模板)">
   <meta name="author" content="Jinlk">
   <meta name="keywords" content="Jinlk , jinlk , jinyulink , jin , jin blog">
-  <meta name="description" content="bfs例題">
+  <meta name="description" content="bfs例題(模板)">
 <meta property="og:type" content="article">
 <meta property="og:title" content="題目 - 走迷宮 (bfs)">
 <meta property="og:url" content="http://jinlk.site/2022/08/10/acw844/index.html">
 <meta property="og:site_name" content="JINLK BLOG">
-<meta property="og:description" content="bfs例題">
+<meta property="og:description" content="bfs例題(模板)">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2022-08-10T07:57:36.000Z">
-<meta property="article:modified_time" content="2022-08-10T15:47:07.281Z">
+<meta property="article:modified_time" content="2022-08-11T07:20:42.014Z">
 <meta property="article:author" content="Jinlk">
 <meta property="article:tag" content="acw">
 <meta property="article:tag" content="bfs">
@@ -259,7 +259,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      313 字
+      1.3k 字
     </span>
   
 
@@ -268,7 +268,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1 分鐘
+      4 分鐘
     </span>
   
 
@@ -333,8 +333,10 @@
 <figure class="highlight basic"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs basic"><span class="hljs-symbol">5 </span><span class="hljs-number">5</span><br><span class="hljs-symbol">0 </span><span class="hljs-number">1</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span><br><span class="hljs-symbol">0 </span><span class="hljs-number">1</span> <span class="hljs-number">0</span> <span class="hljs-number">1</span> <span class="hljs-number">0</span><br><span class="hljs-symbol">0 </span><span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span><br><span class="hljs-symbol">0 </span><span class="hljs-number">1</span> <span class="hljs-number">1</span> <span class="hljs-number">1</span> <span class="hljs-number">0</span><br><span class="hljs-symbol">0 </span><span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">1</span> <span class="hljs-number">0</span><br></code></pre></div></td></tr></table></figure>
 <p><strong>输出样例</strong></p>
 <figure class="highlight"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs">8<br></code></pre></div></td></tr></table></figure>
+<h2 id="想法"><a class="markdownIt-Anchor" href="#想法"></a> 想法</h2>
+<figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs C">初始化 <span class="hljs-function"><span class="hljs-built_in">queue</span></span><br><span class="hljs-function"></span><br><span class="hljs-function"><span class="hljs-title">while</span><span class="hljs-params">(!<span class="hljs-built_in">queue</span>.empty)</span> <span class="hljs-comment">//當queue不空</span></span><br><span class="hljs-function"></span>&#123;<br>    t = <span class="hljs-built_in">queue</span>.front(); <br><br>    拓展 t;<br>&#125;<br></code></pre></div></td></tr></table></figure>
 <h2 id="code"><a class="markdownIt-Anchor" href="#code"></a> code</h2>
-
+<figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs C"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> IO cin.tie(0);cout.tie(0);ios_base::sync_with_stdio(false)</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> ll long long</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> PII pair<span class="hljs-meta-string">&lt;ll,ll&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><span class="hljs-keyword">const</span> ll MAXN = <span class="hljs-number">110</span>;<br>ll n,m;<br>ll g[MAXN][MAXN],vis[MAXN][MAXN];<br><span class="hljs-function">ll <span class="hljs-title">bfs</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-built_in">queue</span>&lt;PII&gt; q;<br>    q.push(&#123;<span class="hljs-number">0</span>,<span class="hljs-number">0</span>&#125;);<br>    <span class="hljs-built_in">memset</span>(vis,<span class="hljs-number">-1</span>,<span class="hljs-keyword">sizeof</span> vis);<br>    vis[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>]=<span class="hljs-number">0</span>;<br>    ll dx[<span class="hljs-number">4</span>]=&#123;<span class="hljs-number">-1</span>,<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">0</span>&#125;,dy[<span class="hljs-number">4</span>]=&#123;<span class="hljs-number">0</span>,<span class="hljs-number">-1</span>,<span class="hljs-number">0</span>,<span class="hljs-number">1</span>&#125;; <span class="hljs-comment">//往上下左右去找</span><br>    <span class="hljs-keyword">while</span>(!q.empty())<br>    &#123;<br>        <span class="hljs-keyword">auto</span> t=q.front();<br>        q.pop();<br>        <span class="hljs-keyword">for</span>(ll i=<span class="hljs-number">0</span>;i&lt;<span class="hljs-number">4</span>;i++)<br>        &#123;<br>            ll x=t.first+dx[i],y=t.second+dy[i];<br>            <span class="hljs-keyword">if</span>(x&gt;=<span class="hljs-number">0</span>&amp;&amp;y&gt;=<span class="hljs-number">0</span>&amp;&amp;x&lt;n&amp;&amp;y&lt;m&amp;&amp;!g[x][y]&amp;&amp;vis[x][y]==<span class="hljs-number">-1</span>)<br>            &#123;<br>                vis[x][y]=vis[t.first][t.second]+<span class="hljs-number">1</span>; <span class="hljs-comment">//vis[x][y]代表從(0,0)到(x,y)的最小步數</span><br>                q.push(&#123;x,y&#125;);<br>            &#125;<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> vis[n<span class="hljs-number">-1</span>][m<span class="hljs-number">-1</span>];<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    IO;<br>    <span class="hljs-built_in">cin</span>&gt;&gt;n&gt;&gt;m;<br>    <span class="hljs-keyword">for</span>(ll i=<span class="hljs-number">0</span>;i&lt;n;i++)<br>        <span class="hljs-keyword">for</span>(ll j=<span class="hljs-number">0</span>;j&lt;m;j++)<br>            <span class="hljs-built_in">cin</span>&gt;&gt;g[i][j];<br>    <span class="hljs-built_in">cout</span>&lt;&lt;bfs()&lt;&lt;<span class="hljs-string">&#x27;\n&#x27;</span>;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
             </div>
             <hr>
             <div>
