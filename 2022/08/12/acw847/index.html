@@ -16,24 +16,44 @@
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
   
   <meta name="theme-color" content="#252626">
-  <meta name="description" content="Jinlk��Blog">
+  <meta name="description" content="bfs例題">
   <meta name="author" content="Jinlk">
   <meta name="keywords" content="Jinlk , jinlk , jinyulink , jin , jin blog">
-  <meta name="description" content="Jinlk��Blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="封存">
-<meta property="og:url" content="http://jinlk.site/archives/2022/index.html">
+  <meta name="description" content="bfs例題">
+<meta property="og:type" content="article">
+<meta property="og:title" content="題目 - 圖中點的層次 (bfs)">
+<meta property="og:url" content="http://jinlk.site/2022/08/12/acw847/index.html">
 <meta property="og:site_name" content="JINLK BLOG">
-<meta property="og:description" content="Jinlk��Blog">
+<meta property="og:description" content="bfs例題">
 <meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2022-08-12T08:16:20.000Z">
+<meta property="article:modified_time" content="2022-08-12T08:24:01.404Z">
 <meta property="article:author" content="Jinlk">
-<meta property="article:tag" content="Jinlk , jinlk , jinyulink , jin , jin blog">
+<meta property="article:tag" content="acw">
+<meta property="article:tag" content="bfs">
+<meta property="article:tag" content="linkedlist">
+<meta property="article:tag" content="連結列表">
 <meta name="twitter:card" content="summary_large_image">
   
-  <title>封存 | JINLK BLOG</title>
+  <title>題目 - 圖中點的層次 (bfs) | JINLK BLOG</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
 
 
 <!-- 主题依赖的图标库，不要自行修改 -->
@@ -71,7 +91,7 @@
 
 
 <body>
-  <header style="height: 60vh;">
+  <header style="height: 70vh;">
     
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
@@ -214,14 +234,56 @@
 </nav>
 
     <div class="banner" id="banner" parallax=true
-         style="background: url('/img/default.png') no-repeat center center;
+         style="background: url('https://cdna.artstation.com/p/assets/images/images/017/814/664/large/alena-aenami-rooflinesgirl-1k-2.jpg?1557427280') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="封存">
+            <span class="h2" id="subtitle" title="題目 - 圖中點的層次 (bfs)">
               
             </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-08-12 16:16" pubdate>
+        2022年8月12日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      3 分鐘
+    </span>
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
+</div>
 
             
           </div>
@@ -233,100 +295,167 @@
   </header>
   <main>
     
-      <div class="container nopadding-x-md">
-        <div class="py-5" id="board"
-          >
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-<div class="list-group">
-  <p class="h4">總共 27 篇文章</p>
-  <hr>
-  
-  
-    
       
-      <p class="h5">2022</p>
-    
-    <a href="/2022/08/12/acw848/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">題目 - 有向圖的拓撲序列 (bfs)</span>
-      <time style="float: right;">08-12</time>
-    </a>
-  
-    
-    <a href="/2022/08/12/acw847/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">題目 - 圖中點的層次 (bfs)</span>
-      <time style="float: right;">08-12</time>
-    </a>
-  
-    
-    <a href="/2022/08/11/acw846/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">題目 - 樹的重心 (dfs)</span>
-      <time style="float: right;">08-11</time>
-    </a>
-  
-    
-    <a href="/2022/08/11/acw845/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">題目 - 八數位 (bfs)</span>
-      <time style="float: right;">08-11</time>
-    </a>
-  
-    
-    <a href="/2022/08/11/queue/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">C++ - Queue (STL)</span>
-      <time style="float: right;">08-11</time>
-    </a>
-  
-    
-    <a href="/2022/08/10/acw788/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">題目 - 逆序對數量 (合併排序)</span>
-      <time style="float: right;">08-10</time>
-    </a>
-  
-    
-    <a href="/2022/08/10/acw787/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">合併排序</span>
-      <time style="float: right;">08-10</time>
-    </a>
-  
-    
-    <a href="/2022/08/10/acw844/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">題目 - 走迷宮 (bfs)</span>
-      <time style="float: right;">08-10</time>
-    </a>
-  
-    
-    <a href="/2022/08/09/acw843/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">題目 - n皇后問題 (dfs)</span>
-      <time style="float: right;">08-09</time>
-    </a>
-  
-    
-    <a href="/2022/08/09/leetcode1413/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">Leetcode 1413 - Minimum Value to Get Positive Step by Step Sum (前綴和)</span>
-      <time style="float: right;">08-09</time>
-    </a>
-  
-</div>
 
-
-  <nav aria-label="navigation">
-    <span class="pagination" id="pagination">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2022/page/2/#board">2</a><a class="page-number" href="/archives/2022/page/3/#board">3</a><a class="extend next" rel="next" href="/archives/2022/page/2/#board"><i class="iconfont icon-arrowright"></i></a>
-    </span>
-  </nav>
-
-
-
-
-              </div>
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">題目 - 圖中點的層次 (bfs)</h1>
+            
+            <div class="markdown-body">
+              <h2 id="題目"><a class="markdownIt-Anchor" href="#題目"></a> 題目</h2>
+<p>給定一個 n 個點 m 條邊的有向圖，圖中可能存在重邊和自環。</p>
+<p>所有邊的長度都是 1，點的編號為 1∼n。</p>
+<p>請你求出 1 號點到 n 號點的最短距離，如果從 1 號點無法走到 n 號點，輸出 −1。</p>
+<p>輸入格式<br />
+第一行包含兩個整數 n 和 m。</p>
+<p>接下來 m 行，每行包含兩個整數 a 和 b，表示存在一條從 a 走到 b 的長度為 1 的邊。</p>
+<p><strong>輸出格式</strong></p>
+<ul>
+<li>輸出一個整數，表示 1 號點到 n 號點的最短距離。</li>
+</ul>
+<p><strong>數據範圍</strong></p>
+<ul>
+<li>1≤n,m≤1e5</li>
+</ul>
+<p><strong>輸入樣例</strong></p>
+<figure class="highlight basic"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs basic"><span class="hljs-symbol">4 </span><span class="hljs-number">5</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">2</span><br><span class="hljs-symbol">2 </span><span class="hljs-number">3</span><br><span class="hljs-symbol">3 </span><span class="hljs-number">4</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">3</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">4</span><br></code></pre></div></td></tr></table></figure>
+<p><strong>輸出樣例</strong></p>
+<figure class="highlight"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs">1<br></code></pre></div></td></tr></table></figure>
+<h2 id="code"><a class="markdownIt-Anchor" href="#code"></a> code</h2>
+<p><a target="_blank" rel="noopener" href="https://www.acwing.com/solution/content/76019/">詳細解釋</a></p>
+<figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs C"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> IO cin.tie(0);cout.tie(0);ios_base::sync_with_stdio(false)</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> ll long long</span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><span class="hljs-keyword">const</span> ll MAXN = <span class="hljs-number">1e5</span>+<span class="hljs-number">10</span>;<br>ll n,m;<br>ll e[MAXN],ne[MAXN],h[MAXN],idx; <span class="hljs-comment">// linked list</span><br>ll d[MAXN]; <span class="hljs-comment">//用來存1到各點的距離，及判斷各點是否到訪過</span><br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">add</span><span class="hljs-params">(ll a, ll b)</span></span><br><span class="hljs-function"></span>&#123;<br>    e[idx]=b, ne[idx]=h[a], h[a]=idx++;<br>&#125;<br><span class="hljs-function">ll <span class="hljs-title">bfs</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-built_in">queue</span>&lt;ll&gt; q;<br>    q.push(<span class="hljs-number">1</span>);<br>    d[<span class="hljs-number">1</span>]=<span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">while</span>(!q.empty())<br>    &#123;<br>        <span class="hljs-keyword">auto</span> t=q.front();<br>        q.pop();<br>        <span class="hljs-keyword">for</span>(ll i=h[t];i!=<span class="hljs-number">-1</span>;i=ne[i]) <span class="hljs-comment">// linked list</span><br>        &#123;<br>            ll j=e[i];<br>            <span class="hljs-keyword">if</span>(d[j]==<span class="hljs-number">-1</span>) <span class="hljs-comment">// if j點 還未造訪過</span><br>            &#123;<br>                d[j]=d[t]+<span class="hljs-number">1</span>;<br>                q.push(j);<br>            &#125;<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> d[n];<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    IO;<br>    <span class="hljs-built_in">memset</span>(d,<span class="hljs-number">-1</span>,<span class="hljs-keyword">sizeof</span> d);<br>    <span class="hljs-built_in">memset</span>(h,<span class="hljs-number">-1</span>,<span class="hljs-keyword">sizeof</span> h);<br>    <span class="hljs-built_in">cin</span>&gt;&gt;n&gt;&gt;m;<br>    <span class="hljs-keyword">for</span>(ll i=<span class="hljs-number">0</span>;i&lt;m;i++)<br>    &#123;<br>        ll a,b; <span class="hljs-built_in">cin</span>&gt;&gt;a&gt;&gt;b;<br>        add(a,b);<br>    &#125;<br>    <span class="hljs-built_in">cout</span>&lt;&lt;bfs()&lt;&lt;<span class="hljs-string">&#x27;\n&#x27;</span>;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
             </div>
-          </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E7%AD%86%E8%A8%98/">筆記</a>
+                    
+                      <a class="hover-with-bg" href="/categories/%E7%AD%86%E8%A8%98/%E6%90%9C%E7%B4%A2%E8%88%87%E5%9C%96%E8%AB%96/">搜索與圖論</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/acw/">acw</a>
+                    
+                      <a class="hover-with-bg" href="/tags/bfs/">bfs</a>
+                    
+                      <a class="hover-with-bg" href="/tags/linkedlist/">linkedlist</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E9%80%A3%E7%B5%90%E5%88%97%E8%A1%A8/">連結列表</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章採用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 協議，請轉載注明出處!
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/08/12/acw848/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">題目 - 有向圖的拓撲序列 (bfs)</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/08/11/acw846/">
+                        <span class="hidden-mobile">題目 - 樹的重心 (dfs)</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#comments', function() {
+      var light = 'github-light';
+      var dark = 'dark-blue';
+      var schema = document.documentElement.getAttribute('data-user-color-scheme');
+      if (schema === 'dark') {
+        schema = dark;
+      } else {
+        schema = light;
+      }
+      window.UtterancesThemeLight = light;
+      window.UtterancesThemeDark = dark;
+      var s = document.createElement('script');
+      s.setAttribute('src', 'https://utteranc.es/client.js');
+      s.setAttribute('repo', 'jinyulink/blog-comment');
+      s.setAttribute('issue-term', 'pathname');
+      
+      s.setAttribute('theme', schema);
+      s.setAttribute('crossorigin', 'anonymous');
+      document.getElementById('comments').appendChild(s);
+    })
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
         </div>
       </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目錄</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+<!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4380085700423637"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-4380085700423637"
+     data-ad-slot="7977608502"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script> -->
     
 
     
@@ -433,6 +562,19 @@
   
 
 
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
 
 
 
