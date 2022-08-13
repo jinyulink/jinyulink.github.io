@@ -27,7 +27,7 @@
 <meta property="og:description" content="前綴和 + 哈希表">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2022-08-13T12:26:20.000Z">
-<meta property="article:modified_time" content="2022-08-13T13:59:13.387Z">
+<meta property="article:modified_time" content="2022-08-13T14:25:28.063Z">
 <meta property="article:author" content="Jinlk">
 <meta property="article:tag" content="acw">
 <meta property="article:tag" content="前綴和">
@@ -260,7 +260,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1k 字
+      1.1k 字
     </span>
   
 
@@ -346,7 +346,7 @@
 <p><strong>核心想法</strong>:</p>
 <ol>
 <li><code>該連續子數組的長度為偶數</code>，代表需要判斷奇偶性。</li>
-<li><code>該連續子數組的前一半元素的異或和等於其後一半元素的異或和</code>，可以想成子數組內的<font color=#FF0000 >[前半異或和] ^ [後半異或和] = 0</font>。</li>
+<li><code>該連續子數組的前一半元素的異或和等於其後一半元素的異或和</code>，可以想成子數組內的<font color=#FF0000 >[前半異或和] ^ [後半異或和] = 0</font>。假設一子樹組符合要求 範圍 i ~ j ，則 i ~ i+m 與 i+m ~ j 的異或和 = 0，也等於 0 ~ i 與 0 ~ j 的異或和 = 0。</li>
 </ol>
 <p>先求出 S 前綴異或和，求完後，遍歷 S ，如果 S[i] = S[j] (也可以想成s[i] ^ s[j] = 0)且 兩者奇偶性相同，代表 子數組 [i,j] 滿足題目要求。</p>
 <p><strong>備註</strong>:</p>
