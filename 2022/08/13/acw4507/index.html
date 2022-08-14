@@ -16,26 +16,26 @@
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
   
   <meta name="theme-color" content="#252626">
-  <meta name="description" content="前綴和 + 哈希表">
+  <meta name="description" content="前綴和 + 雜湊表">
   <meta name="author" content="Jinlk">
   <meta name="keywords" content="Jinlk , jinlk , jinyulink , jin , jin blog">
-  <meta name="description" content="前綴和 + 哈希表">
+  <meta name="description" content="前綴和 + 雜湊表">
 <meta property="og:type" content="article">
-<meta property="og:title" content="題目 - 子數組異或和 (前綴和 + 哈希表)">
+<meta property="og:title" content="題目 - 子數組異或和 (前綴和 + 雜湊表)">
 <meta property="og:url" content="http://jinlk.site/2022/08/13/acw4507/index.html">
 <meta property="og:site_name" content="JINLK BLOG">
-<meta property="og:description" content="前綴和 + 哈希表">
+<meta property="og:description" content="前綴和 + 雜湊表">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2022-08-13T12:26:20.000Z">
-<meta property="article:modified_time" content="2022-08-14T12:11:37.939Z">
+<meta property="article:modified_time" content="2022-08-14T12:15:41.052Z">
 <meta property="article:author" content="Jinlk">
 <meta property="article:tag" content="acw">
 <meta property="article:tag" content="前綴和">
 <meta property="article:tag" content="hash table">
-<meta property="article:tag" content="哈希表">
+<meta property="article:tag" content="雜湊表">
 <meta name="twitter:card" content="summary_large_image">
   
-  <title>題目 - 子數組異或和 (前綴和 + 哈希表) | JINLK BLOG</title>
+  <title>題目 - 子數組異或和 (前綴和 + 雜湊表) | JINLK BLOG</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -239,7 +239,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="題目 - 子數組異或和 (前綴和 + 哈希表)">
+            <span class="h2" id="subtitle" title="題目 - 子數組異或和 (前綴和 + 雜湊表)">
               
             </span>
 
@@ -305,7 +305,7 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">題目 - 子數組異或和 (前綴和 + 哈希表)</h1>
+            <h1 style="display: none">題目 - 子數組異或和 (前綴和 + 雜湊表)</h1>
             
             <div class="markdown-body">
               <p><a href="/2022/08/14/leetcode1310/">leetcode 1310 相似題</a></p>
@@ -352,10 +352,10 @@
 <p>先求出 S 前綴異或和，求完後，遍歷 S ，如果 S[i] = S[j] (也可以想成s[i] ^ s[j] = 0)且 兩者奇偶性相同，代表 子數組 [i,j] 滿足題目要求。</p>
 <p><strong>備註</strong>:</p>
 <ul>
-<li>unordered_map是哈希表，無序的，增刪改查都是 O(1) 的。map平衡樹，動態維護一個有序序列，增刪改查是 O(logn) 的。</li>
+<li>unordered_map是雜湊表，無序的，增刪改查都是 O(1) 的。map平衡樹，動態維護一個有序序列，增刪改查是 O(logn) 的。</li>
 </ul>
 <h2 id="code"><a class="markdownIt-Anchor" href="#code"></a> code</h2>
-<figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs C"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> IO cin.tie(0);cout.tie(0);ios_base::sync_with_stdio(false)</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> ll long long</span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><span class="hljs-keyword">const</span> ll MAXN =<span class="hljs-number">3e5</span>+<span class="hljs-number">10</span>;<br>ll n,res,sum;<br>ll q[MAXN];<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    IO;<br>    <span class="hljs-built_in">cin</span>&gt;&gt;n;<br>    <span class="hljs-keyword">for</span>(ll i=<span class="hljs-number">1</span>;i&lt;=n;i++) <span class="hljs-built_in">cin</span>&gt;&gt;q[i];<br>    <span class="hljs-built_in">unordered_map</span>&lt;ll,ll&gt; s[<span class="hljs-number">2</span>]; <span class="hljs-comment">// 哈希表 照奇偶性分 </span><br>    s[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>]++; <span class="hljs-comment">// 前綴和需要處理的邊界值S[0]，偶數方案前綴異或和為0的需要跟S[0]配對，所以需要先加上1</span><br>    <span class="hljs-keyword">for</span>(ll i=<span class="hljs-number">1</span>;i&lt;=n;i++)<br>    &#123;<br>        sum^=q[i]; <span class="hljs-comment">// xor前綴和</span><br>        res+=s[i&amp;<span class="hljs-number">1</span>][sum]; <br>        s[i&amp;<span class="hljs-number">1</span>][sum]++;<br>    &#125;<br>    <span class="hljs-built_in">cout</span>&lt;&lt;res&lt;&lt;<span class="hljs-string">&#x27;\n&#x27;</span>;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs C"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> IO cin.tie(0);cout.tie(0);ios_base::sync_with_stdio(false)</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> ll long long</span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><span class="hljs-keyword">const</span> ll MAXN =<span class="hljs-number">3e5</span>+<span class="hljs-number">10</span>;<br>ll n,res,sum;<br>ll q[MAXN];<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    IO;<br>    <span class="hljs-built_in">cin</span>&gt;&gt;n;<br>    <span class="hljs-keyword">for</span>(ll i=<span class="hljs-number">1</span>;i&lt;=n;i++) <span class="hljs-built_in">cin</span>&gt;&gt;q[i];<br>    <span class="hljs-built_in">unordered_map</span>&lt;ll,ll&gt; s[<span class="hljs-number">2</span>]; <span class="hljs-comment">// 雜湊表 照奇偶性分 </span><br>    s[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>]++; <span class="hljs-comment">// 前綴和需要處理的邊界值S[0]，偶數方案前綴異或和為0的需要跟S[0]配對，所以需要先加上1</span><br>    <span class="hljs-keyword">for</span>(ll i=<span class="hljs-number">1</span>;i&lt;=n;i++)<br>    &#123;<br>        sum^=q[i]; <span class="hljs-comment">// xor前綴和</span><br>        res+=s[i&amp;<span class="hljs-number">1</span>][sum]; <br>        s[i&amp;<span class="hljs-number">1</span>][sum]++;<br>    &#125;<br>    <span class="hljs-built_in">cout</span>&lt;&lt;res&lt;&lt;<span class="hljs-string">&#x27;\n&#x27;</span>;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
             </div>
             <hr>
             <div>
@@ -382,7 +382,7 @@
                     
                       <a class="hover-with-bg" href="/tags/hash-table/">hash table</a>
                     
-                      <a class="hover-with-bg" href="/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/">哈希表</a>
+                      <a class="hover-with-bg" href="/tags/%E9%9B%9C%E6%B9%8A%E8%A1%A8/">雜湊表</a>
                     
                   </div>
                 
