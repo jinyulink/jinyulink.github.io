@@ -16,43 +16,24 @@
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
   
   <meta name="theme-color" content="#252626">
-  <meta name="description" content="堆優化Dijkstra模板題">
+  <meta name="description" content="Jinlk��Blog">
   <meta name="author" content="Jinlk">
   <meta name="keywords" content="Jinlk , jinlk , jinyulink , jin , jin blog">
-  <meta name="description" content="堆優化Dijkstra模板題">
-<meta property="og:type" content="article">
-<meta property="og:title" content="題目 - Dijkstra求最短路 II (優化Dijkstra)">
-<meta property="og:url" content="http://jinlk.site/2022/08/15/acw851/index.html">
+  <meta name="description" content="Jinlk��Blog">
+<meta property="og:type" content="website">
+<meta property="og:title" content="標籤 - two pointers">
+<meta property="og:url" content="http://jinlk.site/tags/two-pointers/index.html">
 <meta property="og:site_name" content="JINLK BLOG">
-<meta property="og:description" content="堆優化Dijkstra模板題">
+<meta property="og:description" content="Jinlk��Blog">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2022-08-15T03:40:20.000Z">
-<meta property="article:modified_time" content="2022-08-16T02:03:22.922Z">
 <meta property="article:author" content="Jinlk">
-<meta property="article:tag" content="acw">
-<meta property="article:tag" content="Dijkstra">
-<meta property="article:tag" content="最短路">
+<meta property="article:tag" content="Jinlk , jinlk , jinyulink , jin , jin blog">
 <meta name="twitter:card" content="summary_large_image">
   
-  <title>題目 - Dijkstra求最短路 II (優化Dijkstra) | JINLK BLOG</title>
+  <title>標籤 - two pointers | JINLK BLOG</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
-
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
-  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
-
-  
-    
-    
-      
-      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
-    
-  
-
-  
-    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
-  
 
 
 <!-- 主题依赖的图标库，不要自行修改 -->
@@ -90,7 +71,7 @@
 
 
 <body>
-  <header style="height: 70vh;">
+  <header style="height: 80vh;">
     
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
@@ -233,60 +214,22 @@
 </nav>
 
     <div class="banner" id="banner" parallax=true
-         style="background: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/dcca520a-515a-4398-9fed-ef905aa616d4/d47o4c2-e9cc5236-5281-4828-9021-af4f2adecd34.jpg/v1/fill/w_900,h_495,q_75,strp/sunset_room_by_loundraw_d47o4c2-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NDk1IiwicGF0aCI6IlwvZlwvZGNjYTUyMGEtNTE1YS00Mzk4LTlmZWQtZWY5MDVhYTYxNmQ0XC9kNDdvNGMyLWU5Y2M1MjM2LTUyODEtNDgyOC05MDIxLWFmNGYyYWRlY2QzNC5qcGciLCJ3aWR0aCI6Ijw9OTAwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.m6-XzYkELDnrjbg8SJV6byW75m9R6xAMkbvsojp_aXE') no-repeat center center;
+         style="background: url('/img/default.png') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="題目 - Dijkstra求最短路 II (優化Dijkstra)">
+            <span class="h2" id="subtitle" title="標籤 - two pointers">
               
             </span>
 
             
-              <div class="mt-3">
-  
-  
-    <span class="post-meta">
-      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-08-15 11:40" pubdate>
-        2022年8月15日 中午
-      </time>
-    </span>
-  
-</div>
-
-<div class="mt-1">
-  
-    <span class="post-meta mr-2">
-      <i class="iconfont icon-chart"></i>
-      0 字
-    </span>
-  
-
-  
-    <span class="post-meta mr-2">
-      <i class="iconfont icon-clock-fill"></i>
-      
-      
-      1 分鐘
-    </span>
-  
-
-  
-  
-    
-      <!-- 不蒜子统计文章PV -->
-      <span id="busuanzi_container_page_pv" style="display: none">
-        <i class="iconfont icon-eye" aria-hidden="true"></i>
-        <span id="busuanzi_value_page_pv"></span> 次
-      </span>
-    
-  
-</div>
-
-            
           </div>
 
+          
+            <div class="scroll-down-bar">
+              <i class="iconfont icon-arrowdown"></i>
+            </div>
           
         </div>
       </div>
@@ -294,144 +237,46 @@
   </header>
   <main>
     
-      
+      <div class="container nopadding-x-md">
+        <div class="py-5" id="board"
+          >
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
 
-<div class="container-fluid nopadding-x">
-  <div class="row nomargin-x">
-    <div class="d-none d-lg-block col-lg-2"></div>
-    <div class="col-lg-8 nopadding-x-md">
-      <div class="container nopadding-x-md" id="board-ctn">
-        <div class="py-5" id="board">
-          <article class="post-content mx-auto">
-            <!-- SEO header -->
-            <h1 style="display: none">題目 - Dijkstra求最短路 II (優化Dijkstra)</h1>
-            
-            <div class="markdown-body">
-              
-            </div>
-            <hr>
-            <div>
-              <div class="post-metas mb-3">
-                
-                  <div class="post-meta mr-3">
-                    <i class="iconfont icon-category"></i>
-                    
-                      <a class="hover-with-bg" href="/categories/%E7%AD%86%E8%A8%98/">筆記</a>
-                    
-                      <a class="hover-with-bg" href="/categories/%E7%AD%86%E8%A8%98/%E6%90%9C%E7%B4%A2%E8%88%87%E5%9C%96%E8%AB%96/">搜索與圖論</a>
-                    
-                  </div>
-                
-                
-                  <div class="post-meta">
-                    <i class="iconfont icon-tags"></i>
-                    
-                      <a class="hover-with-bg" href="/tags/acw/">acw</a>
-                    
-                      <a class="hover-with-bg" href="/tags/Dijkstra/">Dijkstra</a>
-                    
-                      <a class="hover-with-bg" href="/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF/">最短路</a>
-                    
-                  </div>
-                
+<div class="list-group">
+  <p class="h4">總共 2 篇文章</p>
+  <hr>
+  
+  
+    
+      
+      <p class="h5">2022</p>
+    
+    <a href="/2022/08/18/cd1553d/" class="list-group-item list-group-item-action">
+      <span class="archive-post-title">Codeforces - Backspace (雙指針)</span>
+      <time style="float: right;">08-18</time>
+    </a>
+  
+    
+    <a href="/2022/08/17/acw799/" class="list-group-item list-group-item-action">
+      <span class="archive-post-title">題目 - 最長連續不重復子序列 (雙指針)</span>
+      <time style="float: right;">08-17</time>
+    </a>
+  
+</div>
+
+
+
+
+
               </div>
-              
-                <p class="note note-warning">
-                  
-                    本博客所有文章採用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 協議，請轉載注明出處!
-                  
-                </p>
-              
-              
-                <div class="post-prevnext">
-                  <article class="post-prev col-6">
-                    
-                    
-                      <a href="/2022/08/15/acw850/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">題目 - Dijkstra求最短路 II (優化Dijkstra)</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
-                  </article>
-                  <article class="post-next col-6">
-                    
-                    
-                      <a href="/2022/08/15/acw853/">
-                        <span class="hidden-mobile">題目 - 有邊數限制的最短路 (bellman ford)</span>
-                        <span class="visible-mobile">下一篇</span>
-                        <i class="iconfont icon-arrowright"></i>
-                      </a>
-                    
-                  </article>
-                </div>
-              
             </div>
-
-            
-              <!-- Comments -->
-              <article class="comments" id="comments" lazyload>
-                
-                  
-                
-                
-  <script type="text/javascript">
-    Fluid.utils.loadComments('#comments', function() {
-      var light = 'github-light';
-      var dark = 'dark-blue';
-      var schema = document.documentElement.getAttribute('data-user-color-scheme');
-      if (schema === 'dark') {
-        schema = dark;
-      } else {
-        schema = light;
-      }
-      window.UtterancesThemeLight = light;
-      window.UtterancesThemeDark = dark;
-      var s = document.createElement('script');
-      s.setAttribute('src', 'https://utteranc.es/client.js');
-      s.setAttribute('repo', 'jinyulink/blog-comment');
-      s.setAttribute('issue-term', 'pathname');
-      
-      s.setAttribute('theme', schema);
-      s.setAttribute('crossorigin', 'anonymous');
-      document.getElementById('comments').appendChild(s);
-    })
-  </script>
-  <noscript>Please enable JavaScript to view the comments</noscript>
-
-
-              </article>
-            
-          </article>
+          </div>
         </div>
       </div>
-    </div>
-    
-      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
-        <div id="toc">
-  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目錄</p>
-  <div class="toc-body" id="toc-body"></div>
-</div>
-
-      </div>
-    
-  </div>
-</div>
-
-<!-- Custom -->
-
-
-<!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4380085700423637"
-     crossorigin="anonymous"></script>
-<ins class="adsbygoogle"
-     style="display:block; text-align:center;"
-     data-ad-layout="in-article"
-     data-ad-format="fluid"
-     data-ad-client="ca-pub-4380085700423637"
-     data-ad-slot="7977608502"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script> -->
     
 
     
@@ -538,19 +383,6 @@
   
 
 
-
-  
-    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
-  
-  
-    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
-  
-  
-    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
-  
-  
-    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
-  
 
 
 
