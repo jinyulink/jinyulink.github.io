@@ -16,43 +16,24 @@
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
   
   <meta name="theme-color" content="#252626">
-  <meta name="description" content="leetcode 筆記 (medium)">
+  <meta name="description" content="Jinlk��Blog">
   <meta name="author" content="Jinlk">
   <meta name="keywords" content="Jinlk , jinlk , jinyulink , jin , jin blog">
-  <meta name="description" content="leetcode 筆記 (medium)">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Leetcode 153 - Find Minimum in Rotated Sorted Array [Array]">
-<meta property="og:url" content="http://jinlk.site/2022/09/01/leetcode153/index.html">
+  <meta name="description" content="Jinlk��Blog">
+<meta property="og:type" content="website">
+<meta property="og:title" content="分類 - Leetcode">
+<meta property="og:url" content="http://jinlk.site/categories/%E7%AD%86%E8%A8%98/Leetcode/page/2/index.html">
 <meta property="og:site_name" content="JINLK BLOG">
-<meta property="og:description" content="leetcode 筆記 (medium)">
+<meta property="og:description" content="Jinlk��Blog">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2022-09-01T01:19:20.000Z">
-<meta property="article:modified_time" content="2022-09-01T02:05:25.157Z">
 <meta property="article:author" content="Jinlk">
-<meta property="article:tag" content="medium">
-<meta property="article:tag" content="blind 75">
-<meta property="article:tag" content="二分">
+<meta property="article:tag" content="Jinlk , jinlk , jinyulink , jin , jin blog">
 <meta name="twitter:card" content="summary_large_image">
   
-  <title>Leetcode 153 - Find Minimum in Rotated Sorted Array [Array] | JINLK BLOG</title>
+  <title>分類 - Leetcode | JINLK BLOG</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
-
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
-  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
-
-  
-    
-    
-      
-      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
-    
-  
-
-  
-    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
-  
 
 
 <!-- 主题依赖的图标库，不要自行修改 -->
@@ -90,7 +71,7 @@
 
 
 <body>
-  <header style="height: 70vh;">
+  <header style="height: 60vh;">
     
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
@@ -233,56 +214,14 @@
 </nav>
 
     <div class="banner" id="banner" parallax=true
-         style="background: url('https://i.pinimg.com/originals/0e/b1/32/0eb1328cb6f3259f325c13fc8d5d7a51.jpg') no-repeat center center;
+         style="background: url('/img/%E7%92%89%E6%A0%BC??.webp') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Leetcode 153 - Find Minimum in Rotated Sorted Array [Array]">
+            <span class="h2" id="subtitle" title="分類 - Leetcode">
               
             </span>
-
-            
-              <div class="mt-3">
-  
-  
-    <span class="post-meta">
-      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-09-01 09:19" pubdate>
-        2022年9月1日 上午
-      </time>
-    </span>
-  
-</div>
-
-<div class="mt-1">
-  
-    <span class="post-meta mr-2">
-      <i class="iconfont icon-chart"></i>
-      1.2k 字
-    </span>
-  
-
-  
-    <span class="post-meta mr-2">
-      <i class="iconfont icon-clock-fill"></i>
-      
-      
-      4 分鐘
-    </span>
-  
-
-  
-  
-    
-      <!-- 不蒜子统计文章PV -->
-      <span id="busuanzi_container_page_pv" style="display: none">
-        <i class="iconfont icon-eye" aria-hidden="true"></i>
-        <span id="busuanzi_value_page_pv"></span> 次
-      </span>
-    
-  
-</div>
 
             
           </div>
@@ -294,171 +233,46 @@
   </header>
   <main>
     
-      
+      <div class="container nopadding-x-md">
+        <div class="py-5" id="board"
+          >
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
 
-<div class="container-fluid nopadding-x">
-  <div class="row nomargin-x">
-    <div class="d-none d-lg-block col-lg-2"></div>
-    <div class="col-lg-8 nopadding-x-md">
-      <div class="container nopadding-x-md" id="board-ctn">
-        <div class="py-5" id="board">
-          <article class="post-content mx-auto">
-            <!-- SEO header -->
-            <h1 style="display: none">Leetcode 153 - Find Minimum in Rotated Sorted Array [Array]</h1>
-            
-            <div class="markdown-body">
-              <p><a target="_blank" rel="noopener" href="https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/">題目連結</a>(Medium)</p>
-<h2 id="題目"><a class="markdownIt-Anchor" href="#題目"></a> 題目</h2>
-<p>Suppose an array of length n sorted in ascending order is <strong>rotated</strong> between 1 and n times. For example, the array <code>nums = [0,1,2,4,5,6,7]</code> might become:</p>
-<ul>
-<li><code>[4,5,6,7,0,1,2]</code> if it was rotated <code>4</code> times.</li>
-<li><code>[0,1,2,4,5,6,7]</code> if it was rotated <code>7</code> times.<br />
-Notice that <strong>rotating</strong> an array <code>[a[0], a[1], a[2], ..., a[n-1]]</code> 1 time results in the array <code>[a[n-1], a[0], a[1], a[2], ..., a[n-2]]</code>.</li>
-</ul>
-<p>Given the sorted rotated array nums of <strong>unique</strong> elements, return the minimum element of this array.</p>
-<p>You must write an algorithm that runs in <code>O(log n) time</code>.</p>
-<p><strong>Example 1</strong></p>
-<figure class="highlight smali"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs smali">Input: nums = [3,4,5,1,2]<br>Output: 1<br>Explanation: The original<span class="hljs-built_in"> array </span>was [1,2,3,4,5] rotated 3 times.<br></code></pre></div></td></tr></table></figure>
-<p><strong>Example 2</strong></p>
-<figure class="highlight smali"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs smali">Input: nums = [4,5,6,7,0,1,2]<br>Output: 0<br>Explanation: The original<span class="hljs-built_in"> array </span>was [0,1,2,4,5,6,7]<span class="hljs-built_in"> and </span>it was rotated 4 times.<br></code></pre></div></td></tr></table></figure>
-<p><strong>Example 3</strong></p>
-<figure class="highlight smali"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs smali">Input: nums = [11,13,15,17]<br>Output: 11<br>Explanation: The original<span class="hljs-built_in"> array </span>was [11,13,15,17]<span class="hljs-built_in"> and </span>it was rotated 4 times. <br></code></pre></div></td></tr></table></figure>
-<p><strong>Constraints</strong></p>
-<ul>
-<li><code>n == nums.length</code></li>
-<li><code>1 &lt;= n &lt;= 5000</code></li>
-<li><code>-5000 &lt;= nums[i] &lt;= 5000</code></li>
-<li>All the integers of nums are <strong>unique</strong>.</li>
-<li><code>nums</code> is sorted and rotated between <code>1</code> and <code>n</code> times.</li>
-</ul>
-<h2 id="想法"><a class="markdownIt-Anchor" href="#想法"></a> 想法</h2>
-<p>題目說要在<code>O(log n)</code>內完成，應該想到的就是二分。</p>
-<h2 id="code"><a class="markdownIt-Anchor" href="#code"></a> code</h2>
-<figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs C"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> &#123;</span><br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">findMin</span><span class="hljs-params">(<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&amp; nums)</span> </span>&#123;<br>        <span class="hljs-keyword">int</span> l=<span class="hljs-number">0</span>,r=nums.size()<span class="hljs-number">-1</span>;<br>        <span class="hljs-keyword">while</span>(nums[l]&gt;nums[r])<br>        &#123;<br>            <span class="hljs-keyword">int</span> mid=(l+r)&gt;&gt;<span class="hljs-number">1</span>;<br>            <span class="hljs-keyword">if</span>(nums[mid]&gt;nums[r])<br>                l=mid+<span class="hljs-number">1</span>;<br>            <span class="hljs-keyword">else</span> <br>                r=mid;<br>        &#125;<br>        <span class="hljs-keyword">return</span> nums[l];<br>    &#125;<br>&#125;;<br></code></pre></div></td></tr></table></figure>
-            </div>
-            <hr>
-            <div>
-              <div class="post-metas mb-3">
-                
-                  <div class="post-meta mr-3">
-                    <i class="iconfont icon-category"></i>
-                    
-                      <a class="hover-with-bg" href="/categories/%E7%AD%86%E8%A8%98/">筆記</a>
-                    
-                      <a class="hover-with-bg" href="/categories/%E7%AD%86%E8%A8%98/Leetcode/">Leetcode</a>
-                    
-                  </div>
-                
-                
-                  <div class="post-meta">
-                    <i class="iconfont icon-tags"></i>
-                    
-                      <a class="hover-with-bg" href="/tags/medium/">medium</a>
-                    
-                      <a class="hover-with-bg" href="/tags/blind-75/">blind 75</a>
-                    
-                      <a class="hover-with-bg" href="/tags/%E4%BA%8C%E5%88%86/">二分</a>
-                    
-                  </div>
-                
+<div class="list-group">
+  <p class="h4">總共 11 篇文章</p>
+  <hr>
+  
+  
+    
+      
+      <p class="h5">2022</p>
+    
+    <a href="/2022/08/05/leetcode322/" class="list-group-item list-group-item-action">
+      <span class="archive-post-title">Leetcode 322 - Coin Change I (一維dp)</span>
+      <time style="float: right;">08-05</time>
+    </a>
+  
+</div>
+
+
+  <nav aria-label="navigation">
+    <span class="pagination" id="pagination">
+      <a class="extend prev" rel="prev" href="/categories/%E7%AD%86%E8%A8%98/Leetcode/"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/categories/%E7%AD%86%E8%A8%98/Leetcode/">1</a><span class="page-number current">2</span>
+    </span>
+  </nav>
+
+
+
+
               </div>
-              
-                <p class="note note-warning">
-                  
-                    本博客所有文章採用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 協議，請轉載注明出處!
-                  
-                </p>
-              
-              
-                <div class="post-prevnext">
-                  <article class="post-prev col-6">
-                    
-                    
-                      <a href="/2022/09/01/leetcode1/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Leetcode 1 - Two Sum [Array]</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
-                  </article>
-                  <article class="post-next col-6">
-                    
-                    
-                      <a href="/2022/08/31/leetcode53/">
-                        <span class="hidden-mobile">Leetcode 53 - Maximum Subarray [Array]</span>
-                        <span class="visible-mobile">下一篇</span>
-                        <i class="iconfont icon-arrowright"></i>
-                      </a>
-                    
-                  </article>
-                </div>
-              
             </div>
-
-            
-              <!-- Comments -->
-              <article class="comments" id="comments" lazyload>
-                
-                  
-                
-                
-  <script type="text/javascript">
-    Fluid.utils.loadComments('#comments', function() {
-      var light = 'github-light';
-      var dark = 'dark-blue';
-      var schema = document.documentElement.getAttribute('data-user-color-scheme');
-      if (schema === 'dark') {
-        schema = dark;
-      } else {
-        schema = light;
-      }
-      window.UtterancesThemeLight = light;
-      window.UtterancesThemeDark = dark;
-      var s = document.createElement('script');
-      s.setAttribute('src', 'https://utteranc.es/client.js');
-      s.setAttribute('repo', 'jinyulink/blog-comment');
-      s.setAttribute('issue-term', 'pathname');
-      
-      s.setAttribute('theme', schema);
-      s.setAttribute('crossorigin', 'anonymous');
-      document.getElementById('comments').appendChild(s);
-    })
-  </script>
-  <noscript>Please enable JavaScript to view the comments</noscript>
-
-
-              </article>
-            
-          </article>
+          </div>
         </div>
       </div>
-    </div>
-    
-      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
-        <div id="toc">
-  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目錄</p>
-  <div class="toc-body" id="toc-body"></div>
-</div>
-
-      </div>
-    
-  </div>
-</div>
-
-<!-- Custom -->
-
-
-<!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4380085700423637"
-     crossorigin="anonymous"></script>
-<ins class="adsbygoogle"
-     style="display:block; text-align:center;"
-     data-ad-layout="in-article"
-     data-ad-format="fluid"
-     data-ad-client="ca-pub-4380085700423637"
-     data-ad-slot="7977608502"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script> -->
     
 
     
@@ -565,19 +379,6 @@ Notice that <strong>rotating</strong> an array <code>[a[0], a[1], a[2], ..., a[n
   
 
 
-
-  
-    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
-  
-  
-    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
-  
-  
-    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
-  
-  
-    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
-  
 
 
 

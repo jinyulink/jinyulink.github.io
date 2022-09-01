@@ -4,6 +4,37 @@
   
   
   <entry>
+    <title>Leetcode 1 - Two Sum [Array]</title>
+    <link href="/2022/09/01/leetcode1/"/>
+    <url>/2022/09/01/leetcode1/</url>
+    
+    <content type="html"><![CDATA[<p><a href="https://leetcode.com/problems/two-sum/">題目連結</a>(easy)</p><h2 id="題目"><a class="markdownIt-Anchor" href="#題目"></a> 題目</h2><p>Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.</p><p>You may assume that each input would have <strong>exactly one solution</strong>, and you may not use the same element twice.</p><p>You can return the answer in any order.</p><p><strong>Example 1</strong></p><figure class="highlight prolog"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs prolog"><span class="hljs-symbol">Input</span>: nums = [<span class="hljs-number">2</span>,<span class="hljs-number">7</span>,<span class="hljs-number">11</span>,<span class="hljs-number">15</span>], target = <span class="hljs-number">9</span><br><span class="hljs-symbol">Output</span>: [<span class="hljs-number">0</span>,<span class="hljs-number">1</span>]<br><span class="hljs-symbol">Explanation</span>: <span class="hljs-symbol">Because</span> nums[<span class="hljs-number">0</span>] + nums[<span class="hljs-number">1</span>] == <span class="hljs-number">9</span>, we return [<span class="hljs-number">0</span>, <span class="hljs-number">1</span>].<br></code></pre></div></td></tr></table></figure><p><strong>Example 2</strong></p><figure class="highlight avrasm"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs avrasm"><span class="hljs-symbol">Input:</span> nums = [<span class="hljs-number">3</span>,<span class="hljs-number">2</span>,<span class="hljs-number">4</span>], target = <span class="hljs-number">6</span><br><span class="hljs-symbol">Output:</span> [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>]<br></code></pre></div></td></tr></table></figure><p><strong>Example 3</strong></p><figure class="highlight avrasm"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs avrasm"><span class="hljs-symbol">Input:</span> nums = [<span class="hljs-number">3</span>,<span class="hljs-number">3</span>], target = <span class="hljs-number">6</span><br><span class="hljs-symbol">Output:</span> [<span class="hljs-number">0</span>,<span class="hljs-number">1</span>]<br></code></pre></div></td></tr></table></figure><p><strong>Constraints</strong></p><ul><li>2 &lt;= nums.length &lt;= 1e4</li><li>-1e9 &lt;= nums[i] &lt;= 1e9</li><li>-1e9 &lt;= target &lt;= 1e9</li><li><strong>Only one valid answer exists.</strong></li></ul><h2 id="想法"><a class="markdownIt-Anchor" href="#想法"></a> 想法</h2><p>用<code>hashmap</code>紀錄數字是否出現過，可將查找時間降至<code>O(1)</code>，這樣只需要遍歷一次陣列即可。<br />Time complexity: <code>O(n)</code></p><h2 id="code"><a class="markdownIt-Anchor" href="#code"></a> code</h2><figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs C"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> vt vector</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> pb push_back</span><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> &#123;</span><br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-built_in">map</span>&lt;<span class="hljs-keyword">int</span>,<span class="hljs-keyword">int</span>&gt; hashmap;<br>    <span class="hljs-function"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; <span class="hljs-title">twoSum</span><span class="hljs-params">(<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&amp; nums, <span class="hljs-keyword">int</span> target)</span> </span>&#123;<br>        vt&lt;<span class="hljs-keyword">int</span>&gt; ans;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;nums.size();i++)<br>            hashmap[nums[i]]=i;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;nums.size();i++)<br>        &#123;<br>            <span class="hljs-keyword">if</span>(hashmap[target-nums[i]]&amp;&amp;hashmap[target-nums[i]]!=i)<br>            &#123;<br>                ans.pb(i);ans.pb(hashmap[target-nums[i]]);<br>                <span class="hljs-keyword">break</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> ans;<br>    &#125;<br>&#125;;<br></code></pre></div></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>筆記</category>
+      
+      <category>Leetcode</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>easy</tag>
+      
+      <tag>hash table</tag>
+      
+      <tag>blind 75</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Leetcode 153 - Find Minimum in Rotated Sorted Array [Array]</title>
     <link href="/2022/09/01/leetcode153/"/>
     <url>/2022/09/01/leetcode153/</url>
