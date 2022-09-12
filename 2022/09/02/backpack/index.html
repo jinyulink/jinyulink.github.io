@@ -16,24 +16,42 @@
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
   
   <meta name="theme-color" content="#252626">
-  <meta name="description" content="Jinlk��Blog">
+  <meta name="description" content="常見背包問題 筆記">
   <meta name="author" content="Jinlk">
   <meta name="keywords" content="Jinlk , jinlk , jinyulink , jin , jin blog">
-  <meta name="description" content="Jinlk��Blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="標籤 - two-pointers">
-<meta property="og:url" content="http://jinlk.site/tags/two-pointers/index.html">
+  <meta name="description" content="常見背包問題 筆記">
+<meta property="og:type" content="article">
+<meta property="og:title" content="背包問題">
+<meta property="og:url" content="http://jinlk.site/2022/09/02/backpack/index.html">
 <meta property="og:site_name" content="JINLK BLOG">
-<meta property="og:description" content="Jinlk��Blog">
+<meta property="og:description" content="常見背包問題 筆記">
 <meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2022-09-02T08:55:20.000Z">
+<meta property="article:modified_time" content="2022-09-02T13:07:02.912Z">
 <meta property="article:author" content="Jinlk">
-<meta property="article:tag" content="Jinlk , jinlk , jinyulink , jin , jin blog">
+<meta property="article:tag" content="dp">
+<meta property="article:tag" content="背包">
 <meta name="twitter:card" content="summary_large_image">
   
-  <title>標籤 - two-pointers | JINLK BLOG</title>
+  <title>背包問題 | JINLK BLOG</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
 
 
 <!-- 主题依赖的图标库，不要自行修改 -->
@@ -71,7 +89,7 @@
 
 
 <body>
-  <header style="height: 80vh;">
+  <header style="height: 70vh;">
     
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
@@ -214,22 +232,60 @@
 </nav>
 
     <div class="banner" id="banner" parallax=true
-         style="background: url('/img/default.png') no-repeat center center;
+         style="background: url('https://i.pinimg.com/originals/0e/b1/32/0eb1328cb6f3259f325c13fc8d5d7a51.jpg') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="標籤 - two-pointers">
+            <span class="h2" id="subtitle" title="背包問題">
               
             </span>
 
             
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-09-02 16:55" pubdate>
+        2022年9月2日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.3k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      4 分鐘
+    </span>
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
+</div>
+
+            
           </div>
 
-          
-            <div class="scroll-down-bar">
-              <i class="iconfont icon-arrowdown"></i>
-            </div>
           
         </div>
       </div>
@@ -237,40 +293,166 @@
   </header>
   <main>
     
-      <div class="container nopadding-x-md">
-        <div class="py-5" id="board"
-          >
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-<div class="list-group">
-  <p class="h4">總共 1 篇文章</p>
-  <hr>
-  
-  
-    
       
-      <p class="h5">2022</p>
-    
-    <a href="/2022/09/05/leetcode344/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">Leetcode 344 - Reverse String [2-pointers]</span>
-      <time style="float: right;">09-05</time>
-    </a>
-  
-</div>
 
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">背包問題</h1>
+            
+            <div class="markdown-body">
+              <h1 id="01背包"><a class="markdownIt-Anchor" href="#01背包"></a> 01背包</h1>
+<p>有<code>N</code>件物品，一個容量是<code>M</code>的背包，每件物品只能使用一次，第i件物品體積為<code>vi</code>，價值為<code>wi</code>。<br />
+將那些物品裝進背包，可使物品體積不超過背包容量，且價值總和最大。<br />
+輸出最大價值。</p>
+<h2 id="二維"><a class="markdownIt-Anchor" href="#二維"></a> 二維</h2>
+<h3 id="轉移式"><a class="markdownIt-Anchor" href="#轉移式"></a> 轉移式</h3>
+<figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs C">dp[i][j]=max(dp[i<span class="hljs-number">-1</span>][j],dp[i<span class="hljs-number">-1</span>][j-v[i]]+w[i]);<br></code></pre></div></td></tr></table></figure>
+<p><code>f[i][j]</code>意思為前<code>i</code>個物品放入體積為<code>j</code>的背包的最大價值。<br />
+這個轉移式可以理解為:</p>
+<ol>
+<li>第<code>i</code>件不放進去，這時價值為<code>f[i-1][j]</code>。</li>
+<li>第<code>i</code>件放進去，這時價值為<code>f[i-1][j-v[i]]+w[i]</code></li>
+</ol>
+<h3 id="code"><a class="markdownIt-Anchor" href="#code"></a> code</h3>
+<figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs C"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> IO cin.tie(0);cout.tie(0);ios_base::sync_with_stdio(false)</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> ll long long</span><br><span class="hljs-keyword">const</span> ll MAXN=<span class="hljs-number">1e3</span>+<span class="hljs-number">10</span>;<br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br>ll n,m;<br>ll v[MAXN],w[MAXN];<br>ll res;<br>ll dp[MAXN][MAXN];<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    IO;<br>    <span class="hljs-built_in">cin</span>&gt;&gt;n&gt;&gt;m;<br>    <span class="hljs-keyword">for</span>(ll i=<span class="hljs-number">1</span>;i&lt;=n;i++)    <span class="hljs-built_in">cin</span>&gt;&gt;v[i]&gt;&gt;w[i];<br>    <span class="hljs-keyword">for</span>(ll i=<span class="hljs-number">1</span>;i&lt;=n;i++)<br>    &#123;<br>        <span class="hljs-keyword">for</span>(ll j=<span class="hljs-number">0</span>;j&lt;=m;j++)<br>        &#123;<br>            dp[i][j]=dp[i<span class="hljs-number">-1</span>][j];<br>            <span class="hljs-keyword">if</span>(j&gt;=v[i])<br>                dp[i][j]=max(dp[i][j],dp[i<span class="hljs-number">-1</span>][j-v[i]]+w[i]);<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">for</span>(ll i=<span class="hljs-number">0</span>;i&lt;=m;i++)   res=max(res,dp[n][i]);<br>    <span class="hljs-built_in">cout</span>&lt;&lt;res&lt;&lt;<span class="hljs-string">&#x27;\n&#x27;</span>;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<h2 id="空間優化一維"><a class="markdownIt-Anchor" href="#空間優化一維"></a> 空間優化(一維)</h2>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44176696/article/details/105209974">找到的空間優化解釋</a></p>
+<h3 id="轉移式-2"><a class="markdownIt-Anchor" href="#轉移式-2"></a> 轉移式</h3>
+<figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs C">dp[j]=max(dp[j],dp[j-v[i]]+w[i])<br></code></pre></div></td></tr></table></figure>
+<h3 id="code-2"><a class="markdownIt-Anchor" href="#code-2"></a> code</h3>
+<figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs C"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> IO cin.tie(0);cout.tie(0);ios_base::sync_with_stdio(false)</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> ll long long</span><br><span class="hljs-keyword">const</span> ll MAXN =<span class="hljs-number">1e3</span>+<span class="hljs-number">10</span>;<br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br>ll n,m;<br>ll v[MAXN],w[MAXN];<br>ll dp[MAXN];<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    IO;<br>    <span class="hljs-built_in">cin</span>&gt;&gt;n&gt;&gt;m;<br>    <span class="hljs-keyword">for</span>(ll i=<span class="hljs-number">1</span>;i&lt;=n;i++)    <span class="hljs-built_in">cin</span>&gt;&gt;v[i]&gt;&gt;w[i];<br>    <span class="hljs-keyword">for</span>(ll i=<span class="hljs-number">1</span>;i&lt;=n;i++)<br>        <span class="hljs-keyword">for</span>(ll j=m;j&gt;=v[i];j--)<br>            dp[j]=max(dp[j],dp[j-v[i]]+w[i]);<br>    <span class="hljs-built_in">cout</span>&lt;&lt;dp[m]&lt;&lt;<span class="hljs-string">&#x27;\n&#x27;</span>;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<h2 id="例題"><a class="markdownIt-Anchor" href="#例題"></a> 例題</h2>
+<p><a target="_blank" rel="noopener" href="https://leetcode.com/problems/partition-equal-subset-sum/">Leetcode 416 Partition Equal Subset Sum</a></p>
+<h1 id="完全背包"><a class="markdownIt-Anchor" href="#完全背包"></a> 完全背包</h1>
 
-
-
-
-              </div>
             </div>
-          </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E7%AD%86%E8%A8%98/">筆記</a>
+                    
+                      <a class="hover-with-bg" href="/categories/%E7%AD%86%E8%A8%98/%E5%8B%95%E6%85%8B%E8%A6%8F%E5%8A%83/">動態規劃</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/dp/">dp</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E8%83%8C%E5%8C%85/">背包</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章採用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 協議，請轉載注明出處!
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/09/05/leetcode344/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Leetcode 344 - Reverse String [2-pointers]</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/09/01/leetcode1/">
+                        <span class="hidden-mobile">Leetcode 1 - Two Sum [Array]</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#comments', function() {
+      var light = 'github-light';
+      var dark = 'dark-blue';
+      var schema = document.documentElement.getAttribute('data-user-color-scheme');
+      if (schema === 'dark') {
+        schema = dark;
+      } else {
+        schema = light;
+      }
+      window.UtterancesThemeLight = light;
+      window.UtterancesThemeDark = dark;
+      var s = document.createElement('script');
+      s.setAttribute('src', 'https://utteranc.es/client.js');
+      s.setAttribute('repo', 'jinyulink/blog-comment');
+      s.setAttribute('issue-term', 'pathname');
+      
+      s.setAttribute('theme', schema);
+      s.setAttribute('crossorigin', 'anonymous');
+      document.getElementById('comments').appendChild(s);
+    })
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
         </div>
       </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目錄</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+<!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4380085700423637"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-4380085700423637"
+     data-ad-slot="7977608502"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script> -->
     
 
     
@@ -377,6 +559,19 @@
   
 
 
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
 
 
 

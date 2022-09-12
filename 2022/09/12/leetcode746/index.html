@@ -16,24 +16,43 @@
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
   
   <meta name="theme-color" content="#252626">
-  <meta name="description" content="Jinlk��Blog">
+  <meta name="description" content="leetcode dp 筆記 (easy)">
   <meta name="author" content="Jinlk">
   <meta name="keywords" content="Jinlk , jinlk , jinyulink , jin , jin blog">
-  <meta name="description" content="Jinlk��Blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="標籤 - two-pointers">
-<meta property="og:url" content="http://jinlk.site/tags/two-pointers/index.html">
+  <meta name="description" content="leetcode dp 筆記 (easy)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Leetcode 746 - Min Cost Climbing Stairs (一維dp)">
+<meta property="og:url" content="http://jinlk.site/2022/09/12/leetcode746/index.html">
 <meta property="og:site_name" content="JINLK BLOG">
-<meta property="og:description" content="Jinlk��Blog">
+<meta property="og:description" content="leetcode dp 筆記 (easy)">
 <meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2022-09-12T00:01:20.000Z">
+<meta property="article:modified_time" content="2022-09-12T00:21:18.920Z">
 <meta property="article:author" content="Jinlk">
-<meta property="article:tag" content="Jinlk , jinlk , jinyulink , jin , jin blog">
+<meta property="article:tag" content="dp">
+<meta property="article:tag" content="一維dp">
+<meta property="article:tag" content="easy">
 <meta name="twitter:card" content="summary_large_image">
   
-  <title>標籤 - two-pointers | JINLK BLOG</title>
+  <title>Leetcode 746 - Min Cost Climbing Stairs (一維dp) | JINLK BLOG</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
 
 
 <!-- 主题依赖的图标库，不要自行修改 -->
@@ -71,7 +90,7 @@
 
 
 <body>
-  <header style="height: 80vh;">
+  <header style="height: 70vh;">
     
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
@@ -214,22 +233,60 @@
 </nav>
 
     <div class="banner" id="banner" parallax=true
-         style="background: url('/img/default.png') no-repeat center center;
+         style="background: url('https://pbs.twimg.com/media/D_fQYb5UwAEw59B?format=jpg&name=large') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="標籤 - two-pointers">
+            <span class="h2" id="subtitle" title="Leetcode 746 - Min Cost Climbing Stairs (一維dp)">
               
             </span>
 
             
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-09-12 08:01" pubdate>
+        2022年9月12日 早上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.1k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      4 分鐘
+    </span>
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
+</div>
+
+            
           </div>
 
-          
-            <div class="scroll-down-bar">
-              <i class="iconfont icon-arrowdown"></i>
-            </div>
           
         </div>
       </div>
@@ -237,40 +294,157 @@
   </header>
   <main>
     
-      <div class="container nopadding-x-md">
-        <div class="py-5" id="board"
-          >
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-<div class="list-group">
-  <p class="h4">總共 1 篇文章</p>
-  <hr>
-  
-  
-    
       
-      <p class="h5">2022</p>
-    
-    <a href="/2022/09/05/leetcode344/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">Leetcode 344 - Reverse String [2-pointers]</span>
-      <time style="float: right;">09-05</time>
-    </a>
-  
-</div>
 
-
-
-
-
-              </div>
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Leetcode 746 - Min Cost Climbing Stairs (一維dp)</h1>
+            
+            <div class="markdown-body">
+              <p><a target="_blank" rel="noopener" href="https://leetcode.com/problems/min-cost-climbing-stairs/">題目</a>(easy)<br />
+為<a href="/2022/08/08/leetcode70/">70. Climbing Stairs</a>的延伸題</p>
+<h2 id="題目"><a class="markdownIt-Anchor" href="#題目"></a> 題目</h2>
+<p>You are given an integer array cost where <code>cost[i]</code> is the cost of <code>ith</code> step on a staircase. Once you pay the cost, you can either climb one or two steps.</p>
+<p>You can either start from the step with index <code>0</code>, or the step with index <code>1</code>.</p>
+<p>Return the minimum cost to reach the top of the floor.<br />
+<strong>Example 1:</strong></p>
+<figure class="highlight pgsql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs pgsql"><span class="hljs-keyword">Input</span>: <span class="hljs-keyword">cost</span> = [<span class="hljs-number">10</span>,<span class="hljs-number">15</span>,<span class="hljs-number">20</span>]<br>Output: <span class="hljs-number">15</span><br>Explanation: You will <span class="hljs-keyword">start</span> at <span class="hljs-keyword">index</span> <span class="hljs-number">1.</span><br>- Pay <span class="hljs-number">15</span> <span class="hljs-keyword">and</span> climb two steps <span class="hljs-keyword">to</span> reach the top.<br>The total <span class="hljs-keyword">cost</span> <span class="hljs-keyword">is</span> <span class="hljs-number">15.</span><br></code></pre></div></td></tr></table></figure>
+<p><strong>Example 2:</strong></p>
+<figure class="highlight pgsql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs pgsql"><span class="hljs-keyword">Input</span>: <span class="hljs-keyword">cost</span> = [<span class="hljs-number">1</span>,<span class="hljs-number">100</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">100</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">100</span>,<span class="hljs-number">1</span>]<br>Output: <span class="hljs-number">6</span><br>Explanation: You will <span class="hljs-keyword">start</span> at <span class="hljs-keyword">index</span> <span class="hljs-number">0.</span><br>- Pay <span class="hljs-number">1</span> <span class="hljs-keyword">and</span> climb two steps <span class="hljs-keyword">to</span> reach <span class="hljs-keyword">index</span> <span class="hljs-number">2.</span><br>- Pay <span class="hljs-number">1</span> <span class="hljs-keyword">and</span> climb two steps <span class="hljs-keyword">to</span> reach <span class="hljs-keyword">index</span> <span class="hljs-number">4.</span><br>- Pay <span class="hljs-number">1</span> <span class="hljs-keyword">and</span> climb two steps <span class="hljs-keyword">to</span> reach <span class="hljs-keyword">index</span> <span class="hljs-number">6.</span><br>- Pay <span class="hljs-number">1</span> <span class="hljs-keyword">and</span> climb one step <span class="hljs-keyword">to</span> reach <span class="hljs-keyword">index</span> <span class="hljs-number">7.</span><br>- Pay <span class="hljs-number">1</span> <span class="hljs-keyword">and</span> climb two steps <span class="hljs-keyword">to</span> reach <span class="hljs-keyword">index</span> <span class="hljs-number">9.</span><br>- Pay <span class="hljs-number">1</span> <span class="hljs-keyword">and</span> climb one step <span class="hljs-keyword">to</span> reach the top.<br>The total <span class="hljs-keyword">cost</span> <span class="hljs-keyword">is</span> <span class="hljs-number">6.</span><br></code></pre></div></td></tr></table></figure>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li>2 &lt;= cost.length &lt;= 1000</li>
+<li>0 &lt;= cost[i] &lt;= 999</li>
+</ul>
+<h2 id="想法"><a class="markdownIt-Anchor" href="#想法"></a> 想法</h2>
+<p>初始化: <code>dp[0]=0 dp[1]=0 dp[2]=0</code><br />
+轉移式: <code>dp[i]=min(dp[i-1]+cost[i-2],dp[i-2]+cost[i-3])</code></p>
+<h2 id="code"><a class="markdownIt-Anchor" href="#code"></a> Code</h2>
+<figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs C"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> &#123;</span><br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">minCostClimbingStairs</span><span class="hljs-params">(<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&amp; cost)</span> </span>&#123;<br>        <span class="hljs-keyword">int</span> dp[cost.size()+<span class="hljs-number">2</span>];<br>        dp[<span class="hljs-number">0</span>]=<span class="hljs-number">0</span>; dp[<span class="hljs-number">1</span>]=<span class="hljs-number">0</span>; dp[<span class="hljs-number">2</span>]=<span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">3</span>;i&lt;=cost.size()+<span class="hljs-number">1</span>;i++)<br>        &#123;<br>            dp[i]=min(dp[i<span class="hljs-number">-1</span>]+cost[i<span class="hljs-number">-2</span>],dp[i<span class="hljs-number">-2</span>]+cost[i<span class="hljs-number">-3</span>]);<br>        &#125;<br>        <span class="hljs-keyword">return</span> dp[cost.size()+<span class="hljs-number">1</span>];<br>    &#125;<br>&#125;;<br></code></pre></div></td></tr></table></figure>
             </div>
-          </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E7%AD%86%E8%A8%98/">筆記</a>
+                    
+                      <a class="hover-with-bg" href="/categories/%E7%AD%86%E8%A8%98/Leetcode/">Leetcode</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/dp/">dp</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E4%B8%80%E7%B6%ADdp/">一維dp</a>
+                    
+                      <a class="hover-with-bg" href="/tags/easy/">easy</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章採用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 協議，請轉載注明出處!
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/09/05/leetcode344/">
+                        <span class="hidden-mobile">Leetcode 344 - Reverse String [2-pointers]</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#comments', function() {
+      var light = 'github-light';
+      var dark = 'dark-blue';
+      var schema = document.documentElement.getAttribute('data-user-color-scheme');
+      if (schema === 'dark') {
+        schema = dark;
+      } else {
+        schema = light;
+      }
+      window.UtterancesThemeLight = light;
+      window.UtterancesThemeDark = dark;
+      var s = document.createElement('script');
+      s.setAttribute('src', 'https://utteranc.es/client.js');
+      s.setAttribute('repo', 'jinyulink/blog-comment');
+      s.setAttribute('issue-term', 'pathname');
+      
+      s.setAttribute('theme', schema);
+      s.setAttribute('crossorigin', 'anonymous');
+      document.getElementById('comments').appendChild(s);
+    })
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
         </div>
       </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目錄</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+<!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4380085700423637"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-4380085700423637"
+     data-ad-slot="7977608502"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script> -->
     
 
     
@@ -377,6 +551,19 @@
   
 
 
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
 
 
 
