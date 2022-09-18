@@ -16,25 +16,25 @@
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
   
   <meta name="theme-color" content="#252626">
-  <meta name="description" content="leetcode dp 筆記 (easy)">
+  <meta name="description" content="程式設計研討專題 第一周 題目">
   <meta name="author" content="Jinlk">
   <meta name="keywords" content="Jinlk , jinlk , jinyulink , jin , jin blog">
-  <meta name="description" content="leetcode dp 筆記 (easy)">
+  <meta name="description" content="程式設計研討專題 第一周 題目">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Leetcode 746 - Min Cost Climbing Stairs (一維dp)">
-<meta property="og:url" content="http://jinlk.site/2022/09/12/leetcode746/index.html">
+<meta property="og:title" content="程式設計研討專題 - Week 1">
+<meta property="og:url" content="http://jinlk.site/2022/09/16/cp_course1/index.html">
 <meta property="og:site_name" content="JINLK BLOG">
-<meta property="og:description" content="leetcode dp 筆記 (easy)">
+<meta property="og:description" content="程式設計研討專題 第一周 題目">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2022-09-12T00:01:20.000Z">
-<meta property="article:modified_time" content="2022-09-13T00:22:42.924Z">
+<meta property="og:image" content="https://lh3.googleusercontent.com/-kv4JOBnXy3_p-OCsmlIp_4EUCpc2v3YhdU3wFr7p7xl1QkeaqHNPUnZQiiqKj_zK0aXat6zCSA-2N7oB07tO4OFCNGOJclFfxMe0bOVf5F3nwylkTVX5Psaolb91BEtS7nE7e-_lZsciDgotUNbEKVho-DjLNAPCZsFEndR04OqsyGrLi4B32S5dRSWpYI94SnRo7bf_3t6ExHj__085ym8SLn8Hp88V41r10mszGe6B5be1k-1ekpfI3hAsG0_vTq8-8iZuGGElytmwtQotudrkaduoffzHnWfWDxuABG5ZlIQIDIL82_gmjrvVUJQ4mf-2u7mdTn0ILu1vhHx0ShuK4omaJutf-I3sAkidURiCfjlxnTkmW-Yqa-PofgdWPb6X--nEGZbnn0gwv444u-FGtNWpQnCZ6h0gEK7TgivxeXeH5E39NB0p_az-qZiRkQAWFbTBcjH2gjLY7pfhpOFhIlyeX0Lm1b0XakhkR_EgSm_tm_HdlBmo9MPfc-SfWgWC0yLxe8TxYjBVxDTR1pAiUMtti5fbzxgbLdUSSjuJWgadfXfUkt0eCB8O2BtVRiEE3kotLQc1F6bFjSEKhtyCqO2SE95r7rCC9DJmE8IV1-0UT55ssQe7US1VFVztekwbOLQ8Tm1fRmePH0Xk-nyyJwjkvopFPGV60DGZmRWl1cC7nfkFQPN38D6VE5xqvJdyAhY2us67g_weY5lB1XRbEwqPcEX_bq9iAuHgEDmjZS0B6mPLemLYN7xos4=w202-h310-no?authuser=0">
+<meta property="article:published_time" content="2022-09-16T04:55:20.000Z">
+<meta property="article:modified_time" content="2022-09-18T15:56:12.596Z">
 <meta property="article:author" content="Jinlk">
-<meta property="article:tag" content="dp">
-<meta property="article:tag" content="一維dp">
-<meta property="article:tag" content="easy">
+<meta property="article:tag" content="dsu">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://lh3.googleusercontent.com/-kv4JOBnXy3_p-OCsmlIp_4EUCpc2v3YhdU3wFr7p7xl1QkeaqHNPUnZQiiqKj_zK0aXat6zCSA-2N7oB07tO4OFCNGOJclFfxMe0bOVf5F3nwylkTVX5Psaolb91BEtS7nE7e-_lZsciDgotUNbEKVho-DjLNAPCZsFEndR04OqsyGrLi4B32S5dRSWpYI94SnRo7bf_3t6ExHj__085ym8SLn8Hp88V41r10mszGe6B5be1k-1ekpfI3hAsG0_vTq8-8iZuGGElytmwtQotudrkaduoffzHnWfWDxuABG5ZlIQIDIL82_gmjrvVUJQ4mf-2u7mdTn0ILu1vhHx0ShuK4omaJutf-I3sAkidURiCfjlxnTkmW-Yqa-PofgdWPb6X--nEGZbnn0gwv444u-FGtNWpQnCZ6h0gEK7TgivxeXeH5E39NB0p_az-qZiRkQAWFbTBcjH2gjLY7pfhpOFhIlyeX0Lm1b0XakhkR_EgSm_tm_HdlBmo9MPfc-SfWgWC0yLxe8TxYjBVxDTR1pAiUMtti5fbzxgbLdUSSjuJWgadfXfUkt0eCB8O2BtVRiEE3kotLQc1F6bFjSEKhtyCqO2SE95r7rCC9DJmE8IV1-0UT55ssQe7US1VFVztekwbOLQ8Tm1fRmePH0Xk-nyyJwjkvopFPGV60DGZmRWl1cC7nfkFQPN38D6VE5xqvJdyAhY2us67g_weY5lB1XRbEwqPcEX_bq9iAuHgEDmjZS0B6mPLemLYN7xos4=w202-h310-no?authuser=0">
   
-  <title>Leetcode 746 - Min Cost Climbing Stairs (一維dp) | JINLK BLOG</title>
+  <title>程式設計研討專題 - Week 1 | JINLK BLOG</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -233,12 +233,12 @@
 </nav>
 
     <div class="banner" id="banner" parallax=true
-         style="background: url('https://pbs.twimg.com/media/D_fQYb5UwAEw59B?format=jpg&name=large') no-repeat center center;
+         style="background: url('https://pbs.twimg.com/media/De2WsTYUEAAiL-i.jpg') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Leetcode 746 - Min Cost Climbing Stairs (一維dp)">
+            <span class="h2" id="subtitle" title="程式設計研討專題 - Week 1">
               
             </span>
 
@@ -248,8 +248,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-09-12 08:01" pubdate>
-        2022年9月12日 早上
+      <time datetime="2022-09-16 12:55" pubdate>
+        2022年9月16日 下午
       </time>
     </span>
   
@@ -259,7 +259,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1.1k 字
+      2.3k 字
     </span>
   
 
@@ -268,7 +268,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      4 分鐘
+      7 分鐘
     </span>
   
 
@@ -304,29 +304,55 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Leetcode 746 - Min Cost Climbing Stairs (一維dp)</h1>
+            <h1 style="display: none">程式設計研討專題 - Week 1</h1>
             
             <div class="markdown-body">
-              <p><a target="_blank" rel="noopener" href="https://leetcode.com/problems/min-cost-climbing-stairs/">題目</a>(easy)<br />
-為<a href="/2022/08/08/leetcode70/">70. Climbing Stairs</a>的延伸題</p>
-<h2 id="題目"><a class="markdownIt-Anchor" href="#題目"></a> 題目</h2>
-<p>You are given an integer array cost where <code>cost[i]</code> is the cost of <code>ith</code> step on a staircase. Once you pay the cost, you can either climb one or two steps.</p>
-<p>You can either start from the step with index <code>0</code>, or the step with index <code>1</code>.</p>
-<p>Return the minimum cost to reach the top of the floor.<br />
-<strong>Example 1:</strong></p>
-<figure class="highlight pgsql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs pgsql"><span class="hljs-keyword">Input</span>: <span class="hljs-keyword">cost</span> = [<span class="hljs-number">10</span>,<span class="hljs-number">15</span>,<span class="hljs-number">20</span>]<br>Output: <span class="hljs-number">15</span><br>Explanation: You will <span class="hljs-keyword">start</span> at <span class="hljs-keyword">index</span> <span class="hljs-number">1.</span><br>- Pay <span class="hljs-number">15</span> <span class="hljs-keyword">and</span> climb two steps <span class="hljs-keyword">to</span> reach the top.<br>The total <span class="hljs-keyword">cost</span> <span class="hljs-keyword">is</span> <span class="hljs-number">15.</span><br></code></pre></div></td></tr></table></figure>
-<p><strong>Example 2:</strong></p>
-<figure class="highlight pgsql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs pgsql"><span class="hljs-keyword">Input</span>: <span class="hljs-keyword">cost</span> = [<span class="hljs-number">1</span>,<span class="hljs-number">100</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">100</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">100</span>,<span class="hljs-number">1</span>]<br>Output: <span class="hljs-number">6</span><br>Explanation: You will <span class="hljs-keyword">start</span> at <span class="hljs-keyword">index</span> <span class="hljs-number">0.</span><br>- Pay <span class="hljs-number">1</span> <span class="hljs-keyword">and</span> climb two steps <span class="hljs-keyword">to</span> reach <span class="hljs-keyword">index</span> <span class="hljs-number">2.</span><br>- Pay <span class="hljs-number">1</span> <span class="hljs-keyword">and</span> climb two steps <span class="hljs-keyword">to</span> reach <span class="hljs-keyword">index</span> <span class="hljs-number">4.</span><br>- Pay <span class="hljs-number">1</span> <span class="hljs-keyword">and</span> climb two steps <span class="hljs-keyword">to</span> reach <span class="hljs-keyword">index</span> <span class="hljs-number">6.</span><br>- Pay <span class="hljs-number">1</span> <span class="hljs-keyword">and</span> climb one step <span class="hljs-keyword">to</span> reach <span class="hljs-keyword">index</span> <span class="hljs-number">7.</span><br>- Pay <span class="hljs-number">1</span> <span class="hljs-keyword">and</span> climb two steps <span class="hljs-keyword">to</span> reach <span class="hljs-keyword">index</span> <span class="hljs-number">9.</span><br>- Pay <span class="hljs-number">1</span> <span class="hljs-keyword">and</span> climb one step <span class="hljs-keyword">to</span> reach the top.<br>The total <span class="hljs-keyword">cost</span> <span class="hljs-keyword">is</span> <span class="hljs-number">6.</span><br></code></pre></div></td></tr></table></figure>
-<p><strong>Constraints:</strong></p>
-<ul>
-<li>2 &lt;= cost.length &lt;= 1000</li>
-<li>0 &lt;= cost[i] &lt;= 999</li>
-</ul>
+              <h1 id="uva-459-graph-connectivity"><a class="markdownIt-Anchor" href="#uva-459-graph-connectivity"></a> UVA 459 - Graph Connectivity</h1>
+<p><a target="_blank" rel="noopener" href="https://vjudge.net/problem/UVA-459">題目連結</a><br />
+Consider a graph G formed from a large number of nodes connected by<br />
+edges. G is said to be connected if a path can be found in 0 or more steps<br />
+between any pair of nodes in G. For example, the graph below is not<br />
+connected because there is no path from A to C.</p>
+<p>This graph contains, however, a number of subgraphs that are connected, one for each of the following sets of nodes: {A}, {B}, {C}, {D}, {E}, {A,B}, {B,D}, {C,E}, {A,B,D}</p>
+<p>A connected subgraph is maximal if there are no nodes and edges in<br />
+the original graph that could be added to the subgraph and still leave<br />
+it connected. There are two maximal connected subgraphs above, one<br />
+associated with the nodes {A, B, D} and the other with the nodes {C, E}.</p>
+<p>Write a program to determine the number of maximal connected subgraphs of a given graph.<br />
+<img src="https://lh3.googleusercontent.com/-kv4JOBnXy3_p-OCsmlIp_4EUCpc2v3YhdU3wFr7p7xl1QkeaqHNPUnZQiiqKj_zK0aXat6zCSA-2N7oB07tO4OFCNGOJclFfxMe0bOVf5F3nwylkTVX5Psaolb91BEtS7nE7e-_lZsciDgotUNbEKVho-DjLNAPCZsFEndR04OqsyGrLi4B32S5dRSWpYI94SnRo7bf_3t6ExHj__085ym8SLn8Hp88V41r10mszGe6B5be1k-1ekpfI3hAsG0_vTq8-8iZuGGElytmwtQotudrkaduoffzHnWfWDxuABG5ZlIQIDIL82_gmjrvVUJQ4mf-2u7mdTn0ILu1vhHx0ShuK4omaJutf-I3sAkidURiCfjlxnTkmW-Yqa-PofgdWPb6X--nEGZbnn0gwv444u-FGtNWpQnCZ6h0gEK7TgivxeXeH5E39NB0p_az-qZiRkQAWFbTBcjH2gjLY7pfhpOFhIlyeX0Lm1b0XakhkR_EgSm_tm_HdlBmo9MPfc-SfWgWC0yLxe8TxYjBVxDTR1pAiUMtti5fbzxgbLdUSSjuJWgadfXfUkt0eCB8O2BtVRiEE3kotLQc1F6bFjSEKhtyCqO2SE95r7rCC9DJmE8IV1-0UT55ssQe7US1VFVztekwbOLQ8Tm1fRmePH0Xk-nyyJwjkvopFPGV60DGZmRWl1cC7nfkFQPN38D6VE5xqvJdyAhY2us67g_weY5lB1XRbEwqPcEX_bq9iAuHgEDmjZS0B6mPLemLYN7xos4=w202-h310-no?authuser=0" srcset="/img/loading.gif" lazyload alt="" /></p>
+<p><strong>Input</strong><br />
+The input begins with a single positive integer on a line by itself indicating the number of the cases<br />
+following, each of them as described below. This line is followed by a blank line, and there is also a<br />
+blank line between two consecutive inputs.</p>
+<p>The first line of each input set contains a single uppercase alphabetic character. This character<br />
+represents the largest node name in the graph. Each successive line contains a pair of uppercase<br />
+alphabetic characters denoting an edge in the graph.</p>
+<p>The sample input section contains a possible input set for the graph pictured above.</p>
+<p>Input is terminated by a blank line.</p>
+<p><strong>Output</strong><br />
+For each test case, write in the output the number of maximal connected subgraphs. The outputs of<br />
+two consecutive cases will be separated by a blank line.</p>
+<p><strong>Sample Input</strong></p>
+<figure class="highlight excel"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs excel"><span class="hljs-number">1</span><br>E<br>AB<br>CE<br><span class="hljs-built_in">DB</span><br>EC<br></code></pre></div></td></tr></table></figure>
+<p><strong>Sample Output</strong></p>
+<figure class="highlight"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs">2<br></code></pre></div></td></tr></table></figure>
 <h2 id="想法"><a class="markdownIt-Anchor" href="#想法"></a> 想法</h2>
-<p>初始化: <code>dp[0]=0 dp[1]=0 dp[2]=0</code><br />
-轉移式: <code>dp[i]=min(dp[i-1]+cost[i-2],dp[i-2]+cost[i-3])</code></p>
-<h2 id="code"><a class="markdownIt-Anchor" href="#code"></a> Code</h2>
-<figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs C"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> &#123;</span><br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">minCostClimbingStairs</span><span class="hljs-params">(<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&amp; cost)</span> </span>&#123;<br>        <span class="hljs-keyword">int</span> dp[cost.size()+<span class="hljs-number">2</span>];<br>        dp[<span class="hljs-number">0</span>]=<span class="hljs-number">0</span>; dp[<span class="hljs-number">1</span>]=<span class="hljs-number">0</span>; dp[<span class="hljs-number">2</span>]=<span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">3</span>;i&lt;=cost.size()+<span class="hljs-number">1</span>;i++)<br>        &#123;<br>            dp[i]=min(dp[i<span class="hljs-number">-1</span>]+cost[i<span class="hljs-number">-2</span>],dp[i<span class="hljs-number">-2</span>]+cost[i<span class="hljs-number">-3</span>]);<br>        &#125;<br>        <span class="hljs-keyword">return</span> dp[cost.size()+<span class="hljs-number">1</span>];<br>    &#125;<br>&#125;;<br></code></pre></div></td></tr></table></figure>
+<p><strong>並查集</strong>模板題，加上紀錄連通快數量。<br />
+題外話: 被這題的輸出格式搞好久@@，每筆輸出中間要隔一行，一開始沒看到，一直卡<code>Presentation Error</code>。</p>
+<ul>
+<li>初始化</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs C">ll p[MAXN];<br><span class="hljs-keyword">for</span>(ll i=<span class="hljs-number">0</span>;i&lt;p.length();i++)    p[i]=i;<br></code></pre></div></td></tr></table></figure>
+<ul>
+<li>查找</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs C"><span class="hljs-function">ll <span class="hljs-title">find</span><span class="hljs-params">(ll x)</span> <span class="hljs-comment">//查找 + 路徑壓縮</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">if</span>(p[x]!=x) p[x]=find(p[x]);<br>    <span class="hljs-keyword">return</span> p[x];<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<ul>
+<li>合併</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs C">p[find(a)]=find(b)<br></code></pre></div></td></tr></table></figure>
+<h2 id="code"><a class="markdownIt-Anchor" href="#code"></a> code</h2>
+<figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs C"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> IO cin.tie(0);cout.tie(0);ios_base::sync_with_stdio(0)</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> ll long long </span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><span class="hljs-keyword">const</span> ll MAXN = <span class="hljs-number">30</span>;<br>ll t,p[MAXN];<br><span class="hljs-built_in">string</span> s;<br><span class="hljs-keyword">bool</span> wtf_blank_line=<span class="hljs-number">0</span>;<br><span class="hljs-function">ll <span class="hljs-title">find</span><span class="hljs-params">(ll x)</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">if</span>(p[x]!=x) p[x]=find(p[x]);<br>    <span class="hljs-keyword">return</span> p[x];<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    IO;<br>    <span class="hljs-built_in">cin</span>&gt;&gt;t;<br>    <span class="hljs-keyword">while</span>(t--)<br>    &#123;<br>        <span class="hljs-keyword">if</span>(wtf_blank_line)  <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">&#x27;\n&#x27;</span>;<br>        wtf_blank_line=<span class="hljs-number">1</span>;<br>        <span class="hljs-built_in">cin</span>&gt;&gt;s;<br>        <span class="hljs-built_in">cin</span>.ignore();<br>        <span class="hljs-keyword">int</span> sz=s[<span class="hljs-number">0</span>]-<span class="hljs-string">&#x27;A&#x27;</span>+<span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">for</span>(ll i=<span class="hljs-number">0</span>;i&lt;sz;i++)    p[i]=i;<br>        <span class="hljs-keyword">while</span>(getline(<span class="hljs-built_in">cin</span>,s)&amp;&amp;!s.empty())<br>            p[find(s[<span class="hljs-number">0</span>]-<span class="hljs-string">&#x27;A&#x27;</span>)]=find(s[<span class="hljs-number">1</span>]-<span class="hljs-string">&#x27;A&#x27;</span>);<br>        <span class="hljs-built_in">set</span>&lt;ll&gt; ans;<br>        <span class="hljs-keyword">for</span>(ll i=<span class="hljs-number">0</span>;i&lt;sz;i++)    ans.insert(find(p[i]));<br>        <span class="hljs-built_in">cout</span>&lt;&lt;ans.size()&lt;&lt;<span class="hljs-string">&#x27;\n&#x27;</span>;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;   <br></code></pre></div></td></tr></table></figure>
             </div>
             <hr>
             <div>
@@ -337,7 +363,7 @@
                     
                       <a class="hover-with-bg" href="/categories/%E7%AD%86%E8%A8%98/">筆記</a>
                     
-                      <a class="hover-with-bg" href="/categories/%E7%AD%86%E8%A8%98/Leetcode/">Leetcode</a>
+                      <a class="hover-with-bg" href="/categories/%E7%AD%86%E8%A8%98/%E7%A8%8B%E5%BC%8F%E8%A8%AD%E8%A8%88%E7%A0%94%E8%A8%8E%E5%B0%88%E9%A1%8C/">程式設計研討專題</a>
                     
                   </div>
                 
@@ -345,11 +371,7 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/dp/">dp</a>
-                    
-                      <a class="hover-with-bg" href="/tags/%E4%B8%80%E7%B6%ADdp/">一維dp</a>
-                    
-                      <a class="hover-with-bg" href="/tags/easy/">easy</a>
+                      <a class="hover-with-bg" href="/tags/dsu/">dsu</a>
                     
                   </div>
                 
@@ -366,18 +388,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/09/13/leetcode198/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Leetcode 198 - House Robber (一維dp)</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/09/05/leetcode344/">
-                        <span class="hidden-mobile">Leetcode 344 - Reverse String [2-pointers]</span>
+                      <a href="/2022/09/13/leetcode300/">
+                        <span class="hidden-mobile">Leetcode 300 - Longest Increasing Subsequence (一維dp)</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
