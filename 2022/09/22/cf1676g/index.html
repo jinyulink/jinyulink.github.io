@@ -16,23 +16,26 @@
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
   
   <meta name="theme-color" content="#252626">
-  <meta name="description" content="程式設計研討專題 第一周 題目">
+  <meta name="description" content="codeforces dfs">
   <meta name="author" content="Jinlk">
   <meta name="keywords" content="Jinlk , jinlk , jinyulink , jin , jin blog">
-  <meta name="description" content="程式設計研討專題 第一周 題目">
+  <meta name="description" content="codeforces dfs">
 <meta property="og:type" content="article">
-<meta property="og:title" content="程式設計研討專題 - Week 1">
-<meta property="og:url" content="http://jinlk.site/2022/09/16/cp_course1/index.html">
+<meta property="og:title" content="Codeforces - White-Black Balanced Subtrees (dfs)">
+<meta property="og:url" content="http://jinlk.site/2022/09/22/cf1676g/index.html">
 <meta property="og:site_name" content="JINLK BLOG">
-<meta property="og:description" content="程式設計研討專題 第一周 題目">
+<meta property="og:description" content="codeforces dfs">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2022-09-16T04:55:20.000Z">
-<meta property="article:modified_time" content="2022-09-21T15:27:29.743Z">
+<meta property="og:image" content="https://espresso.codeforces.com/8c1febaf1c81cdd195e3c3599b9900b7e37baf5c.png">
+<meta property="article:published_time" content="2022-09-22T00:33:20.000Z">
+<meta property="article:modified_time" content="2022-09-22T12:41:57.863Z">
 <meta property="article:author" content="Jinlk">
-<meta property="article:tag" content="dsu">
+<meta property="article:tag" content="codeforces">
+<meta property="article:tag" content="dfs">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://espresso.codeforces.com/8c1febaf1c81cdd195e3c3599b9900b7e37baf5c.png">
   
-  <title>程式設計研討專題 - Week 1 | JINLK BLOG</title>
+  <title>Codeforces - White-Black Balanced Subtrees (dfs) | JINLK BLOG</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -231,12 +234,12 @@
 </nav>
 
     <div class="banner" id="banner" parallax=true
-         style="background: url('https://pbs.twimg.com/media/De2WsTYUEAAiL-i.jpg') no-repeat center center;
+         style="background: url('https://pbs.twimg.com/media/EMxcaJ3U0AAZF2d?format=jpg&name=large') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="程式設計研討專題 - Week 1">
+            <span class="h2" id="subtitle" title="Codeforces - White-Black Balanced Subtrees (dfs)">
               
             </span>
 
@@ -246,8 +249,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-09-16 12:55" pubdate>
-        2022年9月16日 下午
+      <time datetime="2022-09-22 08:33" pubdate>
+        2022年9月22日 早上
       </time>
     </span>
   
@@ -257,7 +260,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      2k 字
+      2.5k 字
     </span>
   
 
@@ -266,7 +269,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      6 分鐘
+      8 分鐘
     </span>
   
 
@@ -302,34 +305,36 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">程式設計研討專題 - Week 1</h1>
+            <h1 style="display: none">Codeforces - White-Black Balanced Subtrees (dfs)</h1>
             
             <div class="markdown-body">
-              <h1 id="uva-459-graph-connectivity"><a class="markdownIt-Anchor" href="#uva-459-graph-connectivity"></a> UVA 459 - Graph Connectivity</h1>
-<p><a target="_blank" rel="noopener" href="https://vjudge.net/problem/UVA-459">題目連結</a></p>
+              <p><a target="_blank" rel="noopener" href="https://codeforces.com/problemset/problem/1676/G">題目連結</a></p>
+<h2 id="題目"><a class="markdownIt-Anchor" href="#題目"></a> 題目</h2>
+<p>You are given a rooted tree consisting of n vertices numbered from 1 to n. The root is vertex 1. There is also a string s denoting the color of each vertex: if si=B, then vertex i is black, and if si=W, then vertex i is white.</p>
+<p>A subtree of the tree is called balanced if the number of white vertices equals the number of black vertices. Count the number of balanced subtrees.</p>
+<p>A tree is a connected undirected graph without cycles. A rooted tree is a tree with a selected vertex, which is called the root. In this problem, all trees have root 1.</p>
+<p>The tree is specified by an array of parents a2,…,an containing n−1 numbers: ai is the parent of the vertex with the number i for all i=2,…,n. The parent of a vertex u is a vertex that is the next vertex on a simple path from u to the root.</p>
+<p>The subtree of a vertex u is the set of all vertices that pass through u on a simple path to the root. For example, in the picture below, 7 is in the subtree of 3 because the simple path 7→5→3→1 passes through 3. Note that a vertex is included in its subtree, and the subtree of the root is the entire tree.<br />
+<img src="https://espresso.codeforces.com/8c1febaf1c81cdd195e3c3599b9900b7e37baf5c.png" srcset="/img/loading.gif" lazyload alt="" /><br />
+The picture shows the tree for n=7, a=[1,1,2,3,3,5], and s=WBBWWBW. The subtree at the vertex 3 is balanced.</p>
+<p><strong>Input</strong><br />
+The first line of input contains an integer t (1≤t≤1e4) — the number of test cases.</p>
+<p>The first line of each test case contains an integer n (2≤n≤4000) — the number of vertices in the tree.</p>
+<p>The second line of each test case contains n−1 integers a2,…,an (1≤ai&lt;i) — the parents of the vertices 2,…,n.</p>
+<p>The third line of each test case contains a string s of length n consisting of the characters B and W — the coloring of the tree.</p>
+<p>It is guaranteed that the sum of the values n over all test cases does not exceed 2⋅1e5.</p>
+<p><strong>Output</strong><br />
+For each test case, output a single integer — the number of balanced subtrees.</p>
+<p><strong>Example</strong></p>
+<figure class="highlight apache"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs apache"><span class="hljs-attribute">3</span><br><span class="hljs-attribute">7</span><br><span class="hljs-attribute">1</span> <span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">3</span> <span class="hljs-number">5</span><br><span class="hljs-attribute">WBBWWBW</span><br><span class="hljs-attribute">2</span><br><span class="hljs-attribute">1</span><br><span class="hljs-attribute">BW</span><br><span class="hljs-attribute">8</span><br><span class="hljs-attribute">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">4</span> <span class="hljs-number">5</span> <span class="hljs-number">6</span> <span class="hljs-number">7</span><br><span class="hljs-attribute">BWBWBWBW</span><br></code></pre></div></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs">2<br>1<br>4<br></code></pre></div></td></tr></table></figure>
 <h2 id="想法"><a class="markdownIt-Anchor" href="#想法"></a> 想法</h2>
-<p><strong>並查集</strong>模板題，加上紀錄連通快數量。<br />
-題外話: 被這題的輸出格式搞好久@@，每筆輸出中間要隔一行，一開始沒看到，一直卡<code>Presentation Error</code>。</p>
-<ul>
-<li>初始化</li>
-</ul>
-<figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs C">ll p[MAXN];<br><span class="hljs-keyword">for</span>(ll i=<span class="hljs-number">0</span>;i&lt;p.length();i++)    p[i]=i;<br></code></pre></div></td></tr></table></figure>
-<ul>
-<li>查找</li>
-</ul>
-<figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs C"><span class="hljs-function">ll <span class="hljs-title">find</span><span class="hljs-params">(ll x)</span> <span class="hljs-comment">//查找 + 路徑壓縮</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">if</span>(p[x]!=x) p[x]=find(p[x]);<br>    <span class="hljs-keyword">return</span> p[x];<br>&#125;<br></code></pre></div></td></tr></table></figure>
-<ul>
-<li>合併</li>
-</ul>
-<figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs C">p[find(a)]=find(b)<br></code></pre></div></td></tr></table></figure>
+<p><strong>dfs</strong>，開一個<code>f</code>二維陣列，<code>f[i][0]</code>為以i為根的子樹中黑色節點數，<code>f[i][1]</code>為以i為根的子樹中白色節點數，最後判斷<code>f[i][0] == f[i][1]</code>，如果相等，則<code>ans++</code>。</p>
 <h2 id="code"><a class="markdownIt-Anchor" href="#code"></a> code</h2>
-<figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs C"><span class="hljs-comment">// 程式設計研討專題 Week 1</span><br><span class="hljs-comment">// UVA 459 Graph Connectivity</span><br><span class="hljs-comment">// Disjoint Set Union</span><br><span class="hljs-comment">// 2022/09/21</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> IO cin.tie(0);cout.tie(0);ios_base::sync_with_stdio(false)</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> ll long long </span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><span class="hljs-keyword">const</span> ll MAXN = <span class="hljs-number">30</span>;<br>ll t,sz,p[MAXN];<br><span class="hljs-built_in">string</span> s;<br><span class="hljs-built_in">set</span>&lt;ll&gt; ans;<br><span class="hljs-keyword">bool</span> blank_line;<br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">initial</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    ans.clear();<br>    <span class="hljs-keyword">for</span>(ll i=<span class="hljs-number">0</span>;i&lt;sz;i++)    p[i]=i;<br>&#125;<br><span class="hljs-function">ll <span class="hljs-title">find</span><span class="hljs-params">(ll x)</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">if</span>(p[x]!=x) p[x]=find(p[x]);<br>    <span class="hljs-keyword">return</span> p[x];<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">union_set</span><span class="hljs-params">(<span class="hljs-keyword">char</span> a,<span class="hljs-keyword">char</span> b)</span></span><br><span class="hljs-function"></span>&#123;<br>    p[find(a-<span class="hljs-string">&#x27;A&#x27;</span>)]=find(b-<span class="hljs-string">&#x27;A&#x27;</span>);<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    IO;<br>    <span class="hljs-built_in">cin</span>&gt;&gt;t;<br>    <span class="hljs-keyword">while</span>(t--)<br>    &#123;<br>        <span class="hljs-keyword">if</span>(blank_line)  <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">&#x27;\n&#x27;</span>;<br>        blank_line=<span class="hljs-literal">true</span>;<br>        <span class="hljs-built_in">cin</span>&gt;&gt;s;<br>        sz=s[<span class="hljs-number">0</span>]-<span class="hljs-string">&#x27;A&#x27;</span>+<span class="hljs-number">1</span>;<br>        initial();<br>        <span class="hljs-built_in">cin</span>.ignore();<br>        <span class="hljs-keyword">while</span>(getline(<span class="hljs-built_in">cin</span>,s)&amp;&amp;!s.empty())<br>            union_set(s[<span class="hljs-number">0</span>],s[<span class="hljs-number">1</span>]);<br>        <span class="hljs-keyword">for</span>(ll i=<span class="hljs-number">0</span>;i&lt;sz;i++)    ans.insert(find(p[i]));<br>        <span class="hljs-built_in">cout</span>&lt;&lt;ans.size()&lt;&lt;<span class="hljs-string">&#x27;\n&#x27;</span>;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;  <br></code></pre></div></td></tr></table></figure>
-<h1 id="uva-10324-zeros-and-ones"><a class="markdownIt-Anchor" href="#uva-10324-zeros-and-ones"></a> UVA 10324 Zeros and Ones</h1>
-<p><a target="_blank" rel="noopener" href="https://vjudge.net/problem/UVA-10324">題目連結</a></p>
-<h2 id="想法-2"><a class="markdownIt-Anchor" href="#想法-2"></a> 想法</h2>
-<p>用前綴和，如果<code>a~b</code>區間的和為<code>0</code>或<code>b-a+1</code>，則答案為<code>Yes</code>。</p>
-<h2 id="code-2"><a class="markdownIt-Anchor" href="#code-2"></a> code</h2>
-<figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs C"><span class="hljs-comment">// 程式設計研究專題 Week 1</span><br><span class="hljs-comment">// UVA 10324 Zeros and Ones</span><br><span class="hljs-comment">// Prefix Sum</span><br><span class="hljs-comment">// 2022/09/21</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> IO cin.tie(0);cout.tie(0);ios_base::sync_with_stdio(false)</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> ll long long</span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><span class="hljs-keyword">const</span> ll MAXN= <span class="hljs-number">1e7</span>+<span class="hljs-number">10</span>;<br><span class="hljs-built_in">string</span> s;<br>ll t,a,b,p[MAXN],cnt=<span class="hljs-number">1</span>;<br><span class="hljs-keyword">bool</span> ans;<br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">initial</span><span class="hljs-params">()</span> <span class="hljs-comment">//prefix sum</span></span><br><span class="hljs-function"></span>&#123;<br>    p[<span class="hljs-number">0</span>]=<span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span>(ll i=<span class="hljs-number">1</span>;i&lt;=s.length();i++)    p[i]=p[i<span class="hljs-number">-1</span>]+(s[i<span class="hljs-number">-1</span>]-<span class="hljs-string">&#x27;0&#x27;</span>);<br>    <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">&quot;Case &quot;</span>&lt;&lt;cnt++&lt;&lt;<span class="hljs-string">&quot;:\n&quot;</span>;<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    IO;<br>    <span class="hljs-keyword">while</span>(<span class="hljs-built_in">cin</span>&gt;&gt;s)<br>    &#123;<br>        initial();<br>        <span class="hljs-built_in">cin</span>&gt;&gt;t;<br>        <span class="hljs-keyword">while</span>(t--)<br>        &#123;<br>            ans=<span class="hljs-literal">false</span>;<br>            <span class="hljs-built_in">cin</span>&gt;&gt;a&gt;&gt;b;<br>            <span class="hljs-keyword">if</span>(a&gt;b) swap(a,b);<br>            <span class="hljs-keyword">if</span>((p[b+<span class="hljs-number">1</span>]-p[a])==<span class="hljs-number">0</span>||(p[b+<span class="hljs-number">1</span>]-p[a])==(b-a+<span class="hljs-number">1</span>))    ans=<span class="hljs-literal">true</span>;<br>            <span class="hljs-keyword">if</span>(ans) <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">&quot;Yes\n&quot;</span>;<br>            <span class="hljs-keyword">else</span>    <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">&quot;No\n&quot;</span>;<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs C"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> IO cin.tie(0);cout.tie(0);ios_base::sync_with_stdio(false)</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> ll long long</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> vt vector</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> pb push_back</span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><span class="hljs-keyword">const</span> ll MAXN = <span class="hljs-number">4e3</span>+<span class="hljs-number">10</span>;<br>ll t,n,ans,f[MAXN][<span class="hljs-number">2</span>]; <span class="hljs-comment">// f[i][0]=i的子樹組黑點的數量 f[i][1]=i的子樹組白點的數量</span><br>vt&lt;ll&gt; e[MAXN];<br><span class="hljs-built_in">string</span> s;<br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">initial</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">for</span>(ll i=<span class="hljs-number">0</span>;i&lt;=MAXN;i++) e[i].clear();<br>    <span class="hljs-built_in">memset</span>(f,<span class="hljs-number">0</span>,<span class="hljs-keyword">sizeof</span> f);<br>    ans=<span class="hljs-number">0</span>;<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">dfs</span><span class="hljs-params">(ll x)</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">if</span>(s[x<span class="hljs-number">-1</span>]==<span class="hljs-string">&#x27;B&#x27;</span>)   f[x][<span class="hljs-number">0</span>]++;<br>    <span class="hljs-keyword">else</span>    f[x][<span class="hljs-number">1</span>]++;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">auto</span> y:e[x])<br>    &#123;<br>        dfs(y);<br>        f[x][<span class="hljs-number">0</span>]+=f[y][<span class="hljs-number">0</span>];<br>        f[x][<span class="hljs-number">1</span>]+=f[y][<span class="hljs-number">1</span>];<br>    &#125;<br>    <span class="hljs-keyword">if</span>(f[x][<span class="hljs-number">0</span>]==f[x][<span class="hljs-number">1</span>])    ans++;<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    IO;<br>    <span class="hljs-built_in">cin</span>&gt;&gt;t;<br>    <span class="hljs-keyword">while</span>(t--)<br>    &#123;<br>        initial();<br>        <span class="hljs-built_in">cin</span>&gt;&gt;n;<br>        <span class="hljs-keyword">for</span>(ll i=<span class="hljs-number">2</span>;i&lt;=n;i++)<br>        &#123;<br>            ll x; <span class="hljs-built_in">cin</span>&gt;&gt;x;<br>            e[x].pb(i); <span class="hljs-comment">//x的兒子是i</span><br>        &#125;<br>        <span class="hljs-built_in">cin</span>&gt;&gt;s;<br>        dfs(<span class="hljs-number">1</span>);<br>        <span class="hljs-built_in">cout</span>&lt;&lt;ans&lt;&lt;<span class="hljs-string">&#x27;\n&#x27;</span>;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<h2 id="參考"><a class="markdownIt-Anchor" href="#參考"></a> 參考</h2>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1c34y1a7DH/?spm_id_from=333.337.search-card.all.click&amp;vd_source=d56494e884bbff85cb781c97e8df18a3">Bilibili</a></p>
+
             </div>
             <hr>
             <div>
@@ -340,7 +345,7 @@
                     
                       <a class="hover-with-bg" href="/categories/%E7%AD%86%E8%A8%98/">筆記</a>
                     
-                      <a class="hover-with-bg" href="/categories/%E7%AD%86%E8%A8%98/%E7%A8%8B%E5%BC%8F%E8%A8%AD%E8%A8%88%E7%A0%94%E8%A8%8E%E5%B0%88%E9%A1%8C/">程式設計研討專題</a>
+                      <a class="hover-with-bg" href="/categories/%E7%AD%86%E8%A8%98/Codeforces/">Codeforces</a>
                     
                   </div>
                 
@@ -348,7 +353,9 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/dsu/">dsu</a>
+                      <a class="hover-with-bg" href="/tags/codeforces/">codeforces</a>
+                    
+                      <a class="hover-with-bg" href="/tags/dfs/">dfs</a>
                     
                   </div>
                 
@@ -365,18 +372,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/09/22/cf1676g/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Codeforces - White-Black Balanced Subtrees (dfs)</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/09/13/leetcode300/">
-                        <span class="hidden-mobile">Leetcode 300 - Longest Increasing Subsequence (一維dp)</span>
+                      <a href="/2022/09/16/cp_course1/">
+                        <span class="hidden-mobile">程式設計研討專題 - Week 1</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
