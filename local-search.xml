@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>NCPC 2022 初賽 心得</title>
+    <link href="/2022/10/02/ncpc_first_2022/"/>
+    <url>/2022/10/02/ncpc_first_2022/</url>
+    
+    <content type="html"><![CDATA[<h2 id="賽前"><a class="markdownIt-Anchor" href="#賽前"></a> 賽前</h2><p>從暑假開始斷斷續續的每周團練，結果賽前兩天立確診 😭 ，趕緊發文在社團問有沒有人可以當我們的隊友，但都沒人回…，最後還好隨風幫我們找到一個資工大二的(總召好carry)，找到的這個隊友其實也蠻鬼的，會python，然後leetcode刷了200題(可怕)，總之，還好可以順利出賽。</p><h2 id="賽中"><a class="markdownIt-Anchor" href="#賽中"></a> 賽中</h2><p>這次比賽應該是三題比較簡單的題目，我們前面進行的蠻順利的，隊友理解的很快，也幫忙偵錯我的code，算蠻快就解出前三題的，我們那時還排在校內第二，但可惜我寫pB的時候沒看清楚題目寫roundup是無條件進位，導致處理進位問題又花了一點時間+wa了一次，但總之前三題我們的penalty算蠻低的，然後後面一個半小時就都卡在pF了，在看pF的時候我其實沒有很好的跟隊友討論並理解他們的code，導致我自己其實沒有給出有用的想法，直到結束前差不多十分鐘，看到計分板我們變成校內第六，才繃緊神經，提出再開一個map紀錄步數，但有點為時已晚了，不然我感覺我們其實離ac不遠的說。<br />最後還好在第六，晉級的邊緣XD，兩個禮拜後要決賽，再好好拚一波ㄅ，多多刷題，目標icpc銅牌(?)。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>心得</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>icpc</tag>
+      
+      <tag>ncpc</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>2017-2018 ACM-ICPC, NEERC, Southern Subregional Contest, qualification stage</title>
     <link href="/2022/09/25/icpc847/"/>
     <url>/2022/09/25/icpc847/</url>
