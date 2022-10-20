@@ -16,24 +16,23 @@
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
   
   <meta name="theme-color" content="#252626">
-  <meta name="description" content="ncpc 2022 心得">
+  <meta name="description" content="kmp 筆記">
   <meta name="author" content="Jinlk">
   <meta name="keywords" content="Jinlk , jinlk , jinyulink , jin , jin blog">
-  <meta name="description" content="ncpc 2022 心得">
+  <meta name="description" content="kmp 筆記">
 <meta property="og:type" content="article">
-<meta property="og:title" content="NCPC 2022 初賽 心得">
-<meta property="og:url" content="http://jinlk.site/2022/10/02/ncpc_first_2022/index.html">
+<meta property="og:title" content="UVA 10679 I Love Strings!!">
+<meta property="og:url" content="http://jinlk.site/2022/10/06/kmp/index.html">
 <meta property="og:site_name" content="JINLK BLOG">
-<meta property="og:description" content="ncpc 2022 心得">
+<meta property="og:description" content="kmp 筆記">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2022-10-02T14:24:20.000Z">
-<meta property="article:modified_time" content="2022-10-02T15:20:51.309Z">
+<meta property="article:published_time" content="2022-10-06T09:11:20.000Z">
+<meta property="article:modified_time" content="2022-10-20T18:07:30.243Z">
 <meta property="article:author" content="Jinlk">
-<meta property="article:tag" content="icpc">
-<meta property="article:tag" content="ncpc">
+<meta property="article:tag" content="kmp">
 <meta name="twitter:card" content="summary_large_image">
   
-  <title>NCPC 2022 初賽 心得 | JINLK BLOG</title>
+  <title>UVA 10679 I Love Strings!! | JINLK BLOG</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -232,12 +231,12 @@
 </nav>
 
     <div class="banner" id="banner" parallax=true
-         style="background: url('https://pbs.twimg.com/media/ExegMZpVEAI1irU?format=jpg&name=large') no-repeat center center;
+         style="background: url('https://i.pinimg.com/originals/87/55/f2/8755f24e096258cae2f19694b84ac8a7.jpg') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="NCPC 2022 初賽 心得">
+            <span class="h2" id="subtitle" title="UVA 10679 I Love Strings!!">
               
             </span>
 
@@ -247,8 +246,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-10-02 22:24" pubdate>
-        2022年10月2日 晚上
+      <time datetime="2022-10-06 17:11" pubdate>
+        2022年10月6日 下午
       </time>
     </span>
   
@@ -258,7 +257,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      476 字
+      1.5k 字
     </span>
   
 
@@ -267,7 +266,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1 分鐘
+      5 分鐘
     </span>
   
 
@@ -303,15 +302,21 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">NCPC 2022 初賽 心得</h1>
+            <h1 style="display: none">UVA 10679 I Love Strings!!</h1>
             
             <div class="markdown-body">
-              <h2 id="賽前"><a class="markdownIt-Anchor" href="#賽前"></a> 賽前</h2>
-<p>從暑假開始斷斷續續的每周團練，結果賽前兩天立確診 😭 ，趕緊發文在社團問有沒有人可以當我們的隊友，但都沒人回…，最後還好隨風幫我們找到一個資工大二的(總召好carry)，找到的這個隊友其實也蠻鬼的，會python，然後leetcode刷了200題(可怕)，總之，還好可以順利出賽。</p>
-<h2 id="賽中"><a class="markdownIt-Anchor" href="#賽中"></a> 賽中</h2>
-<p>這次比賽應該是三題比較簡單的題目，我們前面進行的蠻順利的，隊友理解的很快，也幫忙偵錯我的code，算蠻快就解出前三題的，我們那時還排在校內第二，但可惜我寫pB的時候沒看清楚題目寫roundup是無條件進位，導致處理進位問題又花了一點時間+wa了一次，但總之前三題我們的penalty算蠻低的，然後後面一個半小時就都卡在pF了，在看pF的時候我其實沒有很好的跟隊友討論並理解他們的code，導致我自己其實沒有給出有用的想法，直到結束前差不多十分鐘，看到計分板我們變成校內第六，才繃緊神經，提出再開一個map紀錄步數，但有點為時已晚了，不然我感覺我們其實離ac不遠的說。<br />
-最後還好在第六，晉級的邊緣XD，兩個禮拜後要決賽，再好好拚一波ㄅ，多多刷題，目標icpc銅牌(?)。</p>
-
+              <p><a target="_blank" rel="noopener" href="http://jakeboxer.com/blog/2009/12/13/the-knuth-morris-pratt-algorithm-in-my-own-words/">推薦文章連結</a></p>
+<h2 id="模板"><a class="markdownIt-Anchor" href="#模板"></a> 模板</h2>
+<p><a target="_blank" rel="noopener" href="https://github.com/jakao0907/CompetitiveProgrammingCodebook/blob/master/string/KMP.cpp">來自jakao</a></p>
+<figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs C"><span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">KMP</span><span class="hljs-params">(<span class="hljs-built_in">string</span>&amp; t, <span class="hljs-built_in">string</span>&amp; p)</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">if</span> (p.size() &gt; t.size()) <span class="hljs-keyword">return</span>;<br>    <span class="hljs-keyword">for</span> (ll i=<span class="hljs-number">1</span>, j=failure[<span class="hljs-number">0</span>]=<span class="hljs-number">-1</span>; i&lt;p.size(); ++i)<br>    &#123;<br>        <span class="hljs-keyword">while</span> (j &gt;= <span class="hljs-number">0</span> &amp;&amp; p[j+<span class="hljs-number">1</span>] != p[i])<br>            j = failure[j];<br>        <span class="hljs-keyword">if</span> (p[j+<span class="hljs-number">1</span>] == p[i]) j++;<br>        failure[i] = j;<br>    &#125;<br>    <span class="hljs-keyword">for</span> (ll i=<span class="hljs-number">0</span>, j=<span class="hljs-number">-1</span>; i&lt;t.size(); ++i)<br>    &#123;<br>        <span class="hljs-keyword">while</span> (j &gt;= <span class="hljs-number">0</span> &amp;&amp; p[j+<span class="hljs-number">1</span>] != t[i])<br>            j = failure[j];<br>        <span class="hljs-keyword">if</span> (p[j+<span class="hljs-number">1</span>] == t[i]) j++;<br>        <span class="hljs-keyword">if</span> (j == p.size()<span class="hljs-number">-1</span>)<br>        &#123;<br>            <span class="hljs-built_in">cout</span> &lt;&lt; i - p.size() + <span class="hljs-number">1</span>&lt;&lt;<span class="hljs-string">&quot; &quot;</span>; <span class="hljs-comment">//輸出目標字串所位置</span><br>            j = failure[j];<br>        &#125;   <br>    &#125;   <br>&#125;<br></code></pre></div></td></tr></table></figure>
+<h2 id="uva-10679-i-love-strings"><a class="markdownIt-Anchor" href="#uva-10679-i-love-strings"></a> UVA 10679 I Love Strings!!</h2>
+<p><a target="_blank" rel="noopener" href="https://vjudge.net/problem/UVA-10679">題目連結</a><br />
+<strong>Input</strong></p>
+<figure class="highlight awk"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs awk"><span class="hljs-number">2</span> <span class="hljs-regexp">//</span>共兩筆測資<br><br>abcdefghABCDEFGH <span class="hljs-regexp">//</span>主字串<br><span class="hljs-number">2</span> <span class="hljs-regexp">//</span>尋找筆數<br>abc <span class="hljs-regexp">//</span>目標字串<span class="hljs-number">1</span><br>abAB <span class="hljs-regexp">//</span>目標字串<span class="hljs-number">2</span><br><br>xyz<br><span class="hljs-number">1</span><br>xyz<br></code></pre></div></td></tr></table></figure>
+<p><strong>Output</strong></p>
+<figure class="highlight awk"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs awk">y <span class="hljs-regexp">//</span>如果再主字串存在目標字串 則印出y，否則n<br>n<br>y<br></code></pre></div></td></tr></table></figure>
+<h3 id="code"><a class="markdownIt-Anchor" href="#code"></a> code</h3>
+<figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs C"><span class="hljs-comment">// 程式設計研究專題 Week 3</span><br><span class="hljs-comment">// UVA 10679 I Love Strings!!</span><br><span class="hljs-comment">// KMP</span><br><span class="hljs-comment">// 2022/10/06</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> IO cin.tie(0);cout.tie(0);ios_base::sync_with_stdio(false)</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> ll long long </span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><span class="hljs-keyword">const</span> ll MAXN = <span class="hljs-number">1e5</span>+<span class="hljs-number">10</span>;<br>ll t,q;<br><span class="hljs-built_in">string</span> s,qs;<br>ll failure[MAXN];<br><span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">KMP</span><span class="hljs-params">(<span class="hljs-built_in">string</span>&amp; t, <span class="hljs-built_in">string</span>&amp; p)</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">if</span> (p.size() &gt; t.size()) <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>    <span class="hljs-keyword">for</span> (ll i=<span class="hljs-number">1</span>, j=failure[<span class="hljs-number">0</span>]=<span class="hljs-number">-1</span>; i&lt;p.size(); ++i)<br>    &#123;<br>        <span class="hljs-keyword">while</span> (j &gt;= <span class="hljs-number">0</span> &amp;&amp; p[j+<span class="hljs-number">1</span>] != p[i])<br>            j = failure[j];<br>        <span class="hljs-keyword">if</span> (p[j+<span class="hljs-number">1</span>] == p[i]) j++;<br>        failure[i] = j;<br>    &#125;<br>    <span class="hljs-keyword">bool</span> flag=<span class="hljs-literal">false</span>;<br>    <span class="hljs-keyword">for</span> (ll i=<span class="hljs-number">0</span>, j=<span class="hljs-number">-1</span>; i&lt;t.size(); ++i)<br>    &#123;<br>        <span class="hljs-keyword">while</span> (j &gt;= <span class="hljs-number">0</span> &amp;&amp; p[j+<span class="hljs-number">1</span>] != t[i])<br>            j = failure[j];<br>        <span class="hljs-keyword">if</span> (p[j+<span class="hljs-number">1</span>] == t[i]) j++;<br>        <span class="hljs-keyword">if</span> (j == p.size()<span class="hljs-number">-1</span>)<br>        &#123;<br>            flag=<span class="hljs-literal">true</span>;<br>            j = failure[j];<br>        &#125;   <br>    &#125;   <br>    <span class="hljs-keyword">return</span> flag;<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    IO;<br>    <span class="hljs-built_in">cin</span>&gt;&gt;t;<br>    <span class="hljs-keyword">while</span>(t--)<br>    &#123;<br>        <span class="hljs-built_in">cin</span>&gt;&gt;s&gt;&gt;q;<br>        <span class="hljs-keyword">while</span>(q--)<br>        &#123;<br>            <span class="hljs-built_in">cin</span>&gt;&gt;qs;<br>            <span class="hljs-built_in">cout</span>&lt;&lt;(KMP(s,qs)?<span class="hljs-string">&quot;y\n&quot;</span>:<span class="hljs-string">&quot;n\n&quot;</span>);<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
             </div>
             <hr>
             <div>
@@ -320,7 +325,11 @@
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/%E5%BF%83%E5%BE%97/">心得</a>
+                      <a class="hover-with-bg" href="/categories/%E7%AD%86%E8%A8%98/">筆記</a>
+                    
+                      <a class="hover-with-bg" href="/categories/%E7%AD%86%E8%A8%98/%E6%95%B8%E6%93%9A%E7%B5%90%E6%A7%8B/">數據結構</a>
+                    
+                      <a class="hover-with-bg" href="/categories/%E7%AD%86%E8%A8%98/UVA/">UVA</a>
                     
                   </div>
                 
@@ -328,9 +337,7 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/icpc/">icpc</a>
-                    
-                      <a class="hover-with-bg" href="/tags/ncpc/">ncpc</a>
+                      <a class="hover-with-bg" href="/tags/kmp/">kmp</a>
                     
                   </div>
                 
@@ -347,9 +354,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/10/05/leetcode921/">
+                      <a href="/2022/10/16/ncpc_second_2022/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Leetcode 921 - Minimum Add to Make Parentheses Valid (stack)</span>
+                        <span class="hidden-mobile">NCPC 2022 決賽 心得</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -357,8 +364,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/09/25/icpc847/">
-                        <span class="hidden-mobile">2017-2018 ACM-ICPC, NEERC, Southern Subregional Contest, qualification stage</span>
+                      <a href="/2022/10/05/leetcode921/">
+                        <span class="hidden-mobile">Leetcode 921 - Minimum Add to Make Parentheses Valid (stack)</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
