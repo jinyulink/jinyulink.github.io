@@ -11,7 +11,7 @@
   
   <title>
     
-      關於 
+      2023 icpc 桃園站 心得 (待更) 
       
       
       |
@@ -150,53 +150,136 @@
   
 
   
-  <!-- 关于页 url形式：https://yoursite/about/ -->
-    <div class="container about-index">
-      <div class="markdown-body">
-        <p>Jim, 資工系的學生，喜歡寫程式、拍照，嚮往自由，期許自己不要瞎忙。
-這裡紀錄一些日常 / 旅遊 / 筆記 / 經驗分享。</p>
-<h3 id="簡介">簡介</h3>
-<ul>
-<li>中央資工大三</li>
-<li>INFJ</li>
-<li>📷 / 💻</li>
-</ul>
-<h3 id="檢定-比賽">檢定 / 比賽</h3>
-<ul>
-<li>CPE 6/7 1.9%</li>
-<li>ICPC 2023 Asia Taoyuan Site, Bronze Award</li>
-<li>Toeic LR 890 | SW 150 / 170</li>
-</ul>
-<h3 id="經歷">經歷</h3>
-<ul>
-<li>Ncu App developer Team | 2023 - now
-<ul>
-<li>react native, typescript (learning)</li>
-</ul></li>
-<li>Ncu computer center system developer | 2023 - now
-<ul>
-<li>laravel, php, vue, javascript (learning)</li>
-</ul></li>
-<li>World Quant Brain Research Consultant | 2023 - now</li>
-</ul>
-<h3 id="contact">Contact</h3>
-<ul>
-<li>Email: jinyulin34@gmail.com</li>
-<li>IG: <a target="_blank" rel="noopener" href="https://www.instagram.com/jinyu.lk/"><span
-class="citation" data-cites="jinyu.lk">@jinyu.lk</span></a></li>
-<li>TG: <a target="_blank" rel="noopener" href="https://t.me/jinyulink"><span class="citation"
-data-cites="jinyulink">@jinyulink</span></a></li>
-</ul>
-
-      </div>
-    </div>
-  
 
   
 
     
 
   
+  <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
+  <div class="container post-details" id="post-details">
+    <div class="post-content">
+      <div class="post-title">2023 icpc 桃園站 心得 (待更)</div>
+      <div class="post-attach">
+        <span class="post-pubtime">
+          <i class="iconfont icon-updatetime mr-10" title="更新時間"></i>
+          2023-10-25 02:43:23
+        </span>
+        
+      </div>
+      <div class="markdown-body">
+        <h1 id="前言">前言</h1>
+<p>今年靠著topc跟cpe，順利晉級icpc桃園站，這裡記錄一下第一次打icpc的心得。</p>
+<h1 id="出發">出發</h1>
+<p>地點在桃園體育館，從中央到那大眾運輸需要搭公車到中壢站在轉乘台鐵到桃園站，接著步行或騎車，於是比賽當天一早七點就在學校等第一班公車了，大概花了一小時抵達。後來得知其實也可以搭計程車在跟學校報帳(?，不過隊友坐車容易頭暈就作罷。</p>
+<h1 id="比賽">比賽</h1>
+<p>比賽時間從9:30 ~
+14:30，<del>平常這時候大概在睡覺</del>，根據前幾年歷屆
+通常最水兩題是第一題跟最後一題，所以我們就先開這兩題，看了記分板也發現大家都先解這幾題，</p>
+<h2 id="m-簽到題-1-try">M 簽到題, 1 try</h2>
+<h2 id="a-水題-5-try">A 水題, 5 try</h2>
+<p>給至多1000位的數字，判斷是否被13整除；題目提到將該數字從右至左每三位輪流做加減法，得出的數字<code>ans</code>如果可以被13整除，則原數字也可以被13整除。
+輸出<code>ans</code>的絕對值，以及yes / no。</p>
+<p>然後我們沒看到要取絕對值，吃了五個罰時...</p>
+<h2 id="b-數學-5-try">B 數學, 5 try</h2>
+<p>給一循還小數，找出該數值最簡分數。 一開始用python， 用內建 gcd
+不知為啥一直吃re，後來改C++才ac。</p>
+<h2 id="h-2-try">H , 2 try</h2>
+<h2 id="d-模擬-1-try">D 模擬, 1 try</h2>
+<p>給一飛機座位圖，<code>.</code>表示乘客，<code>V</code>表示帶有病毒的乘客，相鄰病毒的乘客需要隔離，輸出每位乘客要隔離的天數。
+其實某種程度也算水題。</p>
+<h2 id="f-模擬-3-try">F 模擬, 3 try</h2>
+<p>給你很多個 task，每個 task 有所需時間跟單位時間罰款，每個 task
+所要支付的總罰款為單位時間罰款乘上前面的總和時間，要重新排序所有 task
+使得罰款總和最小；隊友(學宇)說最近程設專題剛好有遇到類似題目，就解了。</p>
+<h2 id="c-線段樹-2-try">C 線段樹, 2 try</h2>
+<p>給<code>n</code>個燈籠，每個燈籠用<code>si</code>跟<code>pi</code>來表示，<code>si</code>可為0(關)
+/ 1(開) / -1(壞掉)，<code>pi</code>代表該燈籠原始分數。</p>
+<p>給<code>m</code>個操作，有兩種操作:</p>
+<ol type="1">
+<li><code>W l r</code>，將<code>[l, r]</code>區間的燈籠都reverse
+switch</li>
+<li><code>C score</code>，將當前亮著的燈籠全部加上score分</li>
+</ol>
+<p>輸出最終所有燈籠的分數總合。(n &lt;= 1e6, m &lt;= 1e6)</p>
+<p>解這題的時候剩下一小時，已經封版了，我們當時在60+名，所以必須要解掉這題才有牌，雖然知道是線段樹，但我們線段樹實作經驗不多，當下有點緊張。</p>
+<p>最後用線段樹維護區間內亮著的燈籠個數，加上懶標跟壞掉的燈籠前處理，兩次ac，鬆了一口氣(還好有放模板)。</p>
+<p>這題解完剩半小時，想說應該有機會銅牌了，就去吃了點東西，回來
+稍微看了一下L跟J，但沒什麼想法。</p>
+<h2 id="l">L</h2>
+<p>給你一個數字 N，你要分解成很多個數字並且總和是
+N，問你最多可以分解成幾個數字，並且這些數字任取總和都不會是 9。</p>
+<p>後來問其他隊，得知是構造題?
+說實話，我到現在都還不是很確定構造題是怎樣的題目...</p>
+<h2 id="j">J</h2>
+<p>這題花了十分鐘才搞懂題目的意思，給你一張只有一個起點跟一個終點帶有邊權跟點權的
+DAG，問 critical path 長度多少，若 critical path 恰一個，則要輸出該
+path，應該是跟拓樸排序有關，但n跟m只有50跟100，覺得怪怪的，隊友(文獻)說可能最外層要按照時間去遍歷?</p>
+<h1 id="賽後">賽後</h1>
+<p>這次題目相比前幾年或ncpc，真的是非常平易近人，普遍都是7題以上，前十幾名都10題+...</p>
+<p>最終51名/7題拿下一個銅牌。</p>
+<p>能改進的大概就是水題吃太多罰時...，前兩小時總共10個罰時，直接加200
+penalty，要不是今年能解的題目數量變多，不然我們可能罰時就輸了。</p>
+<p>另外還要恭喜中央另外兩隊都有晉級到asia play
+off，真的很強orz，我們隊就看明年能否拿個銀牌吧，今年拿個銅牌，算是符合我們的水準了。</p>
+
+      </div>
+      
+        <div class="prev-or-next">
+          <div class="post-foot-next">
+            
+              <a href="/2023/08/30/2023_summer/" target="_self">
+                <i class="iconfont icon-chevronleft"></i>
+                <span>上一頁</span>
+              </a>
+            
+          </div>
+          <div class="post-attach">
+            <span class="post-pubtime">
+              <i class="iconfont icon-updatetime mr-10" title="更新時間"></i>
+              2023-10-25 02:43:23
+            </span>
+            
+          </div>
+          <div class="post-foot-prev">
+            
+          </div>
+        </div>
+      
+    </div>
+    
+  <div id="btn-catalog" class="btn-catalog">
+    <i class="iconfont icon-catalog"></i>
+  </div>
+  <div class="post-catalog hidden" id="catalog">
+    <div class="title">目錄</div>
+    <div class="catalog-content">
+      
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%87%BA%E7%99%BC"><span class="toc-text">出發</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%AF%94%E8%B3%BD"><span class="toc-text">比賽</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#m-%E7%B0%BD%E5%88%B0%E9%A1%8C-1-try"><span class="toc-text">M 簽到題, 1 try</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#a-%E6%B0%B4%E9%A1%8C-5-try"><span class="toc-text">A 水題, 5 try</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#b-%E6%95%B8%E5%AD%B8-5-try"><span class="toc-text">B 數學, 5 try</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#h-2-try"><span class="toc-text">H , 2 try</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#d-%E6%A8%A1%E6%93%AC-1-try"><span class="toc-text">D 模擬, 1 try</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#f-%E6%A8%A1%E6%93%AC-3-try"><span class="toc-text">F 模擬, 3 try</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#c-%E7%B7%9A%E6%AE%B5%E6%A8%B9-2-try"><span class="toc-text">C 線段樹, 2 try</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#l"><span class="toc-text">L</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#j"><span class="toc-text">J</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%B3%BD%E5%BE%8C"><span class="toc-text">賽後</span></a></li></ol>
+      
+    </div>
+  </div>
+
+  
+<script src="/js/catalog.js"></script>
+
+
+
+
+    
+      <div class="comments-container">
+        
+
+
+
+
+
+
+
+      </div>
+    
+  </div>
+
 
         
 <div class="footer">
@@ -458,12 +541,12 @@ data-cites="jinyulink">@jinyulink</span></a></li>
       </a>
       <div class="share-content hidden">
         
-          <a class="share-item" href="https://twitter.com/intent/tweet?text=' + about + '&url=' + http%3A%2F%2Fexample.com%2Fabout%2Findex.html + '" target="_blank" title="Twitter">
+          <a class="share-item" href="https://twitter.com/intent/tweet?text=' + 2023%20icpc%20%E6%A1%83%E5%9C%92%E7%AB%99%20%E5%BF%83%E5%BE%97%20(%E5%BE%85%E6%9B%B4) + '&url=' + http%3A%2F%2Fexample.com%2F2023%2F10%2F22%2F2023icpc%2F + '" target="_blank" title="Twitter">
             <i class="iconfont icon-twitter"></i>
           </a>
         
         
-          <a class="share-item" href="https://www.facebook.com/sharer.php?u=http://example.com/about/index.html" target="_blank" title="Facebook">
+          <a class="share-item" href="https://www.facebook.com/sharer.php?u=http://example.com/2023/10/22/2023icpc/" target="_blank" title="Facebook">
             <i class="iconfont icon-facebooksquare"></i>
           </a>
         
