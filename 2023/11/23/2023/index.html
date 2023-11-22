@@ -11,7 +11,7 @@
   
   <title>
     
-      archive_a: 2023/8 
+      2023 雜記 
       
       
       |
@@ -110,50 +110,159 @@
 
 
       <div class="flex-container">
-        <!-- 归档页，展示本站所有文章，按照年份降序归类，url形式：https://yoursite/archives/ -->
+        <!-- 文章详情页，展示文章具体内容，url形式：https://yoursite/文章标题/ -->
+<!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
 
-<!-- last: 按年份把文章分组，当前遍历到的年份 -->
-<!-- now: 当前遍历到的文章的发布年份 -->
 
-<div class="container archives">
-  <div class="post-list">
+  <!-- LaTex Display -->
+
+  
+    <script async type="text/javascript" src="/plugins/mathjax/tex-chtml.js"></script>
+  
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      }
+    }
+  </script>
+
+
+
+
+
+  <!-- clipboard -->
+
+  
+    <script async type="text/javascript" src="/plugins/clipboard.min.js"></script>
+  
+  
+<script src="/js/codeCopy.js"></script>
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
     
-        <!-- 后续文章的发布年份呈现 -->
-        <div class="content-title">
-          <h2>
-            <span>2023</span>
-          </h2>
+
+  
+  <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
+  <div class="container post-details" id="post-details">
+    <div class="post-content">
+      <div class="post-title">2023 雜記</div>
+      <div class="post-attach">
+        <span class="post-pubtime">
+          <i class="iconfont icon-updatetime mr-10" title="更新時間"></i>
+          2023-11-23 00:48:02
+        </span>
+        
+      </div>
+      <div class="markdown-body">
+        <h1 id="月---icpc-專題-電算中心">10月 - icpc / 專題 / 電算中心</h1>
+<ul>
+<li>專題開始跟教授開會，想parasite的主題。</li>
+<li>拉icpc隊友學宇跟文獻還有李卓報了Nasa的hackathon，原本只是想水贈品，但是後來肝了半天生出一個<a
+target="_blank" rel="noopener" href="https://wa-automation-nasa.github.io/">網站</a>，最後得了台中站佳作。</li>
+<li>world quant
+alphathon結束，中央第一名(雖然這比賽根本是先卡位先贏)，拿了1000美金跟當顧問。</li>
+<li>跟隊友去師大比ncpc決賽，一大早去租irent從中央開到師大；結果我們打得超爛...晚上在師大吃順便討論icpc怎麼辦。</li>
+<li>考了cpe，題目變難 + 中場離開去開專題會，ac 2題而已
+這比我大一第一次打還爛== 完全在浪費時間。</li>
+<li>電算中心開始跟學長開會，還是很佩服學長作出那個網站，然後一堆資安的漏洞我都不太會修，trace
+code的能力也要加強。</li>
+<li>跟隊友去桃園體育館打icpc，拿了銅牌，算是圓了大一的夢。<a
+href="/2023/10/22/2023icpc/">心得文</a></li>
+<li>機率期中考，意料之中的成績，就是不夠認真。</li>
+<li>計算機網路跟民法期中考，尚可。
+不過我這學期修民法真的很意料之外。</li>
+<li>買了chatGPT plus</li>
+</ul>
+<h1 id="月---wq-曼谷-人工智慧">11月 - wq / 曼谷 / 人工智慧</h1>
+<ul>
+<li>第一次去world
+quant辦公室，那邊的researcher教我們建立自動化產alpha的pipieline，用genetic
+algorithm，很有趣。但我現在只完成串接api登入跟生物驗證用line
+bot寄給我(還特地租了一個vps)。</li>
+<li>第三周全校運動會，只有一有課，過得很爽。</li>
+<li>去清華聽了kronos說明會，感想就是相比其他外國量化公司駐點台灣，kronos總部就在台北，對台灣投入的資源最多，相比其他量化公司，門檻也低了那麼一咪咪；kronos是作虛擬貨幣高頻交易(類似造市商)，對每個員工程式能力要求都比較高，python算是基本，infra
+team的話，c++也要會，程式大概佔70%，wq則是數學金融知識跟程式比例大概各半。</li>
+<li>完成人工智慧的作業2，真的花超多時間。叫我們用RL操作外匯，原本用policy
+gradient訓練到最後變成全買歐元，於是又去作了特徵工程增加一堆特徵再把網路改成lstm模型用dqn，結過score反而變低==，最後交出去的一開始全買歐元的模型...。</li>
+<li>家人參加研討會的緣故，去了一趟泰國曼谷。(這應該之後會再打一篇心得)</li>
+<li>然後，我感受到我程式能力好像還差很遠，python不熟悉，c++其實也只會基本的寫法，很多東西的底層原理都不懂，買了一本c++
+primer，打算好好學一下。</li>
+<li>openAI 第一屆開發者大會，發布GPTs -
+自定義的chatGPT，真心覺得很厲害，我現在基本上就把一本原文書pdf檔案塞進他的knowledge
+base，在經過訓練師的調教，然後我就負責問他問題，他就什麼都能回答了。不過openAI目前不開放plus的訂閱了，說是太多人。</li>
+</ul>
+
+      </div>
+      
+        <div class="prev-or-next">
+          <div class="post-foot-next">
+            
+              <a href="/2023/10/22/2023icpc/" target="_self">
+                <i class="iconfont icon-chevronleft"></i>
+                <span>上一頁</span>
+              </a>
+            
+          </div>
+          <div class="post-attach">
+            <span class="post-pubtime">
+              <i class="iconfont icon-updatetime mr-10" title="更新時間"></i>
+              2023-11-23 00:48:02
+            </span>
+            
+          </div>
+          <div class="post-foot-prev">
+            
+          </div>
         </div>
       
-      <div class="post-item" title="2023 雜記">
-        <div class="time-m-d">11-23</div>
-        <div class="title">
-          <a href="/2023/11/23/2023/">
-            <span>2023 雜記</span>
-          </a>
-        </div>
-      </div>
+    </div>
     
-      <div class="post-item" title="2023 icpc 桃園站 心得">
-        <div class="time-m-d">10-22</div>
-        <div class="title">
-          <a href="/2023/10/22/2023icpc/">
-            <span>2023 icpc 桃園站 心得</span>
-          </a>
-        </div>
-      </div>
+  <div id="btn-catalog" class="btn-catalog">
+    <i class="iconfont icon-catalog"></i>
+  </div>
+  <div class="post-catalog hidden" id="catalog">
+    <div class="title">目錄</div>
+    <div class="catalog-content">
+      
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9C%88---icpc-%E5%B0%88%E9%A1%8C-%E9%9B%BB%E7%AE%97%E4%B8%AD%E5%BF%83"><span class="toc-text">10月 - icpc &#x2F; 專題 &#x2F; 電算中心</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9C%88---wq-%E6%9B%BC%E8%B0%B7-%E4%BA%BA%E5%B7%A5%E6%99%BA%E6%85%A7"><span class="toc-text">11月 - wq &#x2F; 曼谷 &#x2F; 人工智慧</span></a></li></ol>
+      
+    </div>
+  </div>
+
+  
+<script src="/js/catalog.js"></script>
+
+
+
+
     
-      <div class="post-item" title="2023 暑假總結">
-        <div class="time-m-d">08-20</div>
-        <div class="title">
-          <a href="/2023/08/20/2023_summer/">
-            <span>2023 暑假總結</span>
-          </a>
-        </div>
+      <div class="comments-container">
+        
+
+
+
+
+
+
+
       </div>
     
   </div>
-</div>
+
 
         
 <div class="footer">
@@ -408,6 +517,24 @@
 
 
         
+  
+    <div class="share-icon tools-bar-item">
+      <a href="javascript: void(0)" id="share-icon">
+        <i class="iconfont iconshare"></i>
+      </a>
+      <div class="share-content hidden">
+        
+          <a class="share-item" href="https://twitter.com/intent/tweet?text=' + 2023%20%E9%9B%9C%E8%A8%98 + '&url=' + http%3A%2F%2Fexample.com%2F2023%2F11%2F23%2F2023%2F + '" target="_blank" title="Twitter">
+            <i class="iconfont icon-twitter"></i>
+          </a>
+        
+        
+          <a class="share-item" href="https://www.facebook.com/sharer.php?u=http://example.com/2023/11/23/2023/" target="_blank" title="Facebook">
+            <i class="iconfont icon-facebooksquare"></i>
+          </a>
+        
+      </div>
+    </div>
   
   
 <script src="/js/shares.js"></script>
