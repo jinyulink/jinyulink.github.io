@@ -169,7 +169,7 @@
       <div class="post-attach">
         <span class="post-pubtime">
           <i class="iconfont icon-updatetime mr-10" title="更新時間"></i>
-          2024-02-20 09:17:12
+          2024-02-21 09:34:15
         </span>
         
       </div>
@@ -199,10 +199,31 @@ target="_blank" rel="noopener" href="https://leetcode.com/problems/contains-dupl
 Duplicate</a></h2>
 <p>給一個整數陣列，判斷是否有重複的數字。</p>
 <p>Hashmap: O(n)。</p>
-<h2 id="product-of-array-except-self">4. <a
+<h2 id="product-of-array-except-self-待">4. <a
 target="_blank" rel="noopener" href="https://leetcode.com/problems/product-of-array-except-self/">Product
-of Array Except Self</a></h2>
+of Array Except Self</a> (待)</h2>
 <p>給一個整數陣列，計算除了自己以外的所有數字的乘積。</p>
+<h2 id="maximum-subarray">5. <a
+target="_blank" rel="noopener" href="https://leetcode.com/problems/maximum-subarray/">Maximum
+Subarray</a></h2>
+<p>給一個整數陣列，找出和最大的subarray。</p>
+<p>暴力解: 兩層迴圈，時間複雜度O(n^2)。</p>
+<p>dp: f[i] = max(f[i-1] + nums[i], nums[i])，O(n)，這樣空間O(n)。</p>
+<p>Kadane's algorithm:
+O(n)，基本上就是dp優化版本，因為每次我們只需要f[i-1]，實際上可以不用開到一整個陣列去存，維護一個變數就好了，這樣空間O(1)。維護curMax代表以i為結尾的subarray的最大和，每次更新答案。</p>
+<h2 id="maximum-product-subarray">6. <a
+target="_blank" rel="noopener" href="https://leetcode.com/problems/maximum-product-subarray/">Maximum
+Product Subarray</a></h2>
+<p>給一個整數陣列，找出和最大的subarray的乘積。</p>
+<p>想法跟上一題差不多，用kadane's
+algorithm，可以達到O(n)，空間O(1)，但是要多維護一個curMin，因為負數的存在，最大的乘積可能是負數乘上負數。也就是說維護curMax和curMin，每次更新答案。</p>
+<h2 id="find-minimum-in-rotated-sorted-array">7. <a
+target="_blank" rel="noopener" href="https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/">Find
+Minimum in Rotated Sorted Array</a></h2>
+<p>給一個sorted array，這個array被rotate了，找出最小的數字。 eg.
+[4,5,6,7,0,1,2] -&gt; 0</p>
+<p>Naive: 掃一遍，O(n)。</p>
+<p>Binary search: O(logn)。</p>
 
       </div>
       
@@ -218,7 +239,7 @@ of Array Except Self</a></h2>
           <div class="post-attach">
             <span class="post-pubtime">
               <i class="iconfont icon-updatetime mr-10" title="更新時間"></i>
-              2024-02-20 09:17:12
+              2024-02-21 09:34:15
             </span>
             
           </div>
@@ -239,8 +260,11 @@ of Array Except Self</a></h2>
         <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#array"><span class="toc-text">Array</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#two-sum"><span class="toc-text">1. Two
 Sum</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#best-time-to-buy-and-sell-stock"><span class="toc-text">2. Best
 Time to Buy and Sell Stock</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#contains-duplicate"><span class="toc-text">3. Contains
-Duplicate</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#product-of-array-except-self"><span class="toc-text">4. Product
-of Array Except Self</span></a></li></ol></li></ol>
+Duplicate</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#product-of-array-except-self-%E5%BE%85"><span class="toc-text">4. Product
+of Array Except Self (待)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#maximum-subarray"><span class="toc-text">5. Maximum
+Subarray</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#maximum-product-subarray"><span class="toc-text">6. Maximum
+Product Subarray</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#find-minimum-in-rotated-sorted-array"><span class="toc-text">7. Find
+Minimum in Rotated Sorted Array</span></a></li></ol></li></ol>
       
     </div>
   </div>
